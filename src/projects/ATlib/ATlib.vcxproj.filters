@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\com">
+      <UniqueIdentifier>{2c181edb-ac74-4bf0-9e3e-6b40230c26c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\io">
+      <UniqueIdentifier>{0aa67eaf-dc49-48c4-b886-2271e6758200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\log">
+      <UniqueIdentifier>{def18515-b27b-4f9f-ac04-e3b6b54fb16c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\io">
+      <UniqueIdentifier>{bc1c45eb-be46-4564-afee-c4f07048a206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\log">
+      <UniqueIdentifier>{f2b15a2e-9e8d-426d-9006-7d6e8421a67a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\utl">
+      <UniqueIdentifier>{5ead07db-5302-405f-8d46-4a81f4ce0792}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\ATlib\com\ATlibCommon.h">
+      <Filter>ヘッダー ファイル\com</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\com\ATlibPlatform.h">
+      <Filter>ヘッダー ファイル\com</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\com\ATlibDeclaration.h">
+      <Filter>ヘッダー ファイル\com</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\io\ATlibLock.h">
+      <Filter>ヘッダー ファイル\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\io\ATlibFile.h">
+      <Filter>ヘッダー ファイル\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\io\ATlibStream.h">
+      <Filter>ヘッダー ファイル\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\log\ATlibLogger.h">
+      <Filter>ヘッダー ファイル\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\log\ATlibPrinter.h">
+      <Filter>ヘッダー ファイル\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\log\ATlibSysPrinter.h">
+      <Filter>ヘッダー ファイル\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\utl\ATlibStringUtl.h">
+      <Filter>ヘッダー ファイル\utl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\utl\ATlibDateUtl.h">
+      <Filter>ヘッダー ファイル\utl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ATlib\utl\ATlibSysUtl.h">
+      <Filter>ヘッダー ファイル\utl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="io\ATlibLock.cpp">
+      <Filter>ソース ファイル\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ATlibFile.cpp">
+      <Filter>ソース ファイル\io</Filter>
+    </ClCompile>
+    <ClCompile Include="io\ATlibStream.cpp">
+      <Filter>ソース ファイル\io</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
