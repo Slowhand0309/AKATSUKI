@@ -7,7 +7,7 @@
  * ファイル操作クラス<br>
  * <b>ATlibFile.h</b>
  *
- * @author j-fujisaki
+ * @author slowhand0309
  */
 class ATFile : public ATStream
 {

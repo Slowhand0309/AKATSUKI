@@ -1,3 +1,9 @@
+/**
+ * ファイルブラウザクラス実装<br>
+ * <b>ATutlFileBrowser.cpp</b>
+ *
+ * @author slowhand0309
+ */
 #include "stdafx.h"
 #include "ATlib/utl/ATlibDateUtl.h"
 #include "ATutl/ATutlCommon/ATutlFileBrowser.h"

@@ -4,7 +4,7 @@
  * 共通ライブラリ 定数、構造体等の定義
  * ATlibDeclaration.h
  *
- * @author	jf-orange
+ * @author	slowhand0309
  */
 #include "ATlib/com/ATlibPlatform.h"
 

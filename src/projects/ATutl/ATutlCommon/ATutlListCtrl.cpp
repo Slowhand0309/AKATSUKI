@@ -1,3 +1,9 @@
+/**
+ * リストコントロールクラス実装<br>
+ * <b>ATutlListCtrl.cpp</b>
+ *
+ * @author slowhand0309
+ */
 #include "stdafx.h"
 #include "ATutl/ATutlCommon/ATutlListCtrl.h"
 

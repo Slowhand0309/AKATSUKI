@@ -10,6 +10,12 @@ struct FileProperty
 	TString		m_szUpdateDate;	// 更新日時
 };
 
+/**
+ * ファイルブラウザクラス<br>
+ * <b>ATutlFileBrowser.h</b>
+ *
+ * @author slowhand0309
+ */
 class ATFileBrowser
 {
 public:

@@ -4,6 +4,12 @@
 
 typedef std::map<TString, std::list<TString>> ATProfileData;
 
+/**
+ * INIファイル処理クラス<br>
+ * <b>ATutlProfile.h</b>
+ *
+ * @author slowhand0309
+ */
 class ATProfile
 {
 public:

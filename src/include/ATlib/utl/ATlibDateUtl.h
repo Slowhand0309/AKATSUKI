@@ -7,6 +7,12 @@
 
 #define DEFAULT_DATE_FORMAT			_T("%Y/%m/%d %H:%M:%S")
 
+/**
+ * 日時ユーティリティクラス<br>
+ * <b>ATlibDateUtl.h</b>
+ *
+ * @author slowhand0309
+ */
 class ATDateUtl
 {
 public:

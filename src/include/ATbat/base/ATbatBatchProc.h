@@ -5,13 +5,14 @@
 #include "ATlib/log/ATlibLogger.h"
 #include "ATlib/log/ATlibSysPrinter.h"
 
+/* バッチ引数の最大値 */
 #define ARGUMENT_MAX		(4)
 
 /**
  * バッチ用Printerクラス<br>
  * <b>ATlibBatchProc.h</b>
  *
- * @author j-fujisaki
+ * @author slowhand0309
  */
 class ATBatchPrinter : public ATPrinter
 {
@@ -78,7 +79,7 @@ private:
  * バッチ処理基底クラス<br>
  * <b>ATlibBatchProc.h</b>
  *
- * @author j-fujisaki
+ * @author slowhand0309
  */
 class ATBatchProc
 {

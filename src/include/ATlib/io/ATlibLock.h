@@ -17,7 +17,7 @@
  * IOオブジェクトに対する排他処理クラス<br>
  * <b>ATlibLock.h</b>
  *
- * @author j-fujisaki
+ * @author slowhand0309
  */
 class ATLock
 {

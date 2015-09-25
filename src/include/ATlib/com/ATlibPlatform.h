@@ -4,7 +4,7 @@
  * 共通ライブラリ クロスプラットフォーム定義
  * ATlibPlatform.h
  *
- * @author	jf-orange
+ * @author	slowhand0309
  */
 
 /* プラットフォーム判定					*/

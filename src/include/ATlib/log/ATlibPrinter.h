@@ -2,6 +2,12 @@
 #define __ATLIBPRINTER_H__1D62DB63_85E7_4A22_9736_D428BB9C3BE9
 #include "ATlib/com/ATlibCommon.h"
 
+/**
+ * èoóÕÉNÉâÉX<br>
+ * <b>ATlibPrinter.h</b>
+ *
+ * @author slowhand0309
+ */
 class ATPrinter
 {
 public:

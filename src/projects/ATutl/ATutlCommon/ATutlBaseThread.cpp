@@ -1,3 +1,9 @@
+/**
+ * スレッド基底クラス実装<br>
+ * <b>ATutlBaseThread.cpp</b>
+ *
+ * @author slowhand0309
+ */
 #include "stdafx.h"
 #include "ATutl/ATutlCommon/ATutlBaseThread.h"
 

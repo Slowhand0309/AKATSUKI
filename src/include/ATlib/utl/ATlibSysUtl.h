@@ -3,6 +3,12 @@
 
 #include "ATlib/com/ATlibCommon.h"
 
+/**
+ * システムユーティリティクラス<br>
+ * <b>ATlibSysUtl.h</b>
+ *
+ * @author slowhand0309
+ */
 class ATSysUtl
 {
 public:

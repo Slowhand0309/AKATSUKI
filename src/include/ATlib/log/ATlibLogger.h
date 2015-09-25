@@ -10,7 +10,12 @@
 
 #define LOG_LEVEL	(LOG_LEVEL_INFO | LOG_LEVEL_WARN | LOG_LEVEL_ERROR)
 
-
+/**
+ * ÉçÉOÉNÉâÉX<br>
+ * <b>ATlibLogger.h</b>
+ *
+ * @author slowhand0309
+ */
 template <class __Printer>
 class ATLogger
 {

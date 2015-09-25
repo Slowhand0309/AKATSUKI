@@ -1,3 +1,9 @@
+/**
+ * INIファイル処理クラス実装<br>
+ * <b>ATutlProfile.cpp</b>
+ *
+ * @author slowhand0309
+ */
 #include "stdafx.h"
 #include "ATlib/utl/ATlibSysUtl.h"
 #include "ATlib/utl/ATlibStringUtl.h"

@@ -4,7 +4,7 @@
  * ‹¤’Êƒ‰ƒCƒuƒ‰ƒŠ ‹¤’Ê’è‹`
  * ATlibCommon.h
  *
- * @author	jf-orange
+ * @author	slowhand0309
  */
 #include<stdio.h>
 #include<stdlib.h>

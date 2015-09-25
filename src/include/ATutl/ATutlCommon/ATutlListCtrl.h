@@ -6,7 +6,7 @@
  * MFCÇ≈ÇÃCListCtrlägí£ÉNÉâÉX
  * ATutlListCtrl.h
  *
- * @author	jf-orange
+ * @author	slowhand0309
  */
 class ATListCtrl : public CListCtrl
 {

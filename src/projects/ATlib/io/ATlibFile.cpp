@@ -1,3 +1,9 @@
+/**
+ * ファイル処理実装クラス<br>
+ * <b>ATlibFile.cpp</b>
+ *
+ * @author slowhand0309
+ */
 #include "ATlib/utl/ATlibStringUtl.h"
 #include "ATlib/io/ATlibFile.h"
 

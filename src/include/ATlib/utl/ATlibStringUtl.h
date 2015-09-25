@@ -3,6 +3,12 @@
 
 #include "ATlib/com/ATlibCommon.h"
 
+/**
+ * 文字ユーティリティクラス<br>
+ * <b>ATlibStringUtl.h</b>
+ *
+ * @author slowhand0309
+ */
 class ATStringUtl
 {
 public:

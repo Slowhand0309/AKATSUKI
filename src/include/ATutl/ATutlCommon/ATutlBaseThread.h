@@ -1,6 +1,12 @@
 #ifndef __ATUTLBASETHREAD_H__84CF87E1_0AB6_49C8_A1A5_26A31D0C55DA
 #define __ATUTLBASETHREAD_H__84CF87E1_0AB6_49C8_A1A5_26A31D0C55DA
 
+/**
+ * スレッド基底クラス<br>
+ * <b>ATutlBaseThread.h</b>
+ *
+ * @author slowhand0309
+ */
 class ATBaseThread
 {
 public:

@@ -3,6 +3,9 @@
 
 #include "ATlib/io/ATlibLock.h"
 
+/**
+ * オープンモード
+ */
 const enum OpenMode {
 	OpenMode_ReadOnly = 0,	/* 読込専用(バイナリ)			*/
 	OpenMode_Write,			/* 読み書き(バイナリ)			*/
@@ -12,6 +15,12 @@ const enum OpenMode {
 	OpenMode_TxtAppend		/* 追加書込(テキスト)			*/
 };
 
+/**
+ * ストリームクラス<br>
+ * <b>ATlibStream.h</b>
+ *
+ * @author slowhand0309
+ */
 class ATStream
 {
 public:

@@ -1,3 +1,9 @@
+/**
+ * ƒoƒbƒ`ˆ—Šî’êÀ‘•<br>
+ * <b>ATbatBatchProc.cpp</b>
+ *
+ * @author slowhand0309
+ */
 #include <algorithm>
 #include <iterator>
 #include "ATbat/base/ATbatBatchProc.h"
