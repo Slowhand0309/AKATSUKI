@@ -2,6 +2,7 @@
 *.pdb
 *.sdf
 *.user
+build/
 ipch
 Debug
 TestResults

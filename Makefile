@@ -9,58 +9,72 @@
 # Home directory
 HOME = .
 
-# Directory
+# Common directory
 BUILDDIR  = $(HOME)/build
 SRCDIR = $(HOME)/src/projects
 INCDIR = $(HOME)/src/include
-
-ATLIBSRCDIR = $(SRCDIR)/ATlib
-
-# Target declare
-TARGET_LIB  =	$(BUILDDIR)/AKATSUKI.a
-
-# Command
-MAKE	=	/usr/bin/make
-MV		=	/usr/bin/mv
-CHMOD	=	/usr/bin/chmod
-CP	=	/usr/bin/cp
-
-# C++
-CXX = g++
-
-CFLAGS = -Wall -O2
-
-# Object's
-#SRC = $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
-SRC = $(wildcard $(ATLIBSRCDIR)/io/*.cpp) $(wildcard $(ATLIBSRCDIR)/io/*/*.cpp)
-OBJ = $(addprefix $(BUILDDIR)/,$(notdir $(SRC:.cpp=.o)))
+LIBDIR = $(HOME)/lib
 
 # env
 PLATFORM = $(shell uname)
 
+# Project's src dir
+ATBATSRCDIR = $(SRCDIR)/ATbat
+ATGAESRCDIR = $(SRCDIR)/ATgae
+ATLIBSRCDIR = $(SRCDIR)/ATlib
+ATUTLSRCDIR = $(SRCDIR)/ATutl
+
+# Project's target declare
+#TARGET_ATBAT  =	$(LIBDIR)/ATlib.a
+TARGET_ATLIB  =	$(LIBDIR)/ATlib.a
+#TARGET_ATGAE  =	$(LIBDIR)/ATlib.a
+#TARGET_ATUTL  =	$(LIBDIR)/ATutl.a
+
+# Command
+
+# C++
+CXX = g++
+CFLAGS = -Wall -O2
+
+##############################################################
+#
+# Build ATlib
+#
+##############################################################
+#SRC = $(wildcard src/*.cpp) $(wildcard src/*/*.cpp)
+SRC_ATLIB = $(wildcard $(ATLIBSRCDIR)/*.cpp) $(wildcard $(ATLIBSRCDIR)/*/*.cpp)
+OBJ_ATLIB = $(addprefix $(BUILDDIR)/,$(notdir $(SRC_ATLIB:.cpp=.o)))
+
+atlib: $(TARGET_ATLIB)
+
 # Compile
-$(TARGET_LIB) : $(OBJ)
+$(TARGET_ATLIB) : $(OBJ_ATLIB)
 	@echo "compile..."
-	ar rcs $(TARGET_LIB) $^
+	ar rcs $(TARGET_ATLIB) $^
 	@echo "done"
 
 # Dependency
-$(BUILDDIR)/%.o: $(ATLIBSRCDIR)/io/%.cpp
+$(BUILDDIR)/%.o: $(ATLIBSRCDIR)/%.cpp
 	$(CXX) $(CFLAGS) -I$(INCDIR) -c $< -o $@
 
-$(BUILDDIR)/%.o: $(ATLIBSRCDIR)/io/*/%.cpp
+$(BUILDDIR)/%.o: $(ATLIBSRCDIR)/*/%.cpp
 	$(CXX) $(CFLAGS) -I$(INCDIR) -c $< -o $@
+
+##############################################################
+#
+# Build ATutl
+#
+##############################################################
 
 # Phony
 .PHONY: all
 all :
-	@$(MAKE) clean
-	@$(MAKE)
+
 
 .PHONY: clean
 clean :
 	@rm -f $(BUILDDIR)/*.o
-	@rm -f $(TARGET_LIB)
+	@rm -f $(TARGET_ATLIB)
 
 .PHONY: echo
 echo :
