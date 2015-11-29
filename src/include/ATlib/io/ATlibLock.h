@@ -5,13 +5,11 @@
 
 #ifdef PLATFORM_WINDOWS
 #include <typeinfo.h>
-#endif // PLATFORM_WINDOWS
-
-#ifdef PLATFORM_LINUX
+#else
 #include <typeinfo>
 #include <unistd.h>
 #include <sys/sem.h>
-#endif // PLATFORM_LINUX
+#endif // PLATFORM
 
 /**
  * IOオブジェクトに対する排他処理クラス<br>
@@ -65,9 +63,7 @@ private:
 
 #ifdef PLATFORM_WINDOWS
 	HANDLE					ml_hLockHandle;
-#endif // PLATFORM_WINDOWS
-
-#ifdef PLATFORM_LINUX
+#else
 	/* セマフォ構造体定義		*/
 	union semuni {
 		int					nVal;

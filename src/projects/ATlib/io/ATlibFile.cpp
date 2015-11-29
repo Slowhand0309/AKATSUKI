@@ -204,9 +204,13 @@ int ATFile::write(const TString &szData, ...)
 	va_list		vaList;
 	TCHAR		szBuff[_MAX_PATH] = {0};
 
-	const TCHAR *pSrc = szData.c_str();	
+	const TCHAR *pSrc = szData.c_str();
 	va_start(vaList, pSrc);
+#ifdef PLATFORM_WINDOWS
 	_vstprintf_s(szBuff, _MAX_PATH, pSrc, vaList);
+#else
+	vsprintf(szBuff, pSrc, vaList);
+#endif
 	va_end(vaList);
 
 	/* ÉtÉ@ÉCÉãèëçûÇ›		*/
