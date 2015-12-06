@@ -1,7 +1,7 @@
 #ifndef __ATLIBDECLARATION_H__D3225B8E_B222_446A_BC44_39C2B60386F2
 #define __ATLIBDECLARATION_H__D3225B8E_B222_446A_BC44_39C2B60386F2
 /**
- * ‹¤’Êƒ‰ƒCƒuƒ‰ƒŠ ’è”A\‘¢‘Ì“™‚Ì’è‹`
+ * Common declare values
  * ATlibDeclaration.h
  *
  * @author	slowhand0309
@@ -9,29 +9,29 @@
 #include "ATlib/com/ATlibPlatform.h"
 
 /* ----- common define ----- */
-#define AT_OK									(0x00000001)								/* ³í						*/
-#define AT_ERR_HANDLE							(0x90000000)								/* –³Œø‚Èƒnƒ“ƒhƒ‹			*/
-#define AT_ERR_LOCK								(0x90000001)								/* ”r‘¼‚Ìæ“¾‚É¸”s			*/
-#define AT_ERR_ARGUMENTS						(0x90000002)								/* ˆø”•s³					*/
-#define AT_ERR_IOEXCEPTION						(0x90000003)								/* IO—áŠO					*/
-#define AT_ERR_CONVEXCEPTION					(0x90000004)								/* “à•”•ÏŠ·ˆ——áŠO			*/
-#define AT_ERR_CONTRADICTION					(0x90000005)								/* “à•”–µ‚ƒGƒ‰[			*/
-#define AT_ERR_NOTFOUND							(0x90000006)								/* ‘¶İ–³‚µ					*/
-#define AT_ERR_SETTINGS							(0x90000007)								/* İ’èƒGƒ‰[				*/
+#define AT_OK                     (0x00000001)    /* Successed           */
+#define AT_ERR_HANDLE             (0x90000000)    /* Handle error        */
+#define AT_ERR_LOCK               (0x90000001)    /* Lock error          */
+#define AT_ERR_ARGUMENTS          (0x90000002)    /* Arguments error     */
+#define AT_ERR_IOEXCEPTION        (0x90000003)    /* IO exception        */
+#define AT_ERR_CONVEXCEPTION      (0x90000004)    /* Convert exception   */
+#define AT_ERR_CONTRADICTION      (0x90000005)    /* Contradiction       */
+#define AT_ERR_NOTFOUND           (0x90000006)    /* Not found resources */
+#define AT_ERR_SETTINGS           (0x90000007)    /* Settings error      */
 
-#define AT_SAFE_DELETE(p)						{ if (p) { delete (p);      (p)=NULL; } }	/* ˆÀ‘S‘Îô(delete)			*/
-#define AT_SAFE_RELEASE(p)						{ if (p) { (p)->Release();  (p)=NULL; } }	/* Release					*/
-#define AT_SAFE_DELETE_ARRAY(p)					{ if (p) { delete[] (p);    (p)=NULL; } }	/* delete[]					*/
-#define AT_ARRAY_SIZE(o)						(sizeof(o)/sizeof(o[0]))					/* ”z—ñ‚Ì—v‘f”æ“¾			*/
-#define AT_PI									(3.14159265358979323846)					/* ‰~ü—¦					*/
-#define	AT_EMPTY_STR							_T("")										/* ‹ó•¶š					*/
+#define AT_SAFE_DELETE(p)         { if (p) { delete (p);      (p)=NULL; } } /* Safe delete       */
+#define AT_SAFE_RELEASE(p)        { if (p) { (p)->Release();  (p)=NULL; } } /* Safe Release      */
+#define AT_SAFE_DELETE_ARRAY(p)   { if (p) { delete[] (p);    (p)=NULL; } } /* Safe delete array */
+#define AT_ARRAY_SIZE(o)          (sizeof(o)/sizeof(o[0]))                  /* Size of array     */
+#define AT_PI                     (3.14159265358979323846)                  /* PI                */
+#define	AT_EMPTY_STR              _T("")                                    /* Empty string      */
 
 #ifndef max
-#define max(a,b)								(((a) > (b)) ? (a) : (b))
+#define max(a, b)                 (((a) > (b)) ? (a) : (b))
 #endif
 
 #ifndef min
-#define min(a,b)								(((a) < (b)) ? (a) : (b))
+#define min(a, b)                 (((a) < (b)) ? (a) : (b))
 #endif
 
 /* ----- define iostream ---- */
@@ -56,20 +56,20 @@
 
 #endif // __TOUT__
 
-/* ƒ}ƒNƒ“™‚Ì•¶š‰»				*/
+/* ï¿½}ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½				*/
 #define __TOSTR(x)								#x
 #define TOSTR(macro)							__TOSTR(macro)
 
-/* ƒ}ƒNƒ“™‚Ì•¶š˜AŒ‹			*/
+/* ï¿½}ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½			*/
 #define __CONCATSTR(str, x)						str##x
 #define CONCATSTR(str, x)						__CONCATSTR(str, x)
 
-/* ƒ}ƒNƒ“™‚Ì•¶š˜AŒ‹Šg’£		*/
+/* ï¿½}ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½gï¿½ï¿½		*/
 #define __CONCATSTREX(str, x, x2)				str##x##x2
 #define CONCATSTREX(str, x, x2)					__CONCATSTREX(str, x, x2)
 
-/* ƒRƒ“ƒpƒCƒ‰‚Ö‚ÌŒxƒƒbƒZ[ƒWo—Í
-   w’ès‚Ö‚ÌˆÚ“®‰Â”\ *usage : #pragma __ATMESSAGE__("out put message")	*/
+/* ï¿½Rï¿½ï¿½ï¿½pï¿½Cï¿½ï¿½ï¿½Ö‚ÌŒxï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Zï¿½[ï¿½Wï¿½oï¿½ï¿½
+   ï¿½wï¿½ï¿½ï¿½sï¿½Ö‚ÌˆÚ“ï¿½ï¿½Â”\ *usage : #pragma __ATMESSAGE__("out put message")	*/
 #define __ATMESSAGE__(msg)						message(__FILE__"("TOSTR(__LINE__)") : "msg)
 
 #ifdef PLATFORM_WINDOWS
@@ -82,10 +82,10 @@
 #include<tchar.h>
 
 /* ----- warning disable ----- */
-#pragma	warning (disable: 4996)															/* ŒÃ‚¢Œ`®‚Ì‚b•W€ŠÖ”‚Ìg—p‚ÉŒx‚ğo‚³‚È‚¢	*/
-#pragma warning (disable: 4819)															/* •\¦‚Å‚«‚È‚¢•¶šŒx‚ğo‚³‚È‚¢				*/
-#pragma warning (disable: 4995)															/* ‹ŒŒ`®ŠÖ”–¼Œx‚ğo‚³‚È‚¢					*/
-#pragma warning (disable: 4482)															/* enum‚ÌŒÀ’è–¼‚ğ‹–‰Â							*/
+#pragma	warning (disable: 4996)															/* ï¿½Ã‚ï¿½ï¿½`ï¿½ï¿½ï¿½Ì‚bï¿½Wï¿½ï¿½ï¿½Öï¿½ï¿½Ìgï¿½pï¿½ÉŒxï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½È‚ï¿½	*/
+#pragma warning (disable: 4819)															/* ï¿½\ï¿½ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½È‚ï¿½				*/
+#pragma warning (disable: 4995)															/* ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½Öï¿½ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½È‚ï¿½					*/
+#pragma warning (disable: 4482)															/* enumï¿½ÌŒï¿½ï¿½è–¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½							*/
 
 /* ----- link lib files ----- */
 #pragma comment ( lib, "strmiids.lib")
@@ -94,7 +94,7 @@
 #pragma comment	( lib, "ws2_32.lib")
 
 #define ATSleep(t)			Sleep(1000 * t)												/* Sleep(sec)				*/
-#define AT_INVALID_HANDLE	NULL														/* –³Œø‚Èƒnƒ“ƒhƒ‹			*/
+#define AT_INVALID_HANDLE	NULL														/* ï¿½ï¿½ï¿½ï¿½ï¿½Èƒnï¿½ï¿½ï¿½hï¿½ï¿½			*/
 
 #ifndef TRACE
 #define TRACE(str, ...) \
@@ -114,7 +114,7 @@
 #include <sys/stat.h>
 
 #define ATSleep(t)			sleep(t)													/* Sleep(sec)				*/
-#define AT_INVALID_HANDLE	(-1)														/* –³Œø‚Èƒnƒ“ƒhƒ‹			*/
+#define AT_INVALID_HANDLE	(-1)														/* ï¿½ï¿½ï¿½ï¿½ï¿½Èƒnï¿½ï¿½ï¿½hï¿½ï¿½			*/
 
 #ifndef CONST
 #define CONST				const
@@ -161,7 +161,7 @@ typedef long				HRESULT;
 #endif
 
 #ifdef _UNICODE
-/* ƒƒCƒh•¶š						*/
+/* ï¿½ï¿½ï¿½Cï¿½hï¿½ï¿½ï¿½ï¿½						*/
 #define __T(x) 				L##x
 #define TCHAR				wchar_t
 #define _TCHAR				wchar_t
@@ -169,7 +169,7 @@ typedef long				HRESULT;
 #define _tmkdir				wmkdir
 #define _vstprintf			vswprintf
 #else
-/* ƒ}ƒ‹ƒ`ƒoƒCƒg•¶š					*/
+/* ï¿½}ï¿½ï¿½ï¿½`ï¿½oï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½					*/
 #define __T(x)				x
 #define TCHAR				char
 #define _TCHAR				char
@@ -303,8 +303,8 @@ typedef long				HRESULT;
 #endif // PLATFORM_WINDOWS
 
 /* ----- common typedef ----- */
-typedef std::basic_string<TCHAR>					TString;								/* TCHARŒ^‚Ìstd::string			*/
-typedef unsigned int								ATColor;								/* ƒJƒ‰[						*/
-typedef void*										ATHandle;								/* ƒnƒ“ƒhƒ‹						*/
+typedef std::basic_string<TCHAR>					TString;								/* TCHARï¿½^ï¿½ï¿½std::string			*/
+typedef unsigned int								ATColor;								/* ï¿½Jï¿½ï¿½ï¿½[						*/
+typedef void*										ATHandle;								/* ï¿½nï¿½ï¿½ï¿½hï¿½ï¿½						*/
 
 #endif // __ATLIBDECLARATION_H__D3225B8E_B222_446A_BC44_39C2B60386F2
