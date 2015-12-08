@@ -36,8 +36,8 @@
 /* ATlib includes */
 #include "ATlib/com/ATlibDeclaration.h"
 
-#define	LIB_VER        (1.0)
-#define LIB_VER_STR    _T("1.0")
+#define	LIB_VER        (0.10)
+#define LIB_VER_STR    _T("0.10")
 
 
 #endif // __ATLIBCOMMON_H__AEE62417_86B3_48B7_91BF_DEED64BFAB91
