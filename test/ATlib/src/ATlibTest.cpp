@@ -1,11 +1,28 @@
 #include <gtest/gtest.h>
+#include "ATlib/utl/ATlibStringUtl.h"
 
-int add(int x, int y)
+/**
+ * ATStringUtl Test
+ */
+
+TEST(ATStringUtlTest, isEmpty)
 {
-    return x + y;
+    ASSERT_EQ(true, ATStringUtl::isEmpty(TString(_T(""))));
 }
 
-TEST(AddTest, Test1)
+TEST(ATStringUtlTest, isNotEmpty)
 {
-    ASSERT_EQ(2, add(1, 1));
+    ASSERT_EQ(false, ATStringUtl::isNotEmpty(TString(_T(""))));
+}
+
+TEST(ATStringUtlTest, isDigit)
+{
+    const char digit = '9';
+    ASSERT_EQ(true, ATStringUtl::isDigit(digit));
+
+    TString szBuff = _T("12acd45");
+    ASSERT_EQ(false, ATStringUtl::isDigit(szBuff));
+
+    TString szBuff2 = _T("9");
+    ASSERT_EQ(true, ATStringUtl::isDigit(szBuff2));
 }
