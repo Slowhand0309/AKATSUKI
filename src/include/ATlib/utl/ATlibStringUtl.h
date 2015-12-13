@@ -118,13 +118,12 @@ public:
 
 		TString szBuff = szValue;
 		unsigned int uiPos = 0;
-		while ((uiPos = szBuff.find(szDelimiter, 0)) != szBuff.npos) {
-
+		while ((uiPos = szBuff.find(szDelimiter, 0)) != (unsigned int)szBuff.npos) {
 			TString szBefore = szBuff.substr(0, uiPos);
 			splitList.push_back(szBefore);
-
 			szBuff = szBuff.substr(uiPos + szDelimiter.length());
 		}
+
 		if (!ATStringUtl::isEmpty(szBuff)) {
 			splitList.push_back(szBuff);
 		}
