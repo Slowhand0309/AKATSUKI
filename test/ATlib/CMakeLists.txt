@@ -1,14 +1,16 @@
-FIND_PACKAGE (GTest REQUIRED)
+cmake_minimum_required(VERSION 2.8)
 
-set (HOME ../../)
+FIND_PACKAGE (GTest REQUIRED)
 
 include_directories(
     ${GTEST_INCLUDE_DIRS}
-    ${HOME}/src/include
+    ${PROJECT_SOURCE_DIR}/src/include
 )
 
-add_executable(ATlibTest ${PROJECT_SOURCE_DIR}/src/ATlibTest.cpp)
+add_executable(ATlibTest src/ATlibTest.cpp)
+
 target_link_libraries(ATlibTest
     pthread
     ${GTEST_BOTH_LIBRARIES}
+    ATlib
 )
