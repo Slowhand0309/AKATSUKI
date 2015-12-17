@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-FIND_PACKAGE (GTest REQUIRED)
+FIND_PACKAGE (GTest)
 
 include_directories(
     ${GTEST_INCLUDE_DIRS}
