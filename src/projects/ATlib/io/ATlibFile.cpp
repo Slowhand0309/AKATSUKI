@@ -1,5 +1,5 @@
 /**
- * ƒtƒ@ƒCƒ‹ˆ—À‘•ƒNƒ‰ƒX<br>
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½X<br>
  * <b>ATlibFile.cpp</b>
  *
  * @author slowhand0309
@@ -19,9 +19,9 @@
 
 //********************************************************************************************
 /**
- * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+ * ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
  *
- * @param			‚È‚µ.
+ * @param			ï¿½È‚ï¿½.
  *
  */
 //********************************************************************************************
@@ -32,10 +32,10 @@ ATFile::ATFile()
 
 //********************************************************************************************
 /**
- * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+ * ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
  *
- * @param	const TString &fileName		ƒtƒ@ƒCƒ‹–¼.
- * @param	const enum OpenMode eMode	ƒ‚[ƒh.
+ * @param	const TString &fileName		ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½.
+ * @param	const enum OpenMode eMode	ï¿½ï¿½ï¿½[ï¿½h.
  *
  */
 //********************************************************************************************
@@ -47,9 +47,9 @@ ATFile::ATFile(const TString &fileName, const enum OpenMode eMode)
 
 //********************************************************************************************
 /**
- * ƒfƒXƒgƒ‰ƒNƒ^
+ * ï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
  *
- * @param			‚È‚µ.
+ * @param			ï¿½È‚ï¿½.
  *
  */
 //********************************************************************************************
@@ -60,42 +60,42 @@ ATFile::~ATFile()
 
 //********************************************************************************************
 /**
- * ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Iï¿½[ï¿½vï¿½ï¿½
  *
- * @param	const TString &szName		ƒtƒ@ƒCƒ‹–¼Ì.
- * @param	const enum OpenMode eMode	ƒtƒ@ƒCƒ‹ƒ‚[ƒh
+ * @param	const TString &szName		ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+ * @param	const enum OpenMode eMode	ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½h
  *
- * @return			AT_OK				: ³í
- *					AT_ERR_ARGUMENTS	: ƒpƒ‰ƒ[ƒ^•s³
- *					AT_ERR_IOEXCEPTION	: IO—áŠO
+ * @return			AT_OK				: ï¿½ï¿½ï¿½ï¿½
+ *					AT_ERR_ARGUMENTS	: ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½sï¿½ï¿½
+ *					AT_ERR_IOEXCEPTION	: IOï¿½ï¿½ï¿½O
  */
 //********************************************************************************************
 int ATFile::open(const TString &szName, const enum OpenMode eMode)
 {
-	/* ƒtƒ@ƒCƒ‹ƒ‚[ƒhw’è			*/
+	/* ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½hï¿½wï¿½ï¿½			*/
 	TString szMode;
 	switch (eMode) {
-		case OpenMode::OpenMode_ReadOnly:		/* “Çê—p		*/
+		case OpenMode_ReadOnly:		/* ï¿½Çï¿½ï¿½ï¿½ï¿½p		*/
 			szMode = _T("rb");
 			break;
 
-		case OpenMode::OpenMode_Write:			/* ‘‚İ		*/
+		case OpenMode_Write:			/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		*/
 			szMode = _T("wb");
 			break;
 
-		case OpenMode::OpenMode_Append:			/* ’Ç‰Á			*/
+		case OpenMode_Append:			/* ï¿½Ç‰ï¿½			*/
 			szMode = _T("ab");
 			break;
 
-		case OpenMode::OpenMode_TxtReadOnly:		/* “Çê—p		*/
+		case OpenMode_TxtReadOnly:		/* ï¿½Çï¿½ï¿½ï¿½ï¿½p		*/
 			szMode = _T("r");
 			break;
 
-		case OpenMode::OpenMode_TxtWrite:			/* ‘‚İ		*/
+		case OpenMode_TxtWrite:			/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		*/
 			szMode = _T("w");
 			break;
 
-		case OpenMode::OpenMode_TxtAppend:			/* ’Ç‰Á			*/
+		case OpenMode_TxtAppend:			/* ï¿½Ç‰ï¿½			*/
 			szMode = _T("a");
 			break;
 
@@ -105,7 +105,7 @@ int ATFile::open(const TString &szName, const enum OpenMode eMode)
 	}
 
 	try {
-		/* ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“			*/
+		/* ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Iï¿½[ï¿½vï¿½ï¿½			*/
 		ml_pFile = _tfopen(szName.c_str(), szMode.c_str());
 		if (ml_pFile == NULL) {
 			throw "";
@@ -124,11 +124,11 @@ int ATFile::open(const TString &szName, const enum OpenMode eMode)
 
 //********************************************************************************************
 /**
- * ƒtƒ@ƒCƒ‹ƒNƒ[ƒY
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½[ï¿½Y
  *
- * @param						‚È‚µ.
+ * @param						ï¿½È‚ï¿½.
  *
- * @return						‚È‚µ.
+ * @return						ï¿½È‚ï¿½.
  */
 //********************************************************************************************
 void ATFile::close()
@@ -144,14 +144,14 @@ void ATFile::close()
 
 //********************************************************************************************
 /**
- * ƒtƒ@ƒCƒ‹‘‚İ
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *
- * @param	LPCVOID pData		‘‚İƒf[ƒ^.
- * @param	size_t uiSize		‘‚İƒTƒCƒY.
+ * @param	LPCVOID pData		ï¿½ï¿½ï¿½ï¿½ï¿½İƒfï¿½[ï¿½^.
+ * @param	size_t uiSize		ï¿½ï¿½ï¿½ï¿½ï¿½İƒTï¿½Cï¿½Y.
  *
- * @return			AT_OK				: ³í
- *					AT_ERR_ARGUMENTS	: ƒpƒ‰ƒ[ƒ^•s³
- *					AT_ERR_IOEXCEPTION	: IO—áŠO
+ * @return			AT_OK				: ï¿½ï¿½ï¿½ï¿½
+ *					AT_ERR_ARGUMENTS	: ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½sï¿½ï¿½
+ *					AT_ERR_IOEXCEPTION	: IOï¿½ï¿½ï¿½O
  */
 //********************************************************************************************
 int ATFile::write(LPCVOID pData, size_t uiSize)
@@ -164,7 +164,7 @@ int ATFile::write(LPCVOID pData, size_t uiSize)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	/* ƒtƒ@ƒCƒ‹‘‚İ		*/
+	/* ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		*/
 	if (ml_oLock.lock() != AT_OK) {
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -179,15 +179,15 @@ int ATFile::write(LPCVOID pData, size_t uiSize)
 
 //********************************************************************************************
 /**
- * ƒtƒ@ƒCƒ‹‘‚İ
- * ƒtƒ@ƒCƒ‹ˆês•ª•¶š—ñ‚ğ‘‚«‚Ş
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *
- * @param	const TString &szData		‘‚İ•¶š—ñ.
- * @param	...							‰Â•Ï’·ˆø”.
+ * @param	const TString &szData		ï¿½ï¿½ï¿½ï¿½ï¿½İ•ï¿½ï¿½ï¿½ï¿½ï¿½.
+ * @param	...							ï¿½Â•Ï’ï¿½ï¿½ï¿½ï¿½ï¿½.
  *
- * @return			AT_OK				: ³í
- *					AT_ERR_ARGUMENTS	: ƒpƒ‰ƒ[ƒ^•s³
- *					AT_ERR_IOEXCEPTION	: IO—áŠO
+ * @return			AT_OK				: ï¿½ï¿½ï¿½ï¿½
+ *					AT_ERR_ARGUMENTS	: ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½sï¿½ï¿½
+ *					AT_ERR_IOEXCEPTION	: IOï¿½ï¿½ï¿½O
  */
 //********************************************************************************************
 int ATFile::write(const TString &szData, ...)
@@ -200,7 +200,7 @@ int ATFile::write(const TString &szData, ...)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	/* ‰Â•Ï’·ƒŠƒXƒg‚Ìæ“¾	*/
+	/* ï¿½Â•Ï’ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½Ìæ“¾	*/
 	va_list		vaList;
 	TCHAR		szBuff[_MAX_PATH] = {0};
 
@@ -213,7 +213,7 @@ int ATFile::write(const TString &szData, ...)
 #endif
 	va_end(vaList);
 
-	/* ƒtƒ@ƒCƒ‹‘‚İ		*/
+	/* ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		*/
 	if (ml_oLock.lock() != AT_OK) {
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -226,14 +226,14 @@ int ATFile::write(const TString &szData, ...)
 
 //********************************************************************************************
 /**
- * ƒtƒ@ƒCƒ‹“Ç‚İ
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Çï¿½ï¿½ï¿½
  *
- * @param	LPVOID pData		“Ç‚İƒf[ƒ^.
- * @param	size_t uiSize		“Ç‚İƒTƒCƒY.
+ * @param	LPVOID pData		ï¿½Çï¿½ï¿½İƒfï¿½[ï¿½^.
+ * @param	size_t uiSize		ï¿½Çï¿½ï¿½İƒTï¿½Cï¿½Y.
  *
- * @return			AT_OK				: ³í
- *					AT_ERR_ARGUMENTS	: ƒpƒ‰ƒ[ƒ^•s³
- *					AT_ERR_IOEXCEPTION	: IO—áŠO
+ * @return			AT_OK				: ï¿½ï¿½ï¿½ï¿½
+ *					AT_ERR_ARGUMENTS	: ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½sï¿½ï¿½
+ *					AT_ERR_IOEXCEPTION	: IOï¿½ï¿½ï¿½O
  */
 //********************************************************************************************
 int ATFile::read(LPVOID pData, size_t uiSize)
@@ -242,7 +242,7 @@ int ATFile::read(LPVOID pData, size_t uiSize)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	/* ƒtƒ@ƒCƒ‹“Ç‚İ		*/
+	/* ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Çï¿½ï¿½ï¿½		*/
 	if (ml_oLock.lock() != AT_OK) {
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -258,14 +258,14 @@ int ATFile::read(LPVOID pData, size_t uiSize)
 
 //********************************************************************************************
 /**
- * ƒtƒ@ƒCƒ‹“Ç‚İ
- * ƒtƒ@ƒCƒ‹ˆês•ª‚Ì•¶š—ñ‚ğ“Ç‚İ‚Ş
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Çï¿½ï¿½ï¿½
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚İï¿½ï¿½ï¿½
  *
- * @param	TString &szData		“Ç‚İ•¶š—ñ.
+ * @param	TString &szData		ï¿½Çï¿½ï¿½İ•ï¿½ï¿½ï¿½ï¿½ï¿½.
  *
- * @return			AT_OK				: ³í
- *					AT_ERR_ARGUMENTS	: ƒpƒ‰ƒ[ƒ^•s³
- *					AT_ERR_IOEXCEPTION	: IO—áŠO
+ * @return			AT_OK				: ï¿½ï¿½ï¿½ï¿½
+ *					AT_ERR_ARGUMENTS	: ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½sï¿½ï¿½
+ *					AT_ERR_IOEXCEPTION	: IOï¿½ï¿½ï¿½O
  */
 //********************************************************************************************
 int ATFile::read(TString &szData)
@@ -274,7 +274,7 @@ int ATFile::read(TString &szData)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	/* ƒtƒ@ƒCƒ‹“Ç‚İ		*/
+	/* ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Çï¿½ï¿½ï¿½		*/
 	if (ml_oLock.lock() != AT_OK) {
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -289,29 +289,29 @@ int ATFile::read(TString &szData)
 
 //********************************************************************************************
 /**
- * ƒtƒ@ƒCƒ‹ƒTƒCƒYæ“¾
+ * ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Tï¿½Cï¿½Yï¿½æ“¾
  *
- * @param			‚È‚µ.
+ * @param			ï¿½È‚ï¿½.
  *
- * @return			ƒtƒ@ƒCƒ‹ƒTƒCƒY(unsigned int)
- *					¸”s‚µ‚½ê‡‚Í0‚ğ•Ô‚·
+ * @return			ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Tï¿½Cï¿½Y(unsigned int)
+ *					ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½ï¿½0ï¿½ï¿½ï¿½Ô‚ï¿½
  */
 //********************************************************************************************
 unsigned int ATFile::getFileSize() const
 {
 	unsigned int uiPos = 0;
-	// ƒtƒ@ƒCƒ‹ó‘Ôƒ`ƒFƒbƒN
+	// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Ôƒ`ï¿½Fï¿½bï¿½N
 	if (isOpen() == false) {
 		TRACE(_T("file not open for get file size."));
 		return uiPos;
 	}
-	// Œ»İ‚Ìƒtƒ@ƒCƒ‹ƒ|ƒWƒVƒ‡ƒ“æ“¾
+	// ï¿½ï¿½ï¿½İ‚Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½|ï¿½Wï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
 	unsigned int uiCurPos = ftell(ml_pFile);
-	// ƒtƒ@ƒCƒ‹––’[‚Ü‚ÅˆÚ“®
+	// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Ü‚ÅˆÚ“ï¿½
 	fseek(ml_pFile, 0, SEEK_END);
-	// ƒtƒ@ƒCƒ‹‘S‘Ì‚ÌƒTƒCƒY‚ğæ“¾
+	// ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Sï¿½Ì‚ÌƒTï¿½Cï¿½Yï¿½ï¿½ï¿½æ“¾
     uiPos = ftell(ml_pFile);
-	// Œ³‚ÌêŠ‚É–ß‚·
+	// ï¿½ï¿½ï¿½ÌêŠï¿½É–ß‚ï¿½
     fseek(ml_pFile, uiCurPos, SEEK_SET);
 
 	return uiPos;
@@ -319,9 +319,9 @@ unsigned int ATFile::getFileSize() const
 
 //********************************************************************************************
 /**
- * EOF”»’è
+ * EOFï¿½ï¿½ï¿½ï¿½
  *
- * @param			‚È‚µ.
+ * @param			ï¿½È‚ï¿½.
  *
  * @return			true	: EOF
  *					falses	: not EOF
