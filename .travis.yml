@@ -7,6 +7,6 @@ install:
    - "cd /usr/src/gtest && sudo cmake . && sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -"
 script:
    - cd build
-   - cmake ..
+   - cmake .. -DGTEST_BOTH_LIBRARIES="/usr/local/lib/libgtest.a /usr/local/lib/libgtest_main.a"
    - make
    - ./test/ATlib/ATlibTest 
