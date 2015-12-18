@@ -14,3 +14,6 @@ target_link_libraries(ATlibTest
     ${GTEST_BOTH_LIBRARIES}
     ATlib
 )
+
+enable_testing()
+add_test(A ATlibTest)
