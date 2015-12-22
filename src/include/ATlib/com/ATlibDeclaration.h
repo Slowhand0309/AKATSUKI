@@ -168,6 +168,7 @@ typedef long                 HRESULT;
 #define _tsetlocale         _wsetlocale
 #define _tmkdir             wmkdir
 #define _vstprintf          vswprintf
+#define _tstat              _wstat
 #else
 /* MLUTIBYTE */
 #define __T(x)              x
@@ -274,6 +275,7 @@ typedef long                 HRESULT;
 #define _tsopen             _sopen
 #define _tsetlocale         setlocale
 #define _tunlink            _unlink
+#define _tstat              stat
 #define _tfinddata_t        _finddata_t
 #define _strdec(_str1, _str2) ((_str1)>=(_str2) ? NULL : (_str2)-1)
 #define _strinc(_str)  ((_str)+1)
@@ -287,6 +289,9 @@ typedef long                 HRESULT;
 
 #define _T(x)                                __T(x)
 #define _MAX_PATH                            (255)
+#define _MAX_DIR                             (255)
+#define _MAX_FNAME                           (255)
+#define _MAX_EXT                             (128)
 #define SUCCEEDED(hr)                        (((HRESULT)(hr)) >= 0)
 #define FAILED(hr)                           (((HRESULT)(hr)) < 0)
 #define MessageBox(a,b,c,d)

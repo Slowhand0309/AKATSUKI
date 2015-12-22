@@ -7,6 +7,7 @@ set(ATLIB_SRC
     io/ATlibLock.cpp
     io/ATlibStream.cpp
     utl/ATlibStringUtl.cpp
+    utl/ATlibSysUtl.cpp
 )
 
 include_directories(
