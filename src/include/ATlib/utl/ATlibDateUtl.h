@@ -5,10 +5,10 @@
 #include "ATlib/utl/ATlibStringUtl.h"
 #include <time.h>
 
-#define DEFAULT_DATE_FORMAT			_T("%Y/%m/%d %H:%M:%S")
+#define DEFAULT_DATE_FORMAT  _T("%Y/%m/%d %H:%M:%S")
 
 /**
- * 日時ユーティリティクラス<br>
+ * Date time utility class<br>
  * <b>ATlibDateUtl.h</b>
  *
  * @author slowhand0309
@@ -18,67 +18,38 @@ class ATDateUtl
 public:
 
 	/**
-	 * 現在の日時を文字列で取得
+	 * Get current date time(Y/m/d H:M:S).
 	 *
-	 * @return			現在日時
+	 * @return  current date time string
 	 */
-	static TString getCurrentDate() {
-		return getCurrentDate(DEFAULT_DATE_FORMAT);
-	};
+	static TString getCurrentDate();
 
 	/**
-	 * 現在の日時を文字列で取得
+	 * Get current date time(Y/m/d H:M:S).
 	 *
-	 * @param		TString szFormat	日付フォーマット文字列
+	 * @param		TString szFormat date time format
 	 *
-	 * @return		現在日時
+	 * @return  current date time string
 	 */
-	static TString getCurrentDate(TString szFormat) {
-
-		time_t		lTime;
-		struct tm	*tagNow;
-		size_t		uiRet = 0;
-		TCHAR		szTime[_MAX_PATH] = {0};
-
-		time(&lTime);
-		tagNow = localtime(&lTime);
-
-		if (_tcsftime(szTime, _MAX_PATH, szFormat.c_str(), tagNow) == 0) {
-			return TString();
-		}
-		return TString(szTime);
-	};
+	static TString getCurrentDate(TString szFormat);
 
 #ifdef PLATFORM_WINDOWS
 /* declaration for windows					*/
 
-	/**
-	 * 引数のSYSTEMTIMEをフォーマット文字列で取得
-	 * 
-	 * @param	SYSTEMTIME stSysTime		システムタイム
-	 * @param	const TString &szFormat		フォーマット
-	 * @return	TString						文字列
-	 */
-	static TString getFormatString(SYSTEMTIME stSysTime, const TString &szFormat) {
-
-		if (ATStringUtl::isEmpty(szFormat)) {
-			return AT_EMPTY_STR;
-		}
-
-		TCHAR		szValue[_MAX_PATH] = {0};
-		_stprintf(szValue, szFormat.c_str(), 
-					stSysTime.wYear,   stSysTime.wMonth,
-					stSysTime.wDay,    stSysTime.wHour,
-					stSysTime.wMinute, stSysTime.wSecond);
-
-		return TString(szValue);
-	}
+ /**
+  * Get current date time use SYSTEMTIME
+  *
+  * @param	SYSTEMTIME stSysTime system time struct
+  * @param	const TString &szFormat date time format
+  * @return	TString date time string
+  */
+	static TString getFormatString(SYSTEMTIME stSysTime, const TString &szFormat);
 
 #endif // PLATFORM_WINDOWS
 
 private:
 	/**
-	 * インスタンスの作成禁止
+	 * Constructor
 	 */
 	ATDateUtl();
 };

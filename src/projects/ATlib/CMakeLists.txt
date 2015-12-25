@@ -8,6 +8,7 @@ set(ATLIB_SRC
     io/ATlibStream.cpp
     utl/ATlibStringUtl.cpp
     utl/ATlibSysUtl.cpp
+    utl/ATlibDateUtl.cpp
 )
 
 include_directories(
