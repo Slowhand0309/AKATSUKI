@@ -12,7 +12,7 @@
 #endif // PLATFORM
 
 /**
- * IOオブジェクトに対する排他処理クラス<br>
+ * Lock/Unlock class<br>
  * <b>ATlibLock.h</b>
  *
  * @author slowhand0309
@@ -26,54 +26,54 @@ public:
 	virtual ~ATLock();
 
 	/**
-	 * ロック
+	 * Lock.
 	 *
-	 * @return		AT_OK			: 成功
-	 *				AT_ERR_HANDLE	: 無効なハンドル
-	 *				AT_ERR_LOCK		: 排他の取得に失敗
+	 * @return AT_OK : locked
+	 *         AT_ERR_HANDLE : handle error
+	 *         AT_ERR_LOCK : lock error
 	 */
 	int lock();
 
 	/**
-	 * ロック解除
+	 * Unlock.
 	 */
 	void unlock();
 
 	/**
-	 * ロック可否
+	 * Check locked.
 	 *
-	 * @return		true	: ロック中
-	 *				false	: ロック解除
+	 * @return true : locked
+	 *         false : not lock
 	 */
 	bool isLocked() const;
 
 private:
 
 	/**
-	 * ロックハンドル作成
+	 * Create handle for lock.
 	 */
 	void createHandle();
 
 	/**
-	 * ロックハンドル削除
+	 * Delete handle.
 	 */
 	void deleteHandle();
 
-	bool					ml_bLock;
+	bool ml_bLock;
 
 #ifdef PLATFORM_WINDOWS
-	HANDLE					ml_hLockHandle;
+	HANDLE ml_hLockHandle;
 #else
-	/* セマフォ構造体定義		*/
+	/* struct seminfo */
 	union semuni {
-		int					nVal;
-		struct	semid_ds	*buff;
-		unsigned short		*array;
-		struct	seminfo		*info;
+		int nVal;
+		struct semid_ds	*buff;
+		unsigned short *array;
+		struct seminfo *info;
 	};
 
-	struct sembuf			ml_stSemb;
-	int						ml_hLockHandle;
+	struct sembuf ml_stSemb;
+	int ml_hLockHandle;
 #endif // PLATFORM_LINUX
 };
 #endif // __ATLIBLOCK_H__0A06B2FC_821E_4050_99E0_26C285DB2A0A

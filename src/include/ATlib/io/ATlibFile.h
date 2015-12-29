@@ -4,7 +4,7 @@
 #include "ATlib/io/ATlibStream.h"
 
 /**
- * ファイル操作クラス<br>
+ * File manage class<br>
  * <b>ATlibFile.h</b>
  *
  * @author slowhand0309
@@ -13,96 +13,96 @@ class ATFile : public ATStream
 {
 public:
 	/**
-	 * コンストラクタ
+	 * Constructor.
 	 */
 	ATFile();
 
 	/**
-	 * コンストラクタ
+	 * Constructor.
 	 *
-	 * @param	const TString &fileName		ファイル名称
-	 * @param	const enum OpenMode eMode	モード
+	 * @param	const TString &fileName file name
+	 * @param	const enum OpenMode eMode open mode
 	 */
 	ATFile(const TString &fileName, const enum OpenMode eMode);
 
 	/**
-	 * デストラクタ
+	 * Destructor.
 	 */
 	virtual ~ATFile();
 
 	/**
-	 * ファイルオープン処理
+	 * Open file.
 	 *
-	 * @param	const TString &szName		ファイル名称
-	 * @param	const enum OpenMode eMode	モード
+	 * @param	const TString &szName file name
+	 * @param	const enum OpenMode eMode open mode
 	 *
-	 * @return	AT_OK	: 正常
+	 * @return	AT_OK : file opend
 	 */
 	virtual int open(const TString &szName, const enum OpenMode eMode);
 
 	/**
-	 * ファイルクローズ処理
+	 * Close file.
 	 */
 	virtual void close();
 
 	/**
-	 * ファイル書込
+	 * Write data to file.
 	 *
-	 * @param	LPCVOID pData				書込データ
-	 * @param	size_t uiSize				書込サイズ
+	 * @param	LPCVOID pData write data
+	 * @param	size_t uiSize write size
 	 *
-	 * @return	AT_OK	: 正常
+	 * @return	AT_OK : write success
 	 */
 	virtual int write(LPCVOID pData, size_t uiSize);
 
 	/**
-	 * ファイル書込
-	 * <br>ファイル一行分文字列を書き込む
+	 * Write data to file.
+	 * <br>write strings
 	 *
-	 * @param	const TString &szData		書込文字列
-	 * @param	...							可変長引数
+	 * @param	const TString &szData write strings data
+	 * @param	... vargs
 	 *
-	 * @return	AT_OK	: 正常
+	 * @return	AT_OK : write success
 	 */
 	int write(const TString &szData, ...);
 
 	/**
-	 * ファイル読込
+	 * Read from file.
 	 *
-	 * @param	LPCVOID pData				読込データ
-	 * @param	size_t uiSize				読込サイズ
+	 * @param	LPCVOID pData read data
+	 * @param	size_t uiSize read size
 	 *
-	 * @return	AT_OK	: 正常
+	 * @return AT_OK : read success
 	 */
 	virtual int read(LPVOID pData, size_t uiSize);
 
 	/**
-	 * ファイル読込
-	 * <br>ファイル一行分の文字列を読み込む
+	 * Read from file.
+	 * <br>read for string
 	 *
-	 * @param	TString &szData				読込文字列
+	 * @param TString &szData read string data
 	 *
-	 * @return	AT_OK	: 正常
+	 * @return AT_OK : read success
 	 */
 	int read(TString &szData);
 
 	/**
-	 * ファイルサイズ取得
+	 * Get size for file.
 	 *
-	 * @return		ファイルサイズ
+	 * @return file size
 	 */
 	unsigned int getFileSize() const;
 
 	/**
-	 * EOF判定
+	 * Check EOF
 	 *
-	 * @return		true	: EOF
-	 *				false	: not EOF
+	 * @return true : EOF
+	 *         false : not EOF
 	 */
 	bool isEof() const;
 
 protected:
-	FILE			*ml_pFile;
-	TString			ml_szFileName;
+	FILE *ml_pFile;
+	TString ml_szFileName;
 };
 #endif // __ATLIBFILE_H__EECA9CB2_0CC6_474E_8668_296B9B4B730B

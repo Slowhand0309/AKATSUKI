@@ -4,19 +4,19 @@
 #include "ATlib/io/ATlibLock.h"
 
 /**
- * ƒI[ƒvƒ“ƒ‚[ƒh
+ * Open Stream mode.
  */
 const enum OpenMode {
-	OpenMode_ReadOnly = 0,	/* “Çê—p(ƒoƒCƒiƒŠ)			*/
-	OpenMode_Write,			/* “Ç‚İ‘‚«(ƒoƒCƒiƒŠ)			*/
-	OpenMode_Append,		/* ’Ç‰Á‘(ƒoƒCƒiƒŠ)			*/
-	OpenMode_TxtReadOnly,	/* “Çê—p(ƒeƒLƒXƒg)			*/
-	OpenMode_TxtWrite,		/* “Ç‚İ‘‚«(ƒeƒLƒXƒg)			*/
-	OpenMode_TxtAppend		/* ’Ç‰Á‘(ƒeƒLƒXƒg)			*/
+	OpenMode_ReadOnly = 0,	/* ï¿½Çï¿½ï¿½ï¿½ï¿½p(ï¿½oï¿½Cï¿½iï¿½ï¿½)			*/
+	OpenMode_Write,			/* ï¿½Ç‚İï¿½ï¿½ï¿½(ï¿½oï¿½Cï¿½iï¿½ï¿½)			*/
+	OpenMode_Append,		/* ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½oï¿½Cï¿½iï¿½ï¿½)			*/
+	OpenMode_TxtReadOnly,	/* ï¿½Çï¿½ï¿½ï¿½ï¿½p(ï¿½eï¿½Lï¿½Xï¿½g)			*/
+	OpenMode_TxtWrite,		/* ï¿½Ç‚İï¿½ï¿½ï¿½(ï¿½eï¿½Lï¿½Xï¿½g)			*/
+	OpenMode_TxtAppend		/* ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½eï¿½Lï¿½Xï¿½g)			*/
 };
 
 /**
- * ƒXƒgƒŠ[ƒ€ƒNƒ‰ƒX<br>
+ * Stream class<br>
  * <b>ATlibStream.h</b>
  *
  * @author slowhand0309
@@ -25,57 +25,54 @@ class ATStream
 {
 public:
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * Constructor
 	 */
 	ATStream();
 
 	/**
-	 * ƒfƒXƒgƒ‰ƒNƒ^
+	 * Destructor
 	 */
 	virtual ~ATStream();
 
 	/**
-	 * ƒXƒgƒŠ[ƒ€‚ªŠJ‚©‚ê‚Ä‚¢‚é‚©
+	 * Check stream open.
 	 *
-	 * @return true	:	ŠJ‚¢‚Ä‚¢‚é / false	: ŠJ‚¢‚Ä‚¢‚È‚¢
+	 * @return true : open / false : not open
 	 */
 	virtual bool isOpen() const;
 
 	/**
-	 * ƒI[ƒvƒ“ˆ—<br>
-	 * ƒˆ‰¼‘zŠÖ”
+	 * Open stream<br>
+	 * oepn stream from file name
 	 *
-	 * @param	const TString &szName		ƒXƒgƒŠ[ƒ€–¼
-	 * @param	const enum OpenMode eMode	ƒ‚[ƒh
+	 * @param	const TString &szName file name
+	 * @param	const enum OpenMode eMode open mode
 	 */
 	virtual int open(const TString &szName, const enum OpenMode eMode) = 0;
 
 	/**
-	 * ƒNƒ[ƒYˆ—<br>
-	 * ƒˆ‰¼‘zŠÖ”
+	 * Close stream
 	 */
 	virtual void close() = 0;
 
 	/**
-	 * ƒXƒgƒŠ[ƒ€‚Ö‘‚İ<br>
-	 * ƒˆ‰¼‘zŠÖ”
+	 * Write to stream
 	 *
-	 * @param		LPCVOID pData			o—Íƒf[ƒ^
-	 * @param		size_t uiSize			o—ÍƒTƒCƒY
+	 * @param		LPCVOID pData write data
+	 * @param		size_t uiSize write data size
 	 */
 	virtual int write(LPCVOID pData, size_t uiSize) = 0;
 
 	/**
-	 * ƒXƒgƒŠ[ƒ€‚©‚ç“Ç‚İ<br>
-	 * ƒˆ‰¼‘zŠÖ”
+	 * Read from stream
 	 *
-	 * @param		LPCVOID pData			“Çƒf[ƒ^
-	 * @param		size_t uiSize			“ÇƒTƒCƒY
+	 * @param		LPCVOID pData read data
+	 * @param		size_t uiSize read size
 	 */
 	virtual int read(LPVOID pData, size_t uiSize) = 0;
 
 protected:
-	ATLock			ml_oLock;
-	bool			ml_bOpen;
+	ATLock ml_oLock;
+	bool ml_bOpen;
 };
 #endif // __ATLIBSTREAM_H__EFBB0FD1_1513_4126_96DF_0EF7815D5188
