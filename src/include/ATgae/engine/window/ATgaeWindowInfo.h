@@ -7,8 +7,8 @@
 #endif // _MSC_VER > 1000
 
 /**
- * <b>ウィンドウ情報クラス</b><br>
- * @author j-fujisaki
+ * <b>Info for Window</b><br>
+ * @author slowhand
  *
  * <table>
  *   <tr>
@@ -19,7 +19,7 @@
  *   <tr>
  *     <td>1</td>
  *     <td>2015.04.13</td>
- *     <td>新規作成</td>
+ *     <td>Create file</td>
  *   </tr>
  * </table>
  */
@@ -28,50 +28,50 @@ class ATWindowInfo
 public:
 
 	/**
-	 * コンストラクタ
+	 * Constructor
 	 */
 	ATWindowInfo();
 
 	/**
-	 * デストラクタ
+	 * Destructor
 	 */
 	virtual ~ATWindowInfo();
 
 	/**
-	 * クライアント幅取得
+	 * Get height size for client window.
 	 *
-	 * @return クライアント幅
+	 * @return size
 	 */
 	unsigned int getHeight();
 
 	/**
-	 * クライアント幅の設定
+	 * Set height size for client window.
 	 *
-	 * @param unsigned int nHeight	クライアント幅
+	 * @param unsigned int nHeight size	
 	 */
 	void setHeight(unsigned int nHeight);
 
 	/**
-	 * クライアント高取得
+	 * Get width size for client window.
 	 *
-	 * @return クライアント高
+	 * @return size
 	 */
 	unsigned int getWidth();
 
 	/**
-	 * クライアント高の設定
+	 * Set width size for client window.
 	 *
-	 * @param クライアント高
+	 * @param size
 	 */
 	void setWidth(unsigned int nWidth);
 
 private:
-	unsigned int			ml_nHeight;			///< ウィンドウ高
-	unsigned int			ml_nWidth;			///< ウィンドウ幅
-	unsigned int			ml_nDispHeight;		///< ディスプレイ高
-	unsigned int			ml_nDispWidth;		///< ディスプレイ幅
-	TString					ml_szWindowTitle;	///< ウィンドウタイトル
-	bool					ml_bWindowMode;		///< ウィンドウモード判定
+	unsigned int ml_nHeight; ///< ウィンドウ高
+	unsigned int ml_nWidth;	///< ウィンドウ幅
+	unsigned int ml_nDispHeight; ///< ディスプレイ高
+	unsigned int ml_nDispWidth; ///< ディスプレイ幅
+	TString	ml_szWindowTitle; ///< ウィンドウタイトル
+	bool ml_bWindowMode; ///< ウィンドウモード判定
 
 };
 #endif // __ATWINDOWINFO_H__B9F67094_62AF_4F89_87F5_CCBB3134FE10

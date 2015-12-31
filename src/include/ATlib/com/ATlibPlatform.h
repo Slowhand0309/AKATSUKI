@@ -1,13 +1,13 @@
 #ifndef __ATLIBPLATFORM_H__1305AFF2_6224_47D7_B210_F2A72852FB69
 #define __ATLIBPLATFORM_H__1305AFF2_6224_47D7_B210_F2A72852FB69
 /**
- * 共通ライブラリ クロスプラットフォーム定義
+ * Declare for cross platform.<br>
  * ATlibPlatform.h
  *
  * @author	slowhand0309
  */
 
-/* プラットフォーム判定					*/
+/* Define for platform */
 #if defined(WIN32) || defined(WIN64) || defined(_WIN32) || defined(_WIN64)
     #define PLATFORM_WINDOWS		1      
     #define PLATFORM_NAME			"Windows"
@@ -23,7 +23,7 @@
 #endif
 
 
-/* 何Bitオプレーションシステムか?		*/
+/* 32/64 bit */
 #if (defined(_WIN64) || defined(WIN64))
     #define PLATFORM_BITS       64
 // Macintosh
@@ -36,7 +36,7 @@
     #define PLATFORM_BITS       32
 #endif
 
-/* コンパイラ判定						*/
+/* Compiler */
 #ifdef _MSC_VER // Visual Studio
 	#define COMPILER_VERSION       _MSC_VER
 
@@ -65,7 +65,7 @@
         #define COMPILER_NAME       "G++"
 #endif
 
-/* コンパイラオプション(Visual Studio)	*/
+/* Option for Visual Studio */
 #ifdef PLATFORM_WINDOWS
 	// Support for Windows 98
 	#if COMPILER_VERSION >= COMPILER_VS6 && COMPILER_VERSION < COMPILER_VSDOTNET
