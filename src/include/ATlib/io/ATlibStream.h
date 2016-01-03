@@ -6,13 +6,13 @@
 /**
  * Open Stream mode.
  */
-const enum OpenMode {
-	OpenMode_ReadOnly = 0,	/* �Ǎ����p(�o�C�i��)			*/
-	OpenMode_Write,			/* �ǂݏ���(�o�C�i��)			*/
-	OpenMode_Append,		/* �ǉ�����(�o�C�i��)			*/
-	OpenMode_TxtReadOnly,	/* �Ǎ����p(�e�L�X�g)			*/
-	OpenMode_TxtWrite,		/* �ǂݏ���(�e�L�X�g)			*/
-	OpenMode_TxtAppend		/* �ǉ�����(�e�L�X�g)			*/
+enum OpenMode {
+	OpenMode_ReadOnly = 0, /* Read only */
+	OpenMode_Write,	/* Write */
+	OpenMode_Append, /* Append */
+	OpenMode_TxtReadOnly, /* Read only of Text */
+	OpenMode_TxtWrite, /* Wirite of Text */
+	OpenMode_TxtAppend /* Append of Text */
 };
 
 /**
@@ -25,12 +25,12 @@ class ATStream
 {
 public:
 	/**
-	 * Constructor
+	 * Constructor.
 	 */
 	ATStream();
 
 	/**
-	 * Destructor
+	 * Destructor.
 	 */
 	virtual ~ATStream();
 

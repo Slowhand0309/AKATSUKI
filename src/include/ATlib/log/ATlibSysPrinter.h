@@ -3,7 +3,7 @@
 #include "ATlib/log/ATlibPrinter.h"
 
 /**
- * システム標準出力クラス<br>
+ * Default Printer class<br>
  * <b>ATlibSysPrinter.h</b>
  *
  * @author slowhand0309

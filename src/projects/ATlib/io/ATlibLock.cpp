@@ -1,55 +1,41 @@
 /**
- * IOオブジェクトに対する排他処理実装クラス<br>
+ * Lock class implementation <br>
  * <b>ATlibLock.cpp</b>
  *
  * @author slowhand0309
  */
 #include "ATlib/io/ATlibLock.h"
 
-//********************************************************************************************
 /**
- * コンストラクタ
- *
- * @param						なし.
+ * Constructor.
  */
-//********************************************************************************************
 ATLock::ATLock()
 	: ml_bLock(false)
 {
-	/* ハンドルの初期化		*/
 	ml_hLockHandle = AT_INVALID_HANDLE;
-
 	createHandle();
 }
 
-//********************************************************************************************
 /**
- * デストラクタ
+ * Destructor.
  */
-//********************************************************************************************
 ATLock::~ATLock()
 {
 	deleteHandle();
 }
 
-//********************************************************************************************
 /**
- * ロックハンドルの生成
- *
- * @param						なし.
- *
- * @return						なし.
+ * Create handle for lock.
  */
-//********************************************************************************************
 void ATLock::createHandle()
 {
 #ifdef PLATFORM_WINDOWS
-	/* Mutexオブジェクト作成		*/
+	/* Create Mutex */
 	ml_hLockHandle = CreateMutex(0, TRUE, NULL);
 #endif // PLATFORM_WINDOWS
 
 #ifdef PLATFORM_LINUX
-	/* セマフォ作成					*/
+	/* Create semaphore */
 	ml_hLockHandle = semget((key_t)1111, 1, 0666 | IPC_CREAT);
 	if (ml_hLockHandle != AT_INVALID_HANDLE) {
 		union semuni semunion;
@@ -61,19 +47,13 @@ void ATLock::createHandle()
 #endif // PLATFORM_LINUX
 }
 
-//********************************************************************************************
 /**
- * ロックハンドルの削除
- *
- * @param						なし.
- *
- * @return						なし.
+ * Delete handle.
  */
-//********************************************************************************************
 void ATLock::deleteHandle()
 {
 #ifdef PLATFORM_WINDOWS
-	/* Mutexオブジェクトの解放		*/
+	/* Check Mutex */
 	if (ml_hLockHandle != AT_INVALID_HANDLE) {
 		CloseHandle(ml_hLockHandle);
 		ml_hLockHandle = AT_INVALID_HANDLE;
@@ -92,17 +72,13 @@ void ATLock::deleteHandle()
 	ml_bLock = false;
 }
 
-//********************************************************************************************
 /**
- * 排他処理
+ * Lock.
  *
- * @param						なし.
- *
- * @return						AT_OK			: 正常
- *								AT_ERR_HANDLE	: 無効なハンドル
- *								AT_ERR_LOCK		: 排他の取得に失敗
+ * @return AT_OK : locked
+ *         AT_ERR_HANDLE : handle error
+ *         AT_ERR_LOCK : lock error
  */
-//********************************************************************************************
 int ATLock::lock()
 {
 	if (ml_hLockHandle == AT_INVALID_HANDLE) {
@@ -111,8 +87,8 @@ int ATLock::lock()
 	}
 
 #ifdef PLATFORM_WINDOWS
-	
-	/* 所有権の取得				*/
+
+	/* Wait */
 	if (WaitForSingleObject(ml_hLockHandle, INFINITE) == WAIT_FAILED) {
 		TRACE(_T("ATLock lock() waitforsingleobject wait failed."));
 		return AT_ERR_LOCK;
@@ -121,7 +97,7 @@ int ATLock::lock()
 
 #ifdef PLATFORM_LINUX
 
-	/* セマフォ更新				*/
+	/* semaphore lock */
 	ml_stSemb.sem_num = 0;
 	ml_stSemb.sem_op = -1;
 	ml_stSemb.sem_flg = SEM_UNDO;
@@ -136,15 +112,9 @@ int ATLock::lock()
 	return AT_OK;
 }
 
-//********************************************************************************************
 /**
- * 排他解除
- *
- * @param						なし.
- *
- * @return						なし.
+ * Unlock.
  */
-//********************************************************************************************
 void ATLock::unlock()
 {
 	if (!ml_bLock) {
@@ -163,16 +133,12 @@ void ATLock::unlock()
 	ml_bLock = false;
 }
 
-//********************************************************************************************
 /**
- * ロック可否
+ * Check locked.
  *
- * @param						なし.
- *
- * @return						true	: ロック中
- *								false	: ロック解除
+ * @return true : locked
+ *         false : not lock
  */
-//********************************************************************************************
 bool ATLock::isLocked() const
 {
 	return ml_bLock;

@@ -3,7 +3,7 @@
 #include "ATlib/com/ATlibCommon.h"
 
 /**
- * o—ÍƒNƒ‰ƒX<br>
+ * Printer class<br>
  * <b>ATlibPrinter.h</b>
  *
  * @author slowhand0309

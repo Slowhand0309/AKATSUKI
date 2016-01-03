@@ -1,5 +1,5 @@
 /**
- * �t�@�C�����������N���X<br>
+ * ATFIle class implementation<br>
  * <b>ATlibFile.cpp</b>
  *
  * @author slowhand0309
@@ -17,85 +17,68 @@
 
 #include <stdarg.h>
 
-//********************************************************************************************
 /**
- * �R���X�g���N�^
- *
- * @param			�Ȃ�.
- *
+ * Constructor.
  */
-//********************************************************************************************
 ATFile::ATFile()
 	: ml_pFile(NULL)
 {
 }
 
-//********************************************************************************************
 /**
- * �R���X�g���N�^
+ * Constructor.
  *
- * @param	const TString &fileName		�t�@�C����.
- * @param	const enum OpenMode eMode	���[�h.
- *
+ * @param	const TString &fileName file name
+ * @param	const enum OpenMode eMode open mode
  */
-//********************************************************************************************
 ATFile::ATFile(const TString &fileName, const enum OpenMode eMode)
 {
 	ATFile();
 	open(fileName, eMode);
 }
 
-//********************************************************************************************
 /**
- * �f�X�g���N�^
- *
- * @param			�Ȃ�.
- *
+ * Destructor.
  */
-//********************************************************************************************
 ATFile::~ATFile()
 {
 	close();
 }
 
-//********************************************************************************************
 /**
- * �t�@�C���I�[�v��
+ * Open file.
  *
- * @param	const TString &szName		�t�@�C������.
- * @param	const enum OpenMode eMode	�t�@�C�����[�h
+ * @param	const TString &szName file name
+ * @param	const enum OpenMode eMode open mode
  *
- * @return			AT_OK				: ����
- *					AT_ERR_ARGUMENTS	: �p�����[�^�s��
- *					AT_ERR_IOEXCEPTION	: IO���O
+ * @return	AT_OK : file opend
  */
-//********************************************************************************************
 int ATFile::open(const TString &szName, const enum OpenMode eMode)
 {
-	/* �t�@�C�����[�h�w��			*/
+	/* Open by mode */
 	TString szMode;
 	switch (eMode) {
-		case OpenMode_ReadOnly:		/* �Ǎ����p		*/
+		case OpenMode_ReadOnly: /* Read only */
 			szMode = _T("rb");
 			break;
 
-		case OpenMode_Write:			/* ������		*/
+		case OpenMode_Write: /* Write */
 			szMode = _T("wb");
 			break;
 
-		case OpenMode_Append:			/* �ǉ�			*/
+		case OpenMode_Append: /* Append */
 			szMode = _T("ab");
 			break;
 
-		case OpenMode_TxtReadOnly:		/* �Ǎ����p		*/
+		case OpenMode_TxtReadOnly: /* Read only of Text */
 			szMode = _T("r");
 			break;
 
-		case OpenMode_TxtWrite:			/* ������		*/
+		case OpenMode_TxtWrite: /* Write of Text */
 			szMode = _T("w");
 			break;
 
-		case OpenMode_TxtAppend:			/* �ǉ�			*/
+		case OpenMode_TxtAppend: /* Append of Text */
 			szMode = _T("a");
 			break;
 
@@ -105,7 +88,7 @@ int ATFile::open(const TString &szName, const enum OpenMode eMode)
 	}
 
 	try {
-		/* �t�@�C���I�[�v��			*/
+		/* file open */
 		ml_pFile = _tfopen(szName.c_str(), szMode.c_str());
 		if (ml_pFile == NULL) {
 			throw "";
@@ -122,15 +105,9 @@ int ATFile::open(const TString &szName, const enum OpenMode eMode)
 	return AT_OK;
 }
 
-//********************************************************************************************
 /**
- * �t�@�C���N���[�Y
- *
- * @param						�Ȃ�.
- *
- * @return						�Ȃ�.
+ * Close file.
  */
-//********************************************************************************************
 void ATFile::close()
 {
 	if (ml_pFile != NULL) {
@@ -142,18 +119,14 @@ void ATFile::close()
 	ml_szFileName.clear();
 }
 
-//********************************************************************************************
 /**
- * �t�@�C��������
+ * Write data to file.
  *
- * @param	LPCVOID pData		�����݃f�[�^.
- * @param	size_t uiSize		�����݃T�C�Y.
+ * @param	LPCVOID pData write data
+ * @param	size_t uiSize write size
  *
- * @return			AT_OK				: ����
- *					AT_ERR_ARGUMENTS	: �p�����[�^�s��
- *					AT_ERR_IOEXCEPTION	: IO���O
+ * @return	AT_OK : write success
  */
-//********************************************************************************************
 int ATFile::write(LPCVOID pData, size_t uiSize)
 {
 	if (pData == NULL) {
@@ -164,7 +137,7 @@ int ATFile::write(LPCVOID pData, size_t uiSize)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	/* �t�@�C��������		*/
+	/* Lock file */
 	if (ml_oLock.lock() != AT_OK) {
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -177,19 +150,15 @@ int ATFile::write(LPCVOID pData, size_t uiSize)
 	return AT_OK;
 }
 
-//********************************************************************************************
 /**
- * �t�@�C��������
- * �t�@�C�����s������������������
+ * Write data to file.
+ * <br>write strings
  *
- * @param	const TString &szData		�����ݕ�����.
- * @param	...							�ϒ�����.
+ * @param	const TString &szData write strings data
+ * @param	... vargs
  *
- * @return			AT_OK				: ����
- *					AT_ERR_ARGUMENTS	: �p�����[�^�s��
- *					AT_ERR_IOEXCEPTION	: IO���O
+ * @return	AT_OK : write success
  */
-//********************************************************************************************
 int ATFile::write(const TString &szData, ...)
 {
 	if (!ATStringUtl::isEmpty(szData)) {
@@ -200,9 +169,9 @@ int ATFile::write(const TString &szData, ...)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	/* �ϒ����X�g�̎擾	*/
-	va_list		vaList;
-	TCHAR		szBuff[_MAX_PATH] = {0};
+	/* variable args */
+	va_list vaList;
+	TCHAR szBuff[_MAX_PATH] = {0};
 
 	const TCHAR *pSrc = szData.c_str();
 	va_start(vaList, pSrc);
@@ -213,7 +182,7 @@ int ATFile::write(const TString &szData, ...)
 #endif
 	va_end(vaList);
 
-	/* �t�@�C��������		*/
+	/* Lock file */
 	if (ml_oLock.lock() != AT_OK) {
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -224,25 +193,21 @@ int ATFile::write(const TString &szData, ...)
 	return AT_OK;
 }
 
-//********************************************************************************************
 /**
- * �t�@�C���Ǎ���
+ * Read from file.
  *
- * @param	LPVOID pData		�Ǎ��݃f�[�^.
- * @param	size_t uiSize		�Ǎ��݃T�C�Y.
+ * @param	LPCVOID pData read data
+ * @param	size_t uiSize read size
  *
- * @return			AT_OK				: ����
- *					AT_ERR_ARGUMENTS	: �p�����[�^�s��
- *					AT_ERR_IOEXCEPTION	: IO���O
+ * @return AT_OK : read success
  */
-//********************************************************************************************
 int ATFile::read(LPVOID pData, size_t uiSize)
 {
 	if (!isOpen()) {
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	/* �t�@�C���Ǎ���		*/
+	/* Lock file */
 	if (ml_oLock.lock() != AT_OK) {
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -256,25 +221,21 @@ int ATFile::read(LPVOID pData, size_t uiSize)
 	return AT_OK;
 }
 
-//********************************************************************************************
 /**
- * �t�@�C���Ǎ���
- * �t�@�C�����s���̕��������ǂݍ���
+ * Read from file.
+ * <br>read for string
  *
- * @param	TString &szData		�Ǎ��ݕ�����.
+ * @param TString &szData read string data
  *
- * @return			AT_OK				: ����
- *					AT_ERR_ARGUMENTS	: �p�����[�^�s��
- *					AT_ERR_IOEXCEPTION	: IO���O
+ * @return AT_OK : read success
  */
-//********************************************************************************************
 int ATFile::read(TString &szData)
 {
 	if (!isOpen()) {
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	/* �t�@�C���Ǎ���		*/
+	/* Lock file */
 	if (ml_oLock.lock() != AT_OK) {
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -287,46 +248,35 @@ int ATFile::read(TString &szData)
 	return AT_OK;
 }
 
-//********************************************************************************************
 /**
- * �t�@�C���T�C�Y�擾
+ * Get size for file.
  *
- * @param			�Ȃ�.
- *
- * @return			�t�@�C���T�C�Y(unsigned int)
- *					���s�����ꍇ��0���Ԃ�
+ * @return file size
  */
-//********************************************************************************************
 unsigned int ATFile::getFileSize() const
 {
 	unsigned int uiPos = 0;
-	// �t�@�C�����ԃ`�F�b�N
+	// Check file open
 	if (isOpen() == false) {
 		TRACE(_T("file not open for get file size."));
 		return uiPos;
 	}
-	// ���݂̃t�@�C���|�W�V�����擾
+
 	unsigned int uiCurPos = ftell(ml_pFile);
-	// �t�@�C�����[�܂ňړ�
+
 	fseek(ml_pFile, 0, SEEK_END);
-	// �t�@�C���S�̂̃T�C�Y���擾
     uiPos = ftell(ml_pFile);
-	// ���̏ꏊ�ɖ߂�
     fseek(ml_pFile, uiCurPos, SEEK_SET);
 
 	return uiPos;
 }
 
-//********************************************************************************************
 /**
- * EOF����
+ * Check EOF
  *
- * @param			�Ȃ�.
- *
- * @return			true	: EOF
- *					falses	: not EOF
+ * @return true : EOF
+ *         false : not EOF
  */
-//********************************************************************************************
 bool ATFile::isEof() const
 {
 	return feof(ml_pFile) == 0 ? false : true;
