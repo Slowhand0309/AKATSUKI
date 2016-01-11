@@ -5,11 +5,11 @@
 #include "ATlib/log/ATlibLogger.h"
 #include "ATlib/log/ATlibSysPrinter.h"
 
-/* バッチ引数の最大値 */
+/* argument size max */
 #define ARGUMENT_MAX		(4)
 
 /**
- * バッチ用Printerクラス<br>
+ * Logger for batch<br>
  * <b>ATlibBatchProc.h</b>
  *
  * @author slowhand0309
@@ -19,31 +19,31 @@ class ATBatchPrinter : public ATPrinter
 public:
 
 	/**
-	 * コンストラクタ
+	 * Constructor.
 	 */
 	ATBatchPrinter() {};
 
 	/**
-	 * デストラクタ
+	 * Destructor.
 	 */
 	virtual ~ATBatchPrinter() {
 		ml_ofstream.close();
 	};
 
 	/**
-	 * ログファイルの設定
+	 * Set file output.
 	 *
-	 * @param const TString &fileName	ログファイル名
+	 * @param const TString &fileName file name
 	 */
 	virtual void setFile(const TString &fileName) {
 		ml_ofstream.open(fileName.c_str());
 	};
 
 	/**
-	 * ログ出力
+	 * Print.
 	 *
-	 * @param int level					ログ出力レベル
-	 * @param const TString &message	出力文字列
+	 * @param int level Log level
+	 * @param const TString &message log message
 	 */
 	virtual void print(int level, const TString &message) {
 		TString strLevel;
@@ -67,7 +67,7 @@ public:
 		TString date = ATDateUtl::getCurrentDate();
 		tout << date.c_str() << strLevel.c_str() << message.c_str() << std::endl;
 		if (ml_ofstream.is_open()) {
-			ml_ofstream << date.c_str() << strLevel.c_str() << message.c_str() << std::endl; 
+			ml_ofstream << date.c_str() << strLevel.c_str() << message.c_str() << std::endl;
 		}
 	};
 
@@ -76,7 +76,7 @@ private:
 };
 
 /**
- * バッチ処理基底クラス<br>
+ * Batch proccess class<br>
  * <b>ATlibBatchProc.h</b>
  *
  * @author slowhand0309
@@ -86,74 +86,71 @@ class ATBatchProc
 public:
 
 	/**
-	 * コンストラクタ
+	 * Constructor.
 	 *
-	 * @param const TString &szBatchName	バッチ名
+	 * @param const TString &szBatchName batch name
 	 */
 	ATBatchProc(const TString &szBatchName);
 
 	/**
-	 * デストラクタ
+	 * Destructor.
 	 */
 	virtual ~ATBatchProc();
 
 	/**
-	 * バッチ実行
+	 * Run.
 	 *
-	 * @param int argc				引数の数
-	 * @param TCHAR *argv[]			引数
-	 * @return int
+	 * @param int argc Argc
+	 * @param TCHAR *argv[] Argv
+	 * @return int Result
 	 */
 	virtual int run(int argc, TCHAR *argv[]);
 
 protected:
 
 	/**
-	 * 初期化処理<br>
-	 * 純粋仮想関数
+	 * initialize
 	 *
-	 * @return int
+	 * @return int Result
 	 */
 	virtual int initialize() = 0;
 
 	/**
-	 * 実行処理<br>
-	 * 純粋仮想関数
+	 * Execute
 	 *
-	 * @return int
+	 * @return int Result
 	 */
 	virtual int execute() = 0;
 
 	/**
-	 * 終了処理<br>
-	 * 純粋仮想関数
+	 * Finalize
 	 */
 	virtual void finalize() = 0;
 
 	/**
-	 * 引数解析処理
+	 * Split argument.
 	 *
-	 * @param int argc				引数の数
-	 * @param TCHAR *argv[]			引数
-	 * @return int					解析後の引数の数
+	 * @param int argc Argc
+	 * @param TCHAR *argv[] Argv
+	 * @return int split size
 	 */
 	virtual int splitArgs(int argc, TCHAR *argv[]);
 
 	/**
-	 * バッチ開始時ログ
+	 * Start log.
 	 */
 	virtual void logAtStart();
 
 	/**
-	 * バッチ終了時ログ
+	 * End log.
 	 */
 	virtual void logAtEnd();
 
-	TString						ml_szBatchName;
-	TString						ml_szExecTime;
-	TString						ml_szLogPath;
-	TString						ml_szOutputPath;
-	std::vector<TString>		ml_vecParam;
-	ATLogger<ATBatchPrinter>	ml_oLogger;
+	TString ml_szBatchName;
+	TString ml_szExecTime;
+	TString ml_szLogPath;
+	TString ml_szOutputPath;
+	std::vector<TString> ml_vecParam;
+	ATLogger<ATBatchPrinter> ml_oLogger;
 };
 #endif // __ATBATBATCHPROC_H__EF114B68_0F81_4D07_ABC8_EFF9CC8E36CF
