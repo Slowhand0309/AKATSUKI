@@ -7,7 +7,10 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/src/include
 )
 
-add_executable(ATlibTest src/ATlibTest.cpp src/ATlibDateUtlTest.cpp)
+add_executable(ATlibTest
+    src/ATlibStringUtlTest.cpp
+    src/ATlibSysUtlTest.cpp
+    src/ATlibDateUtlTest.cpp)
 
 target_link_libraries(ATlibTest
     pthread
