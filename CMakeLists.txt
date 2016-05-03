@@ -7,4 +7,5 @@ include_directories(
 )
 
 add_subdirectory(src/projects/ATlib)
+add_subdirectory(src/projects/ATgae)
 add_subdirectory(test/ATlib)

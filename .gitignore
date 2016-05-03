@@ -8,4 +8,9 @@ Debug
 TestResults
 Release
 objects
+
+# Generate static lib
+lib/*.a
+
+# Mac OS
 .DS_Store
