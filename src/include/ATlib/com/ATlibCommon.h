@@ -36,6 +36,12 @@
 /* ATlib includes */
 #include "ATlib/com/ATlibDeclaration.h"
 
+/* OpenGL */
+#ifdef PLATFORM_WINDOWS
+#else
+#include <GLUT/glut.h>
+#endif // PLATFORM_WINDOWS
+
 #define	LIB_VER        (0.10)
 #define LIB_VER_STR    _T("0.10")
 
