@@ -5,18 +5,18 @@
  * ATSysUtl Test
  */
 
-// TEST(ATSysUtlTest, getModuleName)
-// {
-//      TString ex = ATSysUtl::getModuleName();
-//      ASSERT_STREQ(_T("ATlibTest"), ex.c_str());
-// }
-//
-//
-//  TEST(ATSysUtlTest, getCurrentPath)
-//  {
-//      TString ex = ATSysUtl::getCurrentPath();
-//      printf(ex.c_str());
-//  }
+TEST(ATSysUtlTest, getModuleName)
+{
+     TString ex = ATSysUtl::getModuleName();
+     ASSERT_STREQ(_T("ATlibTest"), ex.c_str());
+}
+
+
+TEST(ATSysUtlTest, getCurrentPath)
+{
+   TString ex = ATSysUtl::getCurrentPath();
+   ASSERT_STRNE(_T(""), ex.c_str());
+}
 
 
 TEST(ATSysUtlTest, getExtension)

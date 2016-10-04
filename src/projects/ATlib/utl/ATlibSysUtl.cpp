@@ -1,6 +1,11 @@
 #include <unistd.h>
 #include "ATlib/utl/ATlibSysUtl.h"
 
+#if PLATFORM_MACINTOSH
+#include <mach-o/dyld.h>
+#include <libgen.h>
+#endif
+
 /**
  * Get module name
  *
@@ -13,19 +18,36 @@ TString ATSysUtl::getModuleName() {
   TCHAR	szFname[_MAX_FNAME] = {0};
 
 #ifdef PLATFORM_WINDOWS
+  // Windows
   // get full path for module
   GetModuleFileName(GetModuleHandle(NULL), szFullPath, _MAX_PATH);
 
   // split path
   _tsplitpath_s(szFullPath, NULL, 0, NULL, 0, szFname, _MAX_FNAME, NULL, 0);
-#else
 
+#elif PLATFORM_MACINTOSH
+  // Mac OS
+  char buff[_MAX_FNAME] = {0};
+  uint32_t size = sizeof(buff);
+
+  // Get module full path.
+  _NSGetExecutablePath(buff, &size);
+  char *szTemp = basename(buff);
 #if defined(UNICODE) || defined(_UNICODE)
+  ATStringUtl::multi2Wide(szTemp, szFname, _MAX_FNAME);
+#else
+  strcpy(szFname, szTemp);
+#endif // UNICODE
+
+#elif PLATFORM_LINUX
+  // Linux
   char buff[_MAX_FNAME] = {0};
   readlink("/proc/self/exe", buff, sizeof(buff));
+
+#if defined(UNICODE) || defined(_UNICODE)
   ATStringUtl::multi2Wide(buff, szFname, _MAX_FNAME);
 #else
-  readlink("/proc/self/exe", szFname, sizeof(szFname));
+  strcpy(szFname, buff);
 #endif // UNICODE
 
 #endif // PLATFORM_WINDOWS
@@ -58,9 +80,9 @@ TString ATSysUtl::getCurrentPath() {
 #if defined(UNICODE) || defined(_UNICODE)
   char buff[_MAX_PATH];
   getcwd(buff, _MAX_PATH);
-  ATStringUtl::multi2Wide(buff, szFname, _MAX_FNAME);
+  ATStringUtl::multi2Wide(buff, szDir, _MAX_FNAME);
 #else
-  getcwd(szFname, _MAX_PATH);
+  getcwd(szDir, _MAX_PATH);
 #endif // UNICODE
 #endif // PLATFORM_WINDOWS
   return TString(szDir);
