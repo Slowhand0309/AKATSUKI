@@ -1,3 +1,4 @@
+#include <unistd.h>
 #include "ATlib/utl/ATlibSysUtl.h"
 
 /**
@@ -18,6 +19,15 @@ TString ATSysUtl::getModuleName() {
   // split path
   _tsplitpath_s(szFullPath, NULL, 0, NULL, 0, szFname, _MAX_FNAME, NULL, 0);
 #else
+
+#if defined(UNICODE) || defined(_UNICODE)
+  char buff[_MAX_FNAME] = {0};
+  readlink("/proc/self/exe", buff, sizeof(buff));
+  ATStringUtl::multi2Wide(buff, szFname, _MAX_FNAME);
+#else
+  readlink("/proc/self/exe", szFname, sizeof(szFname));
+#endif // UNICODE
+
 #endif // PLATFORM_WINDOWS
 
   strRet = TString(szFname);
@@ -45,6 +55,13 @@ TString ATSysUtl::getCurrentPath() {
     , szFname, _MAX_FNAME, szExt, _MAX_EXT );
 
 #else
+#if defined(UNICODE) || defined(_UNICODE)
+  char buff[_MAX_PATH];
+  getcwd(buff, _MAX_PATH);
+  ATStringUtl::multi2Wide(buff, szFname, _MAX_FNAME);
+#else
+  getcwd(szFname, _MAX_PATH);
+#endif // UNICODE
 #endif // PLATFORM_WINDOWS
   return TString(szDir);
 }

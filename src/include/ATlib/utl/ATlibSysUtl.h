@@ -2,6 +2,7 @@
 #define __ATLIBSYSUTL_H__A8FC7AB2_A5F2_48BD_B274_02ADC28C767B
 
 #include "ATlib/com/ATlibCommon.h"
+#include "ATlib/utl/ATlibStringUtl.h"
 
 /**
  * System utility class<br>
