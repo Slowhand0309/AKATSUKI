@@ -70,7 +70,7 @@
 
 /* print message
  * usage : #pragma __ATMESSAGE__("out put message") */
-#define __ATMESSAGE__(msg)						message(__FILE__"("TOSTR(__LINE__)") : "msg)
+#define __ATMESSAGE__(msg)						message(__FILE__"(" TOSTR(__LINE__)") : " msg)
 
 #ifdef PLATFORM_WINDOWS
 /* declaration for windows */

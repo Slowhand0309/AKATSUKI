@@ -83,7 +83,7 @@ int ATFile::open(const TString &szName, const enum OpenMode eMode)
 			break;
 
 		default:
-			TRACE(_T("ATFile open() mode failed. %d"), eMode);
+			TRACE(_T("ATFile open() mode failed."));
 			return AT_ERR_ARGUMENTS;
 	}
 
@@ -142,7 +142,7 @@ int ATFile::write(LPCVOID pData, size_t uiSize)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	if (fwrite(pData, uiSize, 1, ml_pFile) < 0) {
+	if (fwrite(pData, uiSize, 1, ml_pFile) == 0) {
 		ml_oLock.unlock();
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -154,7 +154,7 @@ int ATFile::write(LPCVOID pData, size_t uiSize)
  * Write data to file.
  * <br>write strings
  *
- * @param	const TString &szData write strings data
+ * @param	szData write strings data
  * @param	... vargs
  *
  * @return	AT_OK : write success
@@ -187,7 +187,7 @@ int ATFile::write(const TString &szData, ...)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	_ftprintf_s(ml_pFile, szBuff);
+	_ftprintf_s(ml_pFile, _T("%s"), szBuff);
 
 	ml_oLock.unlock();
 	return AT_OK;
@@ -196,8 +196,8 @@ int ATFile::write(const TString &szData, ...)
 /**
  * Read from file.
  *
- * @param	LPCVOID pData read data
- * @param	size_t uiSize read size
+ * @param	pData read data
+ * @param	uiSize read size
  *
  * @return AT_OK : read success
  */
@@ -212,7 +212,7 @@ int ATFile::read(LPVOID pData, size_t uiSize)
 		return AT_ERR_IOEXCEPTION;
 	}
 
-	if (fread(pData, uiSize, 1, ml_pFile) < 0) {
+	if (fread(pData, uiSize, 1, ml_pFile) == 0) {
 		ml_oLock.unlock();
 		return AT_ERR_IOEXCEPTION;
 	}
@@ -225,7 +225,7 @@ int ATFile::read(LPVOID pData, size_t uiSize)
  * Read from file.
  * <br>read for string
  *
- * @param TString &szData read string data
+ * @param szData read string data
  *
  * @return AT_OK : read success
  */
@@ -262,10 +262,10 @@ unsigned int ATFile::getFileSize() const
 		return uiPos;
 	}
 
-	unsigned int uiCurPos = ftell(ml_pFile);
+	unsigned int uiCurPos = (unsigned int)ftell(ml_pFile);
 
 	fseek(ml_pFile, 0, SEEK_END);
-    uiPos = ftell(ml_pFile);
+    uiPos = (unsigned int)ftell(ml_pFile);
     fseek(ml_pFile, uiCurPos, SEEK_SET);
 
 	return uiPos;

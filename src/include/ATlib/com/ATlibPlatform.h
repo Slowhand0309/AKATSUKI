@@ -8,18 +8,33 @@
  */
 
 /* Define for platform */
-#if defined(WIN32) || defined(WIN64) || defined(_WIN32) || defined(_WIN64)
-    #define PLATFORM_WINDOWS		1      
-    #define PLATFORM_NAME			"Windows"
-#elif defined(__APPLE__) || defined(__MACH__)
-    #define PLATFORM_MACINTOSH		1        
-    #define PLATFORM_NAME			"Macintosh"
+#if defined(WIN32) || defined(WIN64) || defined(_WIN32) || defined(_WIN64) || defined(_WINDOWS)
+    #define PLATFORM_WINDOWS        1
+    #define PLATFORM_NAME           "Windows"
+    #pragma __ATMESSAGE__("Platform: Windows")
+#elif defined(__APPLE__) || defined(__MACH__) && !defined(ANDROID)
+    #include <TargetConditionals.h>
+    #if TARGET_OS_IPHONE
+      #define PLATFORM_IOS          1
+      #define PLATFORM_NAME         "iOS"
+      #pragma __ATMESSAGE__("Platform: iOS")
+    #elif TARGET_OS_MAC
+      #define PLATFORM_MACOS        1
+      #define PLATFORM_NAME         "MacOS"
+      #pragma __ATMESSAGE__("Platform: MacOS")
+    #endif // TARGET_OS_IPHONE
 #elif defined(linux) || defined(__linux) || defined(__linux__) || defined(__CYGWIN__)
-    #define PLATFORM_LINUX			1         
-    #define PLATFORM_NAME			"Linux"
+    #define PLATFORM_LINUX          1
+    #define PLATFORM_NAME           "Linux"
+    #pragma __ATMESSAGE__("Platform: Linux")
+#elif defined(ANDROID)
+    #define PLATFORM_ANDROID        1
+    #define PLATFORM_NAME           "Android"
+    #pragma __ATMESSAGE__("Platform: Android")
 #else
-    #define PLATFORM_SOMETHINGELSE	1         
-    #define PLATFORM_NAME			"Other"
+    #define PLATFORM_SOMETHINGELSE  1
+    #define PLATFORM_NAME           "Other"
+    #pragma __ATMESSAGE__("Platform: Warning!! unsupport platform...")
 #endif
 
 

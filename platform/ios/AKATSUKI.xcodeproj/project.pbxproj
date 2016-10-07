@@ -1,0 +1,395 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3ED275F1DA7FF6200BA3380 /* ATlibFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED275C1DA7FF6200BA3380 /* ATlibFile.cpp */; };
+		D3ED27601DA7FF6200BA3380 /* ATlibLock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED275D1DA7FF6200BA3380 /* ATlibLock.cpp */; };
+		D3ED27611DA7FF6200BA3380 /* ATlibStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED275E1DA7FF6200BA3380 /* ATlibStream.cpp */; };
+		D3ED27651DA7FF7500BA3380 /* ATlibDateUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED27621DA7FF7500BA3380 /* ATlibDateUtl.cpp */; };
+		D3ED27661DA7FF7500BA3380 /* ATlibStringUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED27631DA7FF7500BA3380 /* ATlibStringUtl.cpp */; };
+		D3ED27671DA7FF7500BA3380 /* ATlibSysUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED27641DA7FF7500BA3380 /* ATlibSysUtl.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D3ED27321DA7FD4000BA3380 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D3ED27341DA7FD4100BA3380 /* libAKATSUKI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAKATSUKI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3ED27501DA7FEFC00BA3380 /* ATlibCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibCommon.h; path = include/ATlib/com/ATlibCommon.h; sourceTree = "<group>"; };
+		D3ED27511DA7FEFC00BA3380 /* ATlibDeclaration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibDeclaration.h; path = include/ATlib/com/ATlibDeclaration.h; sourceTree = "<group>"; };
+		D3ED27521DA7FEFC00BA3380 /* ATlibPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibPlatform.h; path = include/ATlib/com/ATlibPlatform.h; sourceTree = "<group>"; };
+		D3ED27531DA7FF3300BA3380 /* ATlibFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibFile.h; path = include/ATlib/io/ATlibFile.h; sourceTree = "<group>"; };
+		D3ED27541DA7FF3300BA3380 /* ATlibLock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibLock.h; path = include/ATlib/io/ATlibLock.h; sourceTree = "<group>"; };
+		D3ED27551DA7FF3300BA3380 /* ATlibStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibStream.h; path = include/ATlib/io/ATlibStream.h; sourceTree = "<group>"; };
+		D3ED27561DA7FF4000BA3380 /* ATlibLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibLogger.h; path = include/ATlib/log/ATlibLogger.h; sourceTree = "<group>"; };
+		D3ED27571DA7FF4000BA3380 /* ATlibPrinter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibPrinter.h; path = include/ATlib/log/ATlibPrinter.h; sourceTree = "<group>"; };
+		D3ED27581DA7FF4000BA3380 /* ATlibSysPrinter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibSysPrinter.h; path = include/ATlib/log/ATlibSysPrinter.h; sourceTree = "<group>"; };
+		D3ED27591DA7FF4E00BA3380 /* ATlibDateUtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibDateUtl.h; path = include/ATlib/utl/ATlibDateUtl.h; sourceTree = "<group>"; };
+		D3ED275A1DA7FF4E00BA3380 /* ATlibStringUtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibStringUtl.h; path = include/ATlib/utl/ATlibStringUtl.h; sourceTree = "<group>"; };
+		D3ED275B1DA7FF4E00BA3380 /* ATlibSysUtl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibSysUtl.h; path = include/ATlib/utl/ATlibSysUtl.h; sourceTree = "<group>"; };
+		D3ED275C1DA7FF6200BA3380 /* ATlibFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATlibFile.cpp; path = projects/ATlib/io/ATlibFile.cpp; sourceTree = "<group>"; };
+		D3ED275D1DA7FF6200BA3380 /* ATlibLock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATlibLock.cpp; path = projects/ATlib/io/ATlibLock.cpp; sourceTree = "<group>"; };
+		D3ED275E1DA7FF6200BA3380 /* ATlibStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATlibStream.cpp; path = projects/ATlib/io/ATlibStream.cpp; sourceTree = "<group>"; };
+		D3ED27621DA7FF7500BA3380 /* ATlibDateUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATlibDateUtl.cpp; path = projects/ATlib/utl/ATlibDateUtl.cpp; sourceTree = "<group>"; };
+		D3ED27631DA7FF7500BA3380 /* ATlibStringUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATlibStringUtl.cpp; path = projects/ATlib/utl/ATlibStringUtl.cpp; sourceTree = "<group>"; };
+		D3ED27641DA7FF7500BA3380 /* ATlibSysUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATlibSysUtl.cpp; path = projects/ATlib/utl/ATlibSysUtl.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3ED27311DA7FD4000BA3380 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3ED272B1DA7FD4000BA3380 = {
+			isa = PBXGroup;
+			children = (
+				D3ED27361DA7FD4100BA3380 /* AKATSUKI */,
+				D3ED27351DA7FD4100BA3380 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3ED27351DA7FD4100BA3380 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27341DA7FD4100BA3380 /* libAKATSUKI.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3ED27361DA7FD4100BA3380 /* AKATSUKI */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27401DA7FD9400BA3380 /* include */,
+				D3ED27411DA7FD9D00BA3380 /* projects */,
+			);
+			name = AKATSUKI;
+			path = ../../src;
+			sourceTree = "<absolute>";
+		};
+		D3ED27401DA7FD9400BA3380 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27421DA7FDB100BA3380 /* ATlib */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		D3ED27411DA7FD9D00BA3380 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27431DA7FDBB00BA3380 /* ATlib */,
+			);
+			name = projects;
+			sourceTree = "<group>";
+		};
+		D3ED27421DA7FDB100BA3380 /* ATlib */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27441DA7FDC700BA3380 /* com */,
+				D3ED27451DA7FDD000BA3380 /* io */,
+				D3ED27461DA7FDD700BA3380 /* log */,
+				D3ED27471DA7FDDD00BA3380 /* utl */,
+			);
+			name = ATlib;
+			sourceTree = "<group>";
+		};
+		D3ED27431DA7FDBB00BA3380 /* ATlib */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27491DA7FE0D00BA3380 /* io */,
+				D3ED27481DA7FE0300BA3380 /* utl */,
+			);
+			name = ATlib;
+			sourceTree = "<group>";
+		};
+		D3ED27441DA7FDC700BA3380 /* com */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27501DA7FEFC00BA3380 /* ATlibCommon.h */,
+				D3ED27511DA7FEFC00BA3380 /* ATlibDeclaration.h */,
+				D3ED27521DA7FEFC00BA3380 /* ATlibPlatform.h */,
+			);
+			name = com;
+			sourceTree = "<group>";
+		};
+		D3ED27451DA7FDD000BA3380 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27531DA7FF3300BA3380 /* ATlibFile.h */,
+				D3ED27541DA7FF3300BA3380 /* ATlibLock.h */,
+				D3ED27551DA7FF3300BA3380 /* ATlibStream.h */,
+			);
+			name = io;
+			sourceTree = "<group>";
+		};
+		D3ED27461DA7FDD700BA3380 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27561DA7FF4000BA3380 /* ATlibLogger.h */,
+				D3ED27571DA7FF4000BA3380 /* ATlibPrinter.h */,
+				D3ED27581DA7FF4000BA3380 /* ATlibSysPrinter.h */,
+			);
+			name = log;
+			sourceTree = "<group>";
+		};
+		D3ED27471DA7FDDD00BA3380 /* utl */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27591DA7FF4E00BA3380 /* ATlibDateUtl.h */,
+				D3ED275A1DA7FF4E00BA3380 /* ATlibStringUtl.h */,
+				D3ED275B1DA7FF4E00BA3380 /* ATlibSysUtl.h */,
+			);
+			name = utl;
+			sourceTree = "<group>";
+		};
+		D3ED27481DA7FE0300BA3380 /* utl */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED27621DA7FF7500BA3380 /* ATlibDateUtl.cpp */,
+				D3ED27631DA7FF7500BA3380 /* ATlibStringUtl.cpp */,
+				D3ED27641DA7FF7500BA3380 /* ATlibSysUtl.cpp */,
+			);
+			name = utl;
+			sourceTree = "<group>";
+		};
+		D3ED27491DA7FE0D00BA3380 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				D3ED275C1DA7FF6200BA3380 /* ATlibFile.cpp */,
+				D3ED275D1DA7FF6200BA3380 /* ATlibLock.cpp */,
+				D3ED275E1DA7FF6200BA3380 /* ATlibStream.cpp */,
+			);
+			name = io;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3ED27331DA7FD4000BA3380 /* AKATSUKI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3ED273D1DA7FD4100BA3380 /* Build configuration list for PBXNativeTarget "AKATSUKI" */;
+			buildPhases = (
+				D3ED27301DA7FD4000BA3380 /* Sources */,
+				D3ED27311DA7FD4000BA3380 /* Frameworks */,
+				D3ED27321DA7FD4000BA3380 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AKATSUKI;
+			productName = AKATSUKI;
+			productReference = D3ED27341DA7FD4100BA3380 /* libAKATSUKI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3ED272C1DA7FD4000BA3380 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = akatsuki;
+				TargetAttributes = {
+					D3ED27331DA7FD4000BA3380 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D3ED272F1DA7FD4000BA3380 /* Build configuration list for PBXProject "AKATSUKI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D3ED272B1DA7FD4000BA3380;
+			productRefGroup = D3ED27351DA7FD4100BA3380 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3ED27331DA7FD4000BA3380 /* AKATSUKI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3ED27301DA7FD4000BA3380 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3ED27661DA7FF7500BA3380 /* ATlibStringUtl.cpp in Sources */,
+				D3ED27651DA7FF7500BA3380 /* ATlibDateUtl.cpp in Sources */,
+				D3ED27671DA7FF7500BA3380 /* ATlibSysUtl.cpp in Sources */,
+				D3ED275F1DA7FF6200BA3380 /* ATlibFile.cpp in Sources */,
+				D3ED27601DA7FF6200BA3380 /* ATlibLock.cpp in Sources */,
+				D3ED27611DA7FF6200BA3380 /* ATlibStream.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D3ED273B1DA7FD4100BA3380 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../src/include";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D3ED273C1DA7FD4100BA3380 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					armv7s,
+				);
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../src/include";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3ED273E1DA7FD4100BA3380 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D3ED273F1DA7FD4100BA3380 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3ED272F1DA7FD4000BA3380 /* Build configuration list for PBXProject "AKATSUKI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3ED273B1DA7FD4100BA3380 /* Debug */,
+				D3ED273C1DA7FD4100BA3380 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3ED273D1DA7FD4100BA3380 /* Build configuration list for PBXNativeTarget "AKATSUKI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3ED273E1DA7FD4100BA3380 /* Debug */,
+				D3ED273F1DA7FD4100BA3380 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3ED272C1DA7FD4000BA3380 /* Project object */;
+}

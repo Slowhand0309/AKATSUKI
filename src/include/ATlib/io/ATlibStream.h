@@ -45,8 +45,8 @@ public:
 	 * Open stream<br>
 	 * oepn stream from file name
 	 *
-	 * @param	const TString &szName file name
-	 * @param	const enum OpenMode eMode open mode
+	 * @param	szName file name
+	 * @param	eMode open mode
 	 */
 	virtual int open(const TString &szName, const enum OpenMode eMode) = 0;
 
@@ -58,16 +58,16 @@ public:
 	/**
 	 * Write to stream
 	 *
-	 * @param		LPCVOID pData write data
-	 * @param		size_t uiSize write data size
+	 * @param	pData write data
+	 * @param	uiSize write data size
 	 */
 	virtual int write(LPCVOID pData, size_t uiSize) = 0;
 
 	/**
 	 * Read from stream
 	 *
-	 * @param		LPCVOID pData read data
-	 * @param		size_t uiSize read size
+	 * @param	pData read data
+	 * @param	uiSize read size
 	 */
 	virtual int read(LPVOID pData, size_t uiSize) = 0;
 

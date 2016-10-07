@@ -14,3 +14,8 @@ lib/*.a
 
 # Mac OS
 .DS_Store
+
+# Xcode
+build/
+DerivedData/
+xcuserdata/

@@ -16,7 +16,7 @@ public:
 	/**
 	 * Check for empty
 	 *
-	 * @param const TString &szValue check value
+	 * @param szValue check value
 	 * @return    true  :  empty
 	 *            false :  not empty
 	 */
@@ -25,7 +25,7 @@ public:
 	/**
 	 * Check for not empty
 	 *
-	 * @param const TString &szValue check value
+	 * @param szValue check value
 	 * @return    true  :  not empty
 	 *            false :  empty
 	 */
@@ -34,7 +34,7 @@ public:
 	/**
 	 * check for digit
 	 *
-	 * @param const TString &szValue check value
+	 * @param szValue check value
 	 * @return    true  :  digit
 	 *            false :  not digit
 	 */
@@ -43,7 +43,7 @@ public:
 	/**
 	 * check for digit
 	 *
-	 * @param const cahr at     check value
+	 * @param at     check value
 	 * @return     true   : digit
 	 *             false  : not digit
 	 */
@@ -52,8 +52,8 @@ public:
 	/**
 	 * check for contains string
 	 *
-	 * @param const TString &szValue  check value
-	 * @param const TString &szAt     search value
+	 * @param szValue  check value
+	 * @param szAt     search value
 	 * @return    true  :  contains
 	 *            false :  not contains
 	 */
@@ -62,8 +62,8 @@ public:
 	/**
 	 * split string
 	 *
-	 * @param const TString &szValue string
-	 * @param const TString &szDelimiter split value
+	 * @param szValue string
+	 * @param szDelimiter split value
 	 * @return string list
 	 */
 	static std::list<TString> split(const TString &szValue, const TString &szDelimiter);
@@ -71,8 +71,8 @@ public:
 	/**
 	 * erase string to szDest
 	 *
-	 * @param const TString &szSrc    string
-	 * @param const TString &szDest   erase value
+	 * @param szSrc    string
+	 * @param szDest   erase value
 	 * @return  erase value
 	 */
 	static TString erase(const TString &szSrc, const TString &szDest);
@@ -80,9 +80,9 @@ public:
 	/**
 	 * wide to multi string
 	 *
-	 * @param const wchar_t *pSrc  wide string
-	 * @param char *pDest  multi byte string
-	 * @param const size_t iSize  string size
+	 * @param pSrc  wide string
+	 * @param pDest  multi byte string
+	 * @param iSize  string size
 	 * @return int
 	 */
 	static size_t wide2Multi(const wchar_t *pSrc, char *pDest, const size_t iSize);
@@ -90,9 +90,9 @@ public:
 	/**
 	 * multi to wide string
 	 *
-	 * @param const char_t *pSrc  multi byte string
-	 * @param wchar_t *pDest  wide string
-	 * @param const size_t iSize  string size
+	 * @param pSrc  multi byte string
+	 * @param pDest  wide string
+	 * @param iSize  string size
 	 * @return int
 	 */
 	static int multi2Wide(const char *pSrc, wchar_t *pDest, const size_t iSize);

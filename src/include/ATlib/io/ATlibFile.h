@@ -20,8 +20,8 @@ public:
 	/**
 	 * Constructor.
 	 *
-	 * @param	const TString &fileName file name
-	 * @param	const enum OpenMode eMode open mode
+	 * @param	fileName file name
+	 * @param	eMode open mode
 	 */
 	ATFile(const TString &fileName, const enum OpenMode eMode);
 
@@ -33,8 +33,8 @@ public:
 	/**
 	 * Open file.
 	 *
-	 * @param	const TString &szName file name
-	 * @param	const enum OpenMode eMode open mode
+	 * @param	szName file name
+	 * @param	eMode open mode
 	 *
 	 * @return	AT_OK : file opend
 	 */
@@ -48,8 +48,8 @@ public:
 	/**
 	 * Write data to file.
 	 *
-	 * @param	LPCVOID pData write data
-	 * @param	size_t uiSize write size
+	 * @param	pData write data
+	 * @param	uiSize write size
 	 *
 	 * @return	AT_OK : write success
 	 */
@@ -59,7 +59,7 @@ public:
 	 * Write data to file.
 	 * <br>write strings
 	 *
-	 * @param	const TString &szData write strings data
+	 * @param	szData write strings data
 	 * @param	... vargs
 	 *
 	 * @return	AT_OK : write success
@@ -69,8 +69,8 @@ public:
 	/**
 	 * Read from file.
 	 *
-	 * @param	LPCVOID pData read data
-	 * @param	size_t uiSize read size
+	 * @param	pData read data
+	 * @param	uiSize read size
 	 *
 	 * @return AT_OK : read success
 	 */
@@ -80,7 +80,7 @@ public:
 	 * Read from file.
 	 * <br>read for string
 	 *
-	 * @param TString &szData read string data
+	 * @param szData read string data
 	 *
 	 * @return AT_OK : read success
 	 */

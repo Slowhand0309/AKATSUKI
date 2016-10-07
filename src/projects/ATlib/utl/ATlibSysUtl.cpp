@@ -25,7 +25,7 @@ TString ATSysUtl::getModuleName() {
   // split path
   _tsplitpath_s(szFullPath, NULL, 0, NULL, 0, szFname, _MAX_FNAME, NULL, 0);
 
-#elif PLATFORM_MACINTOSH
+#elif PLATFORM_MACOS
   // Mac OS
   char buff[_MAX_FNAME] = {0};
   uint32_t size = sizeof(buff);
