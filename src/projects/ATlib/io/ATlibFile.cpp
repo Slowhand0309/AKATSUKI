@@ -15,6 +15,10 @@
 #include <typeinfo>
 #endif // PLATFORM_LINUX
 
+#ifdef PLATFORM_IOS
+#import "iATLocation.h"
+#endif // PLATFORM_IOS
+
 #include <stdarg.h>
 
 /**
@@ -28,8 +32,8 @@ ATFile::ATFile()
 /**
  * Constructor.
  *
- * @param	const TString &fileName file name
- * @param	const enum OpenMode eMode open mode
+ * @param	fileName file name
+ * @param	eMode open mode
  */
 ATFile::ATFile(const TString &fileName, const enum OpenMode eMode)
 {
@@ -48,13 +52,15 @@ ATFile::~ATFile()
 /**
  * Open file.
  *
- * @param	const TString &szName file name
- * @param	const enum OpenMode eMode open mode
+ * @param	szName file name
+ * @param	eMode open mode
+ * @param   eLocation  specific location for mobile.
  *
  * @return	AT_OK : file opend
  */
-int ATFile::open(const TString &szName, const enum OpenMode eMode)
+int ATFile::open(const TString &szName, const enum OpenMode eMode, const enum SpecificLocation eLocation)
 {
+    TString tsPath = TString(szName.c_str());
 	/* Open by mode */
 	TString szMode;
 	switch (eMode) {
@@ -87,9 +93,32 @@ int ATFile::open(const TString &szName, const enum OpenMode eMode)
 			return AT_ERR_ARGUMENTS;
 	}
 
+#if defined(PLATFORM_IOS)
+    TString tmp = _T("");
+    switch (eLocation) {
+        case SpecificLocation_iOS_Bundle:
+        {
+            const char *path = getApplicationRoot();
+            tmp = ATStringUtl::toTString(path);
+            break;
+        }
+        case SpecificLocation_iOS_Document:
+        {
+            const char *path = getDocumentRoot();
+            tmp = ATStringUtl::toTString(path);
+            break;
+        }
+    }
+    if (!tmp.empty()) {
+        tmp += tsPath;
+        tsPath = TString(tmp.c_str());
+    }
+#elif defined(PLATFORM_ANDROID)
+#endif
+    
 	try {
 		/* file open */
-		ml_pFile = _tfopen(szName.c_str(), szMode.c_str());
+		ml_pFile = _tfopen(tsPath.c_str(), szMode.c_str());
 		if (ml_pFile == NULL) {
 			throw "";
 		}
@@ -100,7 +129,7 @@ int ATFile::open(const TString &szName, const enum OpenMode eMode)
 	}
 
 	ml_bOpen = true;
-	ml_szFileName = szName;
+	ml_szFileName = tsPath;
 
 	return AT_OK;
 }
@@ -122,8 +151,8 @@ void ATFile::close()
 /**
  * Write data to file.
  *
- * @param	LPCVOID pData write data
- * @param	size_t uiSize write size
+ * @param	pData write data
+ * @param	uiSize write size
  *
  * @return	AT_OK : write success
  */

@@ -91,7 +91,7 @@ TString ATSysUtl::getCurrentPath() {
 /**
  * Get file extension.
  *
- * @param const TString &szPath  file path
+ * @param szPath  file path
  * @return TString file extension
  */
 TString ATSysUtl::getExtension(const TString &szPath) {
@@ -103,7 +103,6 @@ TString ATSysUtl::getExtension(const TString &szPath) {
     return _T("");
   }
 
-  unsigned int uiStrLen = szPath.length();
   while(szPath[uiPoint] != _T('\0')){
 
     /* split comma */
@@ -125,7 +124,7 @@ TString ATSysUtl::getExtension(const TString &szPath) {
 /**
  * check path.
  *
- * @param const TString &szPath path for check
+ * @param szPath path for check
  * @return true  : valid
  *         false : unvalid
  */

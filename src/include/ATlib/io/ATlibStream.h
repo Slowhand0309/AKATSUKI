@@ -16,6 +16,21 @@ enum OpenMode {
 };
 
 /**
+ * Specific location.(iOS, Android)
+ */
+enum SpecificLocation {
+#if defined(PLATFORM_IOS)
+    SpecificLocation_iOS_Bundle,   // /var/mobile/Applications/[UUID]/XXXXXX.app
+    SpecificLocation_iOS_Document, // /var/mobile/Applications/[UUID]/Documents
+#elif defined(PLATFORM_ANDROID)
+    SpecificLocation_Android_App,  // /data/data/[application-id]
+    SpecificLocation_Android_SD,   // sdcard
+    SpecificLocation_Android_ExApp // Android/data/[application-id]/
+#endif
+    SpecificLocation_None = 0
+};
+
+/**
  * Stream class<br>
  * <b>ATlibStream.h</b>
  *
@@ -47,8 +62,10 @@ public:
 	 *
 	 * @param	szName file name
 	 * @param	eMode open mode
+     * @param   eLocation  specific location for mobile.
 	 */
-	virtual int open(const TString &szName, const enum OpenMode eMode) = 0;
+	virtual int open(const TString &szName, const enum OpenMode eMode,
+                     const enum SpecificLocation eLocation = SpecificLocation_None) = 0;
 
 	/**
 	 * Close stream

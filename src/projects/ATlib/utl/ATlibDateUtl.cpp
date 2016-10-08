@@ -12,7 +12,7 @@ TString ATDateUtl::getCurrentDate() {
 /**
  * Get current date time(Y/m/d H:M:S).
  *
- * @param		TString szFormat date time format
+ * @param	szFormat date time format
  *
  * @return  current date time string
  */
@@ -20,7 +20,6 @@ TString ATDateUtl::getCurrentDate(TString szFormat) {
 
   time_t		lTime;
   struct tm	*tagNow;
-  size_t		uiRet = 0;
   TCHAR		szTime[_MAX_PATH] = {0};
 
   time(&lTime);

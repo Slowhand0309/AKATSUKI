@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3B18ABE1DA8159B002F3537 /* iATLocation.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3B18ABD1DA8159B002F3537 /* iATLocation.mm */; };
 		D3ED275F1DA7FF6200BA3380 /* ATlibFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED275C1DA7FF6200BA3380 /* ATlibFile.cpp */; };
 		D3ED27601DA7FF6200BA3380 /* ATlibLock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED275D1DA7FF6200BA3380 /* ATlibLock.cpp */; };
 		D3ED27611DA7FF6200BA3380 /* ATlibStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3ED275E1DA7FF6200BA3380 /* ATlibStream.cpp */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D3B18ABC1DA8157B002F3537 /* iATLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iATLocation.h; path = io/iATLocation.h; sourceTree = SOURCE_ROOT; };
+		D3B18ABD1DA8159B002F3537 /* iATLocation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = iATLocation.mm; path = io/iATLocation.mm; sourceTree = SOURCE_ROOT; };
 		D3ED27341DA7FD4100BA3380 /* libAKATSUKI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAKATSUKI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3ED27501DA7FEFC00BA3380 /* ATlibCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibCommon.h; path = include/ATlib/com/ATlibCommon.h; sourceTree = "<group>"; };
 		D3ED27511DA7FEFC00BA3380 /* ATlibDeclaration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibDeclaration.h; path = include/ATlib/com/ATlibDeclaration.h; sourceTree = "<group>"; };
@@ -60,6 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3B18ABA1DA81510002F3537 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				D3B18ABB1DA81529002F3537 /* io */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		D3B18ABB1DA81529002F3537 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				D3B18ABC1DA8157B002F3537 /* iATLocation.h */,
+				D3B18ABD1DA8159B002F3537 /* iATLocation.mm */,
+			);
+			name = io;
+			sourceTree = "<group>";
+		};
 		D3ED272B1DA7FD4000BA3380 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +99,7 @@
 		D3ED27361DA7FD4100BA3380 /* AKATSUKI */ = {
 			isa = PBXGroup;
 			children = (
+				D3B18ABA1DA81510002F3537 /* ios */,
 				D3ED27401DA7FD9400BA3380 /* include */,
 				D3ED27411DA7FD9D00BA3380 /* projects */,
 			);
@@ -244,6 +265,7 @@
 				D3ED27671DA7FF7500BA3380 /* ATlibSysUtl.cpp in Sources */,
 				D3ED275F1DA7FF6200BA3380 /* ATlibFile.cpp in Sources */,
 				D3ED27601DA7FF6200BA3380 /* ATlibLock.cpp in Sources */,
+				D3B18ABE1DA8159B002F3537 /* iATLocation.mm in Sources */,
 				D3ED27611DA7FF6200BA3380 /* ATlibStream.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

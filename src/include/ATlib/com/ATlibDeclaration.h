@@ -296,6 +296,7 @@ typedef long                 HRESULT;
 #define FAILED(hr)                           (((HRESULT)(hr)) < 0)
 #define MessageBox(a,b,c,d)
 #define ZeroMemory(Destination,Length)       memset((Destination),0,(Length))
+#define BUFF_SIZE                            (1024)
 
 #ifndef TRACE
 #define TRACE( str, ... ) \

@@ -35,10 +35,12 @@ public:
 	 *
 	 * @param	szName file name
 	 * @param	eMode open mode
+     * @param   eLocation  specific location for mobile.
 	 *
 	 * @return	AT_OK : file opend
 	 */
-	virtual int open(const TString &szName, const enum OpenMode eMode);
+	virtual int open(const TString &szName, const enum OpenMode eMode,
+                     const enum SpecificLocation eLocation = SpecificLocation_None);
 
 	/**
 	 * Close file.

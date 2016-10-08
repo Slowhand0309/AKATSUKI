@@ -3,21 +3,18 @@
 /**
  * Check for empty
  *
- * @param const TString &szValue check value
+ * @param szValue check value
  * @return    true  :  empty
  *            false :  not empty
  */
 bool ATStringUtl::isEmpty(const TString &szValue) {
-  if (&szValue == NULL) {
-    return true;
-  }
   return szValue.empty();
 };
 
 /**
  * Check for not empty
  *
- * @param const TString &szValue check value
+ * @param szValue check value
  * @return    true  :  not empty
  *            false :  empty
  */
@@ -28,7 +25,7 @@ bool ATStringUtl::isNotEmpty(const TString &szValue) {
 /**
  * check for digit
  *
- * @param const TString &szValue check value
+ * @param szValue check value
  * @return    true  :  digit
  *            false :  not digit
  */
@@ -40,7 +37,7 @@ bool ATStringUtl::isDigit(const TString &szValue) {
 
   char szBuff[_MAX_PATH] = {0};
   const TCHAR *szTemp = szValue.c_str();
-  int nSize = szValue.length();
+  int nSize = (int)szValue.length();
 #ifdef _UNICODE
   /* convert unicode */
   nSize = ATStringUtl::wide2Multi(szTemp, szBuff, nSize);
@@ -60,7 +57,7 @@ bool ATStringUtl::isDigit(const TString &szValue) {
 /**
  * check for digit
  *
- * @param const cahr at     check value
+ * @param at     check value
  * @return     true   : digit
  *             false  : not digit
  */
@@ -75,8 +72,8 @@ bool ATStringUtl::isDigit(const char at) {
 /**
  * check for contains string
  *
- * @param const TString &szValue  check value
- * @param const TString &szAt     search value
+ * @param szValue  check value
+ * @param szAt     search value
  * @return    true  :  contains
  *            false :  not contains
  */
@@ -92,8 +89,8 @@ bool ATStringUtl::contains(const TString &szValue, const TString &szAt) {
 /**
  * split string
  *
- * @param const TString &szValue string
- * @param const TString &szDelimiter split value
+ * @param szValue string
+ * @param szDelimiter split value
  * @return string list
  */
 std::list<TString> ATStringUtl::split(const TString &szValue, const TString &szDelimiter) {
@@ -105,7 +102,7 @@ std::list<TString> ATStringUtl::split(const TString &szValue, const TString &szD
 
   TString szBuff = szValue;
   unsigned int uiPos = 0;
-  while ((uiPos = szBuff.find(szDelimiter, 0)) != (unsigned int)szBuff.npos) {
+  while ((uiPos = (unsigned int)szBuff.find(szDelimiter, 0)) != (unsigned int)szBuff.npos) {
     TString szBefore = szBuff.substr(0, uiPos);
     splitList.push_back(szBefore);
     szBuff = szBuff.substr(uiPos + szDelimiter.length());
@@ -120,15 +117,15 @@ std::list<TString> ATStringUtl::split(const TString &szValue, const TString &szD
 /**
  * erase string to szDest
  *
- * @param const TString &szSrc    string
- * @param const TString &szDest   erase value
+ * @param szSrc    string
+ * @param szDest   erase value
  * @return  erase value
  */
 TString ATStringUtl::erase(const TString &szSrc, const TString &szDest) {
 
   TString szBuff = szSrc;
-  unsigned int uiPos = szBuff.find(szDest, 0);
-  if(uiPos == szBuff.npos){
+  unsigned int uiPos = (unsigned int)szBuff.find(szDest, 0);
+  if(uiPos == (unsigned int)szBuff.npos){
     return szBuff;
   }
 
@@ -141,9 +138,9 @@ TString ATStringUtl::erase(const TString &szSrc, const TString &szDest) {
 /**
  * wide to multi string
  *
- * @param const wchar_t *pSrc  wide string
- * @param char *pDest  multi byte string
- * @param const size_t iSize  string size
+ * @param pSrc  wide string
+ * @param pDest  multi byte string
+ * @param iSize  string size
  * @return int
  */
 size_t ATStringUtl::wide2Multi(const wchar_t *pSrc, char *pDest, const size_t iSize)
@@ -171,9 +168,9 @@ size_t ATStringUtl::wide2Multi(const wchar_t *pSrc, char *pDest, const size_t iS
 /**
  * multi to wide string
  *
- * @param const char_t *pSrc  multi byte string
- * @param wchar_t *pDest  wide string
- * @param const size_t iSize  string size
+ * @param pSrc  multi byte string
+ * @param pDest  wide string
+ * @param iSize  string size
  * @return int
  */
 int ATStringUtl::multi2Wide(const char *pSrc, wchar_t *pDest, const size_t iSize)
@@ -198,5 +195,43 @@ int ATStringUtl::multi2Wide(const char *pSrc, wchar_t *pDest, const size_t iSize
   return AT_OK;
 }
 
-ATStringUtl::ATStringUtl() {  
+/**
+ * Convert char to TString.
+ *
+ * @param pSrc multibyte
+ * @return TString
+ */
+TString ATStringUtl::toTString(const char *pSrc)
+{
+  TString result = _T("");
+#ifdef _UNICODE
+  wchar_t pDest[BUFF_SIZE] = {0};
+  ATStringUtl::multi2Wide(pSrc, pDest, BUFF_SIZE);
+  result = TString(pDest);
+#else
+  result = TString(pSrc);
+#endif // _UNICODE
+  return result;
+}
+
+/**
+ * Convert wchar_t to TString.
+ *
+ * @param pSrc wide
+ * @return TString
+ */
+TString ATStringUtl::toTString(const wchar_t *pSrc)
+{
+  TString result = _T("");
+#ifdef _UNICODE
+  result = TString(pSrc);
+#else
+  char pDest[BUFF_SIZE] = {0};
+  ATStringUtl::wide2Multi(pSrc, pDest, BUFF_SIZE);
+  result = TString(pDest);
+#endif // _UNICODE
+  return result;
+}
+
+ATStringUtl::ATStringUtl() {
 }

@@ -96,6 +96,22 @@ public:
 	 * @return int
 	 */
 	static int multi2Wide(const char *pSrc, wchar_t *pDest, const size_t iSize);
+    
+    /**
+     * Convert char to TString.
+     *
+     * @param pSrc multibyte
+     * @return TString
+     */
+    static TString toTString(const char *pSrc);
+    
+    /**
+     * Convert wchar_t to TString.
+     *
+     * @param pSrc wide
+     * @return TString
+     */
+    static TString toTString(const wchar_t *pSrc);
 
 private:
 	ATStringUtl();
