@@ -72,6 +72,12 @@
  * usage : #pragma __ATMESSAGE__("out put message") */
 #define __ATMESSAGE__(msg)						message(__FILE__"(" TOSTR(__LINE__)") : " msg)
 
+#if defined(DEBUG) || defined(_DEBUG)
+#define ATASSERT(x)  assert(x)
+#else
+#define ATASSERT(x)
+#endif
+
 #ifdef PLATFORM_WINDOWS
 /* declaration for windows */
 
