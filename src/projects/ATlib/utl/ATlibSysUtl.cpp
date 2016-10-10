@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include "ATlib/utl/ATlibSysUtl.h"
 
-#if PLATFORM_MACINTOSH
+#if defined(PLATFORM_MACOS) || defined(PLATFORM_IOS)
 #include <mach-o/dyld.h>
 #include <libgen.h>
 #endif
@@ -17,15 +17,16 @@ TString ATSysUtl::getModuleName() {
   TCHAR	szFullPath[_MAX_PATH] = {0};
   TCHAR	szFname[_MAX_FNAME] = {0};
 
-#ifdef PLATFORM_WINDOWS
+#if defined(PLATFORM_WINDOWS)
   // Windows
   // get full path for module
   GetModuleFileName(GetModuleHandle(NULL), szFullPath, _MAX_PATH);
 
   // split path
   _tsplitpath_s(szFullPath, NULL, 0, NULL, 0, szFname, _MAX_FNAME, NULL, 0);
+#endif // PLATFORM_WINDOWS
 
-#elif PLATFORM_MACOS
+#if defined(PLATFORM_MACOS) || defined(PLATFORM_IOS)
   // Mac OS
   char buff[_MAX_FNAME] = {0};
   uint32_t size = sizeof(buff);
@@ -38,8 +39,9 @@ TString ATSysUtl::getModuleName() {
 #else
   strcpy(szFname, szTemp);
 #endif // UNICODE
+#endif // PLATFORM_MACOS || PLATFORM_IOS
 
-#elif PLATFORM_LINUX
+#if defined(PLATFORM_LINUX)
   // Linux
   char buff[_MAX_FNAME] = {0};
   readlink("/proc/self/exe", buff, sizeof(buff));
@@ -50,7 +52,7 @@ TString ATSysUtl::getModuleName() {
   strcpy(szFname, buff);
 #endif // UNICODE
 
-#endif // PLATFORM_WINDOWS
+#endif // PLATFORM_LINUX
 
   strRet = TString(szFname);
   return strRet;

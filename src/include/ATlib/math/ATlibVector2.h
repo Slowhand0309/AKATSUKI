@@ -1,5 +1,5 @@
-#ifndef __ATLIBLOGGER_H__
-#define __ATLIBLOGGER_H__
+#ifndef __ATLIBVECTOR2_H__
+#define __ATLIBVECTOR2_H__
 
 
 class ATVector2
@@ -9,7 +9,7 @@ public:
   ATVector2();
 
   // Constructor with initiale value.
-  ATVector2(float f1, float f2);
+  ATVector2(float _x, float _y);
 
   // Destructor.
   virtual ~ATVector2();
@@ -29,7 +29,7 @@ public:
   // Operator [] .
   float operator[](int index);
 private:
-  float ml_v1;
-  float ml_v2;
+  float x;
+  float y;
 };
-#endif // __ATLIBLOGGER_H__
+#endif // __ATLIBVECTOR2_H__

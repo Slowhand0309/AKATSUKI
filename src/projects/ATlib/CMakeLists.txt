@@ -9,6 +9,9 @@ set(ATLIB_SRC
     utl/ATlibStringUtl.cpp
     utl/ATlibSysUtl.cpp
     utl/ATlibDateUtl.cpp
+    math/ATlibVector2.cpp
+    math/ATlibVector3.cpp
+    math/ATlibVector4.cpp
 )
 
 include_directories(
