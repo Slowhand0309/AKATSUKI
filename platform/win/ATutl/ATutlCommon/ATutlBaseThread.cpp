@@ -5,7 +5,7 @@
  * @author slowhand0309
  */
 #include "stdafx.h"
-#include "ATutl/ATutlCommon/ATutlBaseThread.h"
+#include "ATutlBaseThread.h"
 
 //********************************************************************************************
 /**

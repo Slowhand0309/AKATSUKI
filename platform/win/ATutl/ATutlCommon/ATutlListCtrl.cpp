@@ -5,7 +5,7 @@
  * @author slowhand0309
  */
 #include "stdafx.h"
-#include "ATutl/ATutlCommon/ATutlListCtrl.h"
+#include "ATutlListCtrl.h"
 
 //********************************************************************************************
 /**

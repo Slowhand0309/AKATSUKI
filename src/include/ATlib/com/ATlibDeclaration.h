@@ -6,7 +6,6 @@
  *
  * @author	slowhand0309
  */
-#include "ATlib/com/ATlibPlatform.h"
 
 /* ----- common define ----- */
 #define AT_OK                     (0x00000001)    /* Successed           */
@@ -25,6 +24,8 @@
 #define AT_ARRAY_SIZE(o)          (sizeof(o)/sizeof(o[0]))                  /* Size of array     */
 #define AT_PI                     (3.14159265358979323846)                  /* PI                */
 #define	AT_EMPTY_STR              _T("")                                    /* Empty string      */
+
+#define BUFF_SIZE                 (1024)
 
 #ifndef max
 #define max(a, b)                 (((a) > (b)) ? (a) : (b))
@@ -77,6 +78,9 @@
 #else
 #define ATASSERT(x)
 #endif
+
+#include "ATlib/com/ATlibPlatform.h"
+
 
 #ifdef PLATFORM_WINDOWS
 /* declaration for windows */
@@ -302,7 +306,7 @@ typedef long                 HRESULT;
 #define FAILED(hr)                           (((HRESULT)(hr)) < 0)
 #define MessageBox(a,b,c,d)
 #define ZeroMemory(Destination,Length)       memset((Destination),0,(Length))
-#define BUFF_SIZE                            (1024)
+
 
 #ifndef TRACE
 #define TRACE( str, ... ) \

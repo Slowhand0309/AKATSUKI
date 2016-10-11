@@ -6,7 +6,7 @@
  */
 #include <algorithm>
 #include <iterator>
-#include "ATbat/base/ATbatBatchProc.h"
+#include "ATbatBatchProc.h"
 #include "ATlib/utl/ATlibSysUtl.h"
 #include "ATlib/utl/ATlibStringUtl.h"
 

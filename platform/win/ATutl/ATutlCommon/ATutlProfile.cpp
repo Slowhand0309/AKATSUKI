@@ -8,7 +8,7 @@
 #include "ATlib/utl/ATlibSysUtl.h"
 #include "ATlib/utl/ATlibStringUtl.h"
 #include "ATlib/io/ATlibFile.h"
-#include "ATutl/ATutlCommon/ATutlProfile.h"
+#include "ATutlProfile.h"
 
 /* iniファイル内のコメント文字列		*/
 #define COMMENT_MARK				_T(";")
@@ -125,7 +125,7 @@ int ATProfile::readProfile(const TString &szFileName)
 					/* 新規のキー	*/
 					std::list<TString> listValues;
 					listValues.push_back(szBuff);
-					ml_mapList.insert(std::make_pair<TString, std::list<TString>>(szKey, listValues));
+					//ml_mapList.insert(std::make_pair<TString, std::list<TString>>(TString(szKey), listValues));
 				}
 			}
 		}

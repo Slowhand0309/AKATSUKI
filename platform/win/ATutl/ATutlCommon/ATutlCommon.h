@@ -9,10 +9,10 @@
 
 /* ----- header include ----- */
 #include "resource.h"		// メイン シンボル
-#include "ATutl/ATutlCommon/ATutlListCtrl.h"
-#include "ATutl/ATutlCommon/ATutlProfile.h"
-#include "ATutl/ATutlCommon/ATutlFileBrowser.h"
-#include "ATutl/ATutlCommon/ATutlBaseThread.h"
+#include "../ATutlCommon/ATutlListCtrl.h"
+#include "../ATutlCommon/ATutlProfile.h"
+#include "../ATutlCommon/ATutlFileBrowser.h"
+#include "../ATutlCommon/ATutlBaseThread.h"
 
 /* ----- define  ----- */
 #define ERROR_MSG_TITLE					_T("エラー")

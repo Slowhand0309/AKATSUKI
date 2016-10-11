@@ -19,3 +19,12 @@ lib/*.a
 build/
 DerivedData/
 xcuserdata/
+
+# Visual Studio
+*.sdf
+*.suo
+.vs
+lib/debug
+lib/release
+*.vcxproj.user
+

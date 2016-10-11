@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-#include "ATutl/ATutlCommon/ATutlCommon.h"
+#include "ATutlCommon.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW

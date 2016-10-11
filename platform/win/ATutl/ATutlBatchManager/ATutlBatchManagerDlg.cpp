@@ -8,7 +8,7 @@
 #include "afxdialogex.h"
 
 #include "ATlib/utl/ATlibStringUtl.h"
-#include "ATutl/ATutlCommon/ATutlFileBrowser.h"
+#include "../ATutlCommon/ATutlFileBrowser.h"
 #include "profile/ATutlBatchManagerProfile.h"
 #include "ATlib/utl/ATlibSysUtl.h"
 #include "ATlib/utl/ATlibDateUtl.h"

@@ -1,5 +1,9 @@
-#include <unistd.h>
 #include "ATlib/utl/ATlibSysUtl.h"
+
+#if defined(PLATFORM_WINDOWS)
+#else
+#include <unistd.h>
+#endif // PLATFORM_WINDOWS
 
 #if defined(PLATFORM_MACOS) || defined(PLATFORM_IOS)
 #include <mach-o/dyld.h>
@@ -133,7 +137,12 @@ TString ATSysUtl::getExtension(const TString &szPath) {
 bool ATSysUtl::hasPath(const TString &szPath) {
 
   int		iRet = 0;
+
+#if defined(PLATFORM_WINDOWS)
+  struct _stat64i32 tagStat;
+#else
   struct stat tagStat;
+#endif // PLATFORM_WINDOWS
 
   if(szPath.empty()){
     return false;

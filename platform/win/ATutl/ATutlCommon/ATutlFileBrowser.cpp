@@ -6,7 +6,7 @@
  */
 #include "stdafx.h"
 #include "ATlib/utl/ATlibDateUtl.h"
-#include "ATutl/ATutlCommon/ATutlFileBrowser.h"
+#include "ATutlFileBrowser.h"
 
 #define BROWSE_FOLDER_TITLE				_T("フォルダの選択")
 #define	FILE_TIME_FORMAT				_T("%d/%d/%d %d:%d:%d")
