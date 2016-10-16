@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D39241331DB373BF0028180C /* ATlibMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D39241321DB373BF0028180C /* ATlibMatrix.cpp */; };
 		D3B18ABE1DA8159B002F3537 /* iATLocation.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3B18ABD1DA8159B002F3537 /* iATLocation.mm */; };
 		D3B27AFE1DABDFDD002160D7 /* ATlibVector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3B27AFB1DABDFDD002160D7 /* ATlibVector2.cpp */; };
 		D3B27AFF1DABDFDD002160D7 /* ATlibVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3B27AFC1DABDFDD002160D7 /* ATlibVector3.cpp */; };
@@ -32,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D39241311DB373AE0028180C /* ATlibMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ATlibMatrix.h; path = include/ATlib/math/ATlibMatrix.h; sourceTree = "<group>"; };
+		D39241321DB373BF0028180C /* ATlibMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATlibMatrix.cpp; path = projects/ATlib/math/ATlibMatrix.cpp; sourceTree = "<group>"; };
 		D3B18ABC1DA8157B002F3537 /* iATLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iATLocation.h; path = io/iATLocation.h; sourceTree = SOURCE_ROOT; };
 		D3B18ABD1DA8159B002F3537 /* iATLocation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = iATLocation.mm; path = io/iATLocation.mm; sourceTree = SOURCE_ROOT; };
 		D3B27AF81DABDFBA002160D7 /* ATlibVector2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATlibVector2.h; path = include/ATlib/math/ATlibVector2.h; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 		D3B27AF71DABDF96002160D7 /* math */ = {
 			isa = PBXGroup;
 			children = (
+				D39241311DB373AE0028180C /* ATlibMatrix.h */,
 				D3B27AF81DABDFBA002160D7 /* ATlibVector2.h */,
 				D3B27AF91DABDFBA002160D7 /* ATlibVector3.h */,
 				D3B27AFA1DABDFBA002160D7 /* ATlibVector4.h */,
@@ -102,6 +106,7 @@
 		D3C5BDEE1DAB930300C629CA /* math */ = {
 			isa = PBXGroup;
 			children = (
+				D39241321DB373BF0028180C /* ATlibMatrix.cpp */,
 				D3B27AFB1DABDFDD002160D7 /* ATlibVector2.cpp */,
 				D3B27AFC1DABDFDD002160D7 /* ATlibVector3.cpp */,
 				D3B27AFD1DABDFDD002160D7 /* ATlibVector4.cpp */,
@@ -296,6 +301,7 @@
 				D3B27AFE1DABDFDD002160D7 /* ATlibVector2.cpp in Sources */,
 				D3ED27671DA7FF7500BA3380 /* ATlibSysUtl.cpp in Sources */,
 				D3ED275F1DA7FF6200BA3380 /* ATlibFile.cpp in Sources */,
+				D39241331DB373BF0028180C /* ATlibMatrix.cpp in Sources */,
 				D3ED27601DA7FF6200BA3380 /* ATlibLock.cpp in Sources */,
 				D3B27B001DABDFDD002160D7 /* ATlibVector4.cpp in Sources */,
 				D3B27AFF1DABDFDD002160D7 /* ATlibVector3.cpp in Sources */,

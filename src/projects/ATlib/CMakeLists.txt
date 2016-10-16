@@ -12,6 +12,7 @@ set(ATLIB_SRC
     math/ATlibVector2.cpp
     math/ATlibVector3.cpp
     math/ATlibVector4.cpp
+    math/ATlibMatrix.cpp
 )
 
 include_directories(
