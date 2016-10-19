@@ -27,7 +27,7 @@ public:
    *
    * @return status code.
    */
-  virtual int initialize();
+  virtual int initialize(int argc, char *argv[]);
 
   /**
    * Run.

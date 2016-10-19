@@ -18,14 +18,14 @@ public:
   /**
    * Destructor.
    */
-  ~ATCore();
+  virtual ~ATCore();
 
   /**
    * Initialize.
    *
    * @return status code.
    */
-  virtual int initialize() = 0;
+  virtual int initialize(int argc, char *argv[]) = 0;
 
   /**
    * Finalize.
@@ -33,6 +33,11 @@ public:
    * @return status code.
    */
   virtual int finalize() = 0;
+
+  /**
+   * Show main window.
+   */
+  virtual void showWindow() = 0;
 
   /**
    * Clear screen.

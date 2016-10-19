@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D348504F1DB7CC760085B598 /* ATgaeEngineCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D348504E1DB7CC760085B598 /* ATgaeEngineCreator.cpp */; };
+		D38433031DB7C342002D5DA5 /* ATgaeEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432E11DB7C342002D5DA5 /* ATgaeEngine.h */; };
+		D38433041DB7C342002D5DA5 /* ATgaeEngineCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432E21DB7C342002D5DA5 /* ATgaeEngineCreator.h */; };
+		D38433051DB7C343002D5DA5 /* ATgaeCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432E41DB7C342002D5DA5 /* ATgaeCommon.h */; };
+		D38433061DB7C343002D5DA5 /* ATgaeCore.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432E61DB7C342002D5DA5 /* ATgaeCore.h */; };
+		D38433071DB7C343002D5DA5 /* ATgaeCoreGL.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432E71DB7C342002D5DA5 /* ATgaeCoreGL.h */; };
+		D38433081DB7C343002D5DA5 /* ATgaeImplGL.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432E91DB7C342002D5DA5 /* ATgaeImplGL.h */; };
+		D38433091DB7C343002D5DA5 /* ATgaeWindowInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432EB1DB7C342002D5DA5 /* ATgaeWindowInfo.h */; };
+		D384330A1DB7C343002D5DA5 /* ATgaeWindowManager.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432EC1DB7C342002D5DA5 /* ATgaeWindowManager.h */; };
+		D384330B1DB7C343002D5DA5 /* ATlibCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432EF1DB7C342002D5DA5 /* ATlibCommon.h */; };
+		D384330C1DB7C343002D5DA5 /* ATlibDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432F01DB7C342002D5DA5 /* ATlibDeclaration.h */; };
+		D384330D1DB7C343002D5DA5 /* ATlibPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432F11DB7C342002D5DA5 /* ATlibPlatform.h */; };
+		D384330E1DB7C343002D5DA5 /* ATlibFile.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432F31DB7C342002D5DA5 /* ATlibFile.h */; };
+		D384330F1DB7C343002D5DA5 /* ATlibLock.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432F41DB7C342002D5DA5 /* ATlibLock.h */; };
+		D38433101DB7C343002D5DA5 /* ATlibStream.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432F51DB7C342002D5DA5 /* ATlibStream.h */; };
+		D38433111DB7C343002D5DA5 /* ATlibLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432F71DB7C342002D5DA5 /* ATlibLogger.h */; };
+		D38433121DB7C343002D5DA5 /* ATlibPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432F81DB7C342002D5DA5 /* ATlibPrinter.h */; };
+		D38433131DB7C343002D5DA5 /* ATlibSysPrinter.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432F91DB7C342002D5DA5 /* ATlibSysPrinter.h */; };
+		D38433141DB7C343002D5DA5 /* ATlibMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432FB1DB7C342002D5DA5 /* ATlibMatrix.h */; };
+		D38433151DB7C343002D5DA5 /* ATlibVector2.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432FC1DB7C342002D5DA5 /* ATlibVector2.h */; };
+		D38433161DB7C343002D5DA5 /* ATlibVector3.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432FD1DB7C342002D5DA5 /* ATlibVector3.h */; };
+		D38433171DB7C343002D5DA5 /* ATlibVector4.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432FE1DB7C342002D5DA5 /* ATlibVector4.h */; };
+		D38433181DB7C343002D5DA5 /* ATlibDateUtl.h in Headers */ = {isa = PBXBuildFile; fileRef = D38433001DB7C342002D5DA5 /* ATlibDateUtl.h */; };
+		D38433191DB7C343002D5DA5 /* ATlibStringUtl.h in Headers */ = {isa = PBXBuildFile; fileRef = D38433011DB7C342002D5DA5 /* ATlibStringUtl.h */; };
+		D384331A1DB7C343002D5DA5 /* ATlibSysUtl.h in Headers */ = {isa = PBXBuildFile; fileRef = D38433021DB7C342002D5DA5 /* ATlibSysUtl.h */; };
+		D38433361DB7C35B002D5DA5 /* ATgaeEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D384331E1DB7C35B002D5DA5 /* ATgaeEngine.cpp */; };
+		D38433371DB7C35B002D5DA5 /* ATgaeCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433201DB7C35B002D5DA5 /* ATgaeCore.cpp */; };
+		D38433381DB7C35B002D5DA5 /* ATgaeCoreGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433211DB7C35B002D5DA5 /* ATgaeCoreGL.cpp */; };
+		D38433391DB7C35B002D5DA5 /* ATgaeImplGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433231DB7C35B002D5DA5 /* ATgaeImplGL.cpp */; };
+		D384333A1DB7C35B002D5DA5 /* ATgaeWindowInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433251DB7C35B002D5DA5 /* ATgaeWindowInfo.cpp */; };
+		D384333B1DB7C35B002D5DA5 /* ATgaeWindowManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433261DB7C35B002D5DA5 /* ATgaeWindowManager.cpp */; };
+		D384333C1DB7C35B002D5DA5 /* ATlibFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D384332A1DB7C35B002D5DA5 /* ATlibFile.cpp */; };
+		D384333D1DB7C35B002D5DA5 /* ATlibLock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D384332B1DB7C35B002D5DA5 /* ATlibLock.cpp */; };
+		D384333E1DB7C35B002D5DA5 /* ATlibStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D384332C1DB7C35B002D5DA5 /* ATlibStream.cpp */; };
+		D384333F1DB7C35B002D5DA5 /* ATlibMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D384332E1DB7C35B002D5DA5 /* ATlibMatrix.cpp */; };
+		D38433401DB7C35B002D5DA5 /* ATlibVector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D384332F1DB7C35B002D5DA5 /* ATlibVector2.cpp */; };
+		D38433411DB7C35B002D5DA5 /* ATlibVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433301DB7C35B002D5DA5 /* ATlibVector3.cpp */; };
+		D38433421DB7C35B002D5DA5 /* ATlibVector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433311DB7C35B002D5DA5 /* ATlibVector4.cpp */; };
+		D38433431DB7C35B002D5DA5 /* ATlibDateUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433331DB7C35B002D5DA5 /* ATlibDateUtl.cpp */; };
+		D38433441DB7C35B002D5DA5 /* ATlibStringUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433341DB7C35B002D5DA5 /* ATlibStringUtl.cpp */; };
+		D38433451DB7C35B002D5DA5 /* ATlibSysUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433351DB7C35B002D5DA5 /* ATlibSysUtl.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D348504E1DB7CC760085B598 /* ATgaeEngineCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeEngineCreator.cpp; sourceTree = "<group>"; };
+		D38432D61DB7C30F002D5DA5 /* libAKATSUKI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAKATSUKI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38432E11DB7C342002D5DA5 /* ATgaeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeEngine.h; sourceTree = "<group>"; };
+		D38432E21DB7C342002D5DA5 /* ATgaeEngineCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeEngineCreator.h; sourceTree = "<group>"; };
+		D38432E41DB7C342002D5DA5 /* ATgaeCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeCommon.h; sourceTree = "<group>"; };
+		D38432E61DB7C342002D5DA5 /* ATgaeCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeCore.h; sourceTree = "<group>"; };
+		D38432E71DB7C342002D5DA5 /* ATgaeCoreGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeCoreGL.h; sourceTree = "<group>"; };
+		D38432E91DB7C342002D5DA5 /* ATgaeImplGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeImplGL.h; sourceTree = "<group>"; };
+		D38432EB1DB7C342002D5DA5 /* ATgaeWindowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeWindowInfo.h; sourceTree = "<group>"; };
+		D38432EC1DB7C342002D5DA5 /* ATgaeWindowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeWindowManager.h; sourceTree = "<group>"; };
+		D38432EF1DB7C342002D5DA5 /* ATlibCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibCommon.h; sourceTree = "<group>"; };
+		D38432F01DB7C342002D5DA5 /* ATlibDeclaration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibDeclaration.h; sourceTree = "<group>"; };
+		D38432F11DB7C342002D5DA5 /* ATlibPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibPlatform.h; sourceTree = "<group>"; };
+		D38432F31DB7C342002D5DA5 /* ATlibFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibFile.h; sourceTree = "<group>"; };
+		D38432F41DB7C342002D5DA5 /* ATlibLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibLock.h; sourceTree = "<group>"; };
+		D38432F51DB7C342002D5DA5 /* ATlibStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibStream.h; sourceTree = "<group>"; };
+		D38432F71DB7C342002D5DA5 /* ATlibLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibLogger.h; sourceTree = "<group>"; };
+		D38432F81DB7C342002D5DA5 /* ATlibPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibPrinter.h; sourceTree = "<group>"; };
+		D38432F91DB7C342002D5DA5 /* ATlibSysPrinter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibSysPrinter.h; sourceTree = "<group>"; };
+		D38432FB1DB7C342002D5DA5 /* ATlibMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibMatrix.h; sourceTree = "<group>"; };
+		D38432FC1DB7C342002D5DA5 /* ATlibVector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibVector2.h; sourceTree = "<group>"; };
+		D38432FD1DB7C342002D5DA5 /* ATlibVector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibVector3.h; sourceTree = "<group>"; };
+		D38432FE1DB7C342002D5DA5 /* ATlibVector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibVector4.h; sourceTree = "<group>"; };
+		D38433001DB7C342002D5DA5 /* ATlibDateUtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibDateUtl.h; sourceTree = "<group>"; };
+		D38433011DB7C342002D5DA5 /* ATlibStringUtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibStringUtl.h; sourceTree = "<group>"; };
+		D38433021DB7C342002D5DA5 /* ATlibSysUtl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATlibSysUtl.h; sourceTree = "<group>"; };
+		D384331E1DB7C35B002D5DA5 /* ATgaeEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeEngine.cpp; sourceTree = "<group>"; };
+		D38433201DB7C35B002D5DA5 /* ATgaeCore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeCore.cpp; sourceTree = "<group>"; };
+		D38433211DB7C35B002D5DA5 /* ATgaeCoreGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeCoreGL.cpp; sourceTree = "<group>"; };
+		D38433231DB7C35B002D5DA5 /* ATgaeImplGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeImplGL.cpp; sourceTree = "<group>"; };
+		D38433251DB7C35B002D5DA5 /* ATgaeWindowInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeWindowInfo.cpp; sourceTree = "<group>"; };
+		D38433261DB7C35B002D5DA5 /* ATgaeWindowManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeWindowManager.cpp; sourceTree = "<group>"; };
+		D384332A1DB7C35B002D5DA5 /* ATlibFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibFile.cpp; sourceTree = "<group>"; };
+		D384332B1DB7C35B002D5DA5 /* ATlibLock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibLock.cpp; sourceTree = "<group>"; };
+		D384332C1DB7C35B002D5DA5 /* ATlibStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibStream.cpp; sourceTree = "<group>"; };
+		D384332E1DB7C35B002D5DA5 /* ATlibMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibMatrix.cpp; sourceTree = "<group>"; };
+		D384332F1DB7C35B002D5DA5 /* ATlibVector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibVector2.cpp; sourceTree = "<group>"; };
+		D38433301DB7C35B002D5DA5 /* ATlibVector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibVector3.cpp; sourceTree = "<group>"; };
+		D38433311DB7C35B002D5DA5 /* ATlibVector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibVector4.cpp; sourceTree = "<group>"; };
+		D38433331DB7C35B002D5DA5 /* ATlibDateUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibDateUtl.cpp; sourceTree = "<group>"; };
+		D38433341DB7C35B002D5DA5 /* ATlibStringUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibStringUtl.cpp; sourceTree = "<group>"; };
+		D38433351DB7C35B002D5DA5 /* ATlibSysUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibSysUtl.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D38432D31DB7C30F002D5DA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D38432CD1DB7C30F002D5DA5 = {
+			isa = PBXGroup;
+			children = (
+				D38432DD1DB7C319002D5DA5 /* include */,
+				D38432DE1DB7C324002D5DA5 /* projects */,
+				D38432D71DB7C30F002D5DA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D38432D71DB7C30F002D5DA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D38432D61DB7C30F002D5DA5 /* libAKATSUKI.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D38432DD1DB7C319002D5DA5 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D38432DF1DB7C342002D5DA5 /* ATgae */,
+				D38432ED1DB7C342002D5DA5 /* ATlib */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		D38432DE1DB7C324002D5DA5 /* projects */ = {
+			isa = PBXGroup;
+			children = (
+				D384331B1DB7C35B002D5DA5 /* ATgae */,
+				D38433271DB7C35B002D5DA5 /* ATlib */,
+			);
+			name = projects;
+			sourceTree = "<group>";
+		};
+		D38432DF1DB7C342002D5DA5 /* ATgae */ = {
+			isa = PBXGroup;
+			children = (
+				D38432E01DB7C342002D5DA5 /* engine */,
+			);
+			name = ATgae;
+			path = ../../src/include/ATgae;
+			sourceTree = "<group>";
+		};
+		D38432E01DB7C342002D5DA5 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				D38432E11DB7C342002D5DA5 /* ATgaeEngine.h */,
+				D38432E21DB7C342002D5DA5 /* ATgaeEngineCreator.h */,
+				D38432E31DB7C342002D5DA5 /* com */,
+				D38432E51DB7C342002D5DA5 /* core */,
+				D38432E81DB7C342002D5DA5 /* impl */,
+				D38432EA1DB7C342002D5DA5 /* window */,
+			);
+			path = engine;
+			sourceTree = "<group>";
+		};
+		D38432E31DB7C342002D5DA5 /* com */ = {
+			isa = PBXGroup;
+			children = (
+				D38432E41DB7C342002D5DA5 /* ATgaeCommon.h */,
+			);
+			path = com;
+			sourceTree = "<group>";
+		};
+		D38432E51DB7C342002D5DA5 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				D38432E61DB7C342002D5DA5 /* ATgaeCore.h */,
+				D38432E71DB7C342002D5DA5 /* ATgaeCoreGL.h */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		D38432E81DB7C342002D5DA5 /* impl */ = {
+			isa = PBXGroup;
+			children = (
+				D38432E91DB7C342002D5DA5 /* ATgaeImplGL.h */,
+			);
+			path = impl;
+			sourceTree = "<group>";
+		};
+		D38432EA1DB7C342002D5DA5 /* window */ = {
+			isa = PBXGroup;
+			children = (
+				D38432EB1DB7C342002D5DA5 /* ATgaeWindowInfo.h */,
+				D38432EC1DB7C342002D5DA5 /* ATgaeWindowManager.h */,
+			);
+			path = window;
+			sourceTree = "<group>";
+		};
+		D38432ED1DB7C342002D5DA5 /* ATlib */ = {
+			isa = PBXGroup;
+			children = (
+				D38432EE1DB7C342002D5DA5 /* com */,
+				D38432F21DB7C342002D5DA5 /* io */,
+				D38432F61DB7C342002D5DA5 /* log */,
+				D38432FA1DB7C342002D5DA5 /* math */,
+				D38432FF1DB7C342002D5DA5 /* utl */,
+			);
+			name = ATlib;
+			path = ../../src/include/ATlib;
+			sourceTree = "<group>";
+		};
+		D38432EE1DB7C342002D5DA5 /* com */ = {
+			isa = PBXGroup;
+			children = (
+				D38432EF1DB7C342002D5DA5 /* ATlibCommon.h */,
+				D38432F01DB7C342002D5DA5 /* ATlibDeclaration.h */,
+				D38432F11DB7C342002D5DA5 /* ATlibPlatform.h */,
+			);
+			path = com;
+			sourceTree = "<group>";
+		};
+		D38432F21DB7C342002D5DA5 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				D38432F31DB7C342002D5DA5 /* ATlibFile.h */,
+				D38432F41DB7C342002D5DA5 /* ATlibLock.h */,
+				D38432F51DB7C342002D5DA5 /* ATlibStream.h */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		D38432F61DB7C342002D5DA5 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				D38432F71DB7C342002D5DA5 /* ATlibLogger.h */,
+				D38432F81DB7C342002D5DA5 /* ATlibPrinter.h */,
+				D38432F91DB7C342002D5DA5 /* ATlibSysPrinter.h */,
+			);
+			path = log;
+			sourceTree = "<group>";
+		};
+		D38432FA1DB7C342002D5DA5 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				D38432FB1DB7C342002D5DA5 /* ATlibMatrix.h */,
+				D38432FC1DB7C342002D5DA5 /* ATlibVector2.h */,
+				D38432FD1DB7C342002D5DA5 /* ATlibVector3.h */,
+				D38432FE1DB7C342002D5DA5 /* ATlibVector4.h */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		D38432FF1DB7C342002D5DA5 /* utl */ = {
+			isa = PBXGroup;
+			children = (
+				D38433001DB7C342002D5DA5 /* ATlibDateUtl.h */,
+				D38433011DB7C342002D5DA5 /* ATlibStringUtl.h */,
+				D38433021DB7C342002D5DA5 /* ATlibSysUtl.h */,
+			);
+			path = utl;
+			sourceTree = "<group>";
+		};
+		D384331B1DB7C35B002D5DA5 /* ATgae */ = {
+			isa = PBXGroup;
+			children = (
+				D384331D1DB7C35B002D5DA5 /* engine */,
+			);
+			name = ATgae;
+			path = ../../src/projects/ATgae;
+			sourceTree = "<group>";
+		};
+		D384331D1DB7C35B002D5DA5 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				D384331E1DB7C35B002D5DA5 /* ATgaeEngine.cpp */,
+				D348504E1DB7CC760085B598 /* ATgaeEngineCreator.cpp */,
+				D384331F1DB7C35B002D5DA5 /* core */,
+				D38433221DB7C35B002D5DA5 /* impl */,
+				D38433241DB7C35B002D5DA5 /* window */,
+			);
+			path = engine;
+			sourceTree = "<group>";
+		};
+		D384331F1DB7C35B002D5DA5 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				D38433201DB7C35B002D5DA5 /* ATgaeCore.cpp */,
+				D38433211DB7C35B002D5DA5 /* ATgaeCoreGL.cpp */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		D38433221DB7C35B002D5DA5 /* impl */ = {
+			isa = PBXGroup;
+			children = (
+				D38433231DB7C35B002D5DA5 /* ATgaeImplGL.cpp */,
+			);
+			path = impl;
+			sourceTree = "<group>";
+		};
+		D38433241DB7C35B002D5DA5 /* window */ = {
+			isa = PBXGroup;
+			children = (
+				D38433251DB7C35B002D5DA5 /* ATgaeWindowInfo.cpp */,
+				D38433261DB7C35B002D5DA5 /* ATgaeWindowManager.cpp */,
+			);
+			path = window;
+			sourceTree = "<group>";
+		};
+		D38433271DB7C35B002D5DA5 /* ATlib */ = {
+			isa = PBXGroup;
+			children = (
+				D38433291DB7C35B002D5DA5 /* io */,
+				D384332D1DB7C35B002D5DA5 /* math */,
+				D38433321DB7C35B002D5DA5 /* utl */,
+			);
+			name = ATlib;
+			path = ../../src/projects/ATlib;
+			sourceTree = "<group>";
+		};
+		D38433291DB7C35B002D5DA5 /* io */ = {
+			isa = PBXGroup;
+			children = (
+				D384332A1DB7C35B002D5DA5 /* ATlibFile.cpp */,
+				D384332B1DB7C35B002D5DA5 /* ATlibLock.cpp */,
+				D384332C1DB7C35B002D5DA5 /* ATlibStream.cpp */,
+			);
+			path = io;
+			sourceTree = "<group>";
+		};
+		D384332D1DB7C35B002D5DA5 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				D384332E1DB7C35B002D5DA5 /* ATlibMatrix.cpp */,
+				D384332F1DB7C35B002D5DA5 /* ATlibVector2.cpp */,
+				D38433301DB7C35B002D5DA5 /* ATlibVector3.cpp */,
+				D38433311DB7C35B002D5DA5 /* ATlibVector4.cpp */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		D38433321DB7C35B002D5DA5 /* utl */ = {
+			isa = PBXGroup;
+			children = (
+				D38433331DB7C35B002D5DA5 /* ATlibDateUtl.cpp */,
+				D38433341DB7C35B002D5DA5 /* ATlibStringUtl.cpp */,
+				D38433351DB7C35B002D5DA5 /* ATlibSysUtl.cpp */,
+			);
+			path = utl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D38432D41DB7C30F002D5DA5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D38433071DB7C343002D5DA5 /* ATgaeCoreGL.h in Headers */,
+				D384330F1DB7C343002D5DA5 /* ATlibLock.h in Headers */,
+				D38433061DB7C343002D5DA5 /* ATgaeCore.h in Headers */,
+				D384330B1DB7C343002D5DA5 /* ATlibCommon.h in Headers */,
+				D38433121DB7C343002D5DA5 /* ATlibPrinter.h in Headers */,
+				D38433081DB7C343002D5DA5 /* ATgaeImplGL.h in Headers */,
+				D38433041DB7C342002D5DA5 /* ATgaeEngineCreator.h in Headers */,
+				D384330E1DB7C343002D5DA5 /* ATlibFile.h in Headers */,
+				D38433191DB7C343002D5DA5 /* ATlibStringUtl.h in Headers */,
+				D38433031DB7C342002D5DA5 /* ATgaeEngine.h in Headers */,
+				D38433181DB7C343002D5DA5 /* ATlibDateUtl.h in Headers */,
+				D384331A1DB7C343002D5DA5 /* ATlibSysUtl.h in Headers */,
+				D38433171DB7C343002D5DA5 /* ATlibVector4.h in Headers */,
+				D384330C1DB7C343002D5DA5 /* ATlibDeclaration.h in Headers */,
+				D38433111DB7C343002D5DA5 /* ATlibLogger.h in Headers */,
+				D38433131DB7C343002D5DA5 /* ATlibSysPrinter.h in Headers */,
+				D38433091DB7C343002D5DA5 /* ATgaeWindowInfo.h in Headers */,
+				D38433151DB7C343002D5DA5 /* ATlibVector2.h in Headers */,
+				D384330D1DB7C343002D5DA5 /* ATlibPlatform.h in Headers */,
+				D38433141DB7C343002D5DA5 /* ATlibMatrix.h in Headers */,
+				D38433051DB7C343002D5DA5 /* ATgaeCommon.h in Headers */,
+				D384330A1DB7C343002D5DA5 /* ATgaeWindowManager.h in Headers */,
+				D38433161DB7C343002D5DA5 /* ATlibVector3.h in Headers */,
+				D38433101DB7C343002D5DA5 /* ATlibStream.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D38432D51DB7C30F002D5DA5 /* AKATSUKI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D38432DA1DB7C30F002D5DA5 /* Build configuration list for PBXNativeTarget "AKATSUKI" */;
+			buildPhases = (
+				D38432D21DB7C30F002D5DA5 /* Sources */,
+				D38432D31DB7C30F002D5DA5 /* Frameworks */,
+				D38432D41DB7C30F002D5DA5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AKATSUKI;
+			productName = AKATSUKI;
+			productReference = D38432D61DB7C30F002D5DA5 /* libAKATSUKI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D38432CE1DB7C30F002D5DA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = slowhand;
+				TargetAttributes = {
+					D38432D51DB7C30F002D5DA5 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D38432D11DB7C30F002D5DA5 /* Build configuration list for PBXProject "AKATSUKI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D38432CD1DB7C30F002D5DA5;
+			productRefGroup = D38432D71DB7C30F002D5DA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D38432D51DB7C30F002D5DA5 /* AKATSUKI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D38432D21DB7C30F002D5DA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D38433451DB7C35B002D5DA5 /* ATlibSysUtl.cpp in Sources */,
+				D38433361DB7C35B002D5DA5 /* ATgaeEngine.cpp in Sources */,
+				D38433421DB7C35B002D5DA5 /* ATlibVector4.cpp in Sources */,
+				D38433431DB7C35B002D5DA5 /* ATlibDateUtl.cpp in Sources */,
+				D38433381DB7C35B002D5DA5 /* ATgaeCoreGL.cpp in Sources */,
+				D38433371DB7C35B002D5DA5 /* ATgaeCore.cpp in Sources */,
+				D38433441DB7C35B002D5DA5 /* ATlibStringUtl.cpp in Sources */,
+				D38433411DB7C35B002D5DA5 /* ATlibVector3.cpp in Sources */,
+				D384333D1DB7C35B002D5DA5 /* ATlibLock.cpp in Sources */,
+				D38433401DB7C35B002D5DA5 /* ATlibVector2.cpp in Sources */,
+				D384333A1DB7C35B002D5DA5 /* ATgaeWindowInfo.cpp in Sources */,
+				D384333E1DB7C35B002D5DA5 /* ATlibStream.cpp in Sources */,
+				D384333B1DB7C35B002D5DA5 /* ATgaeWindowManager.cpp in Sources */,
+				D384333C1DB7C35B002D5DA5 /* ATlibFile.cpp in Sources */,
+				D38433391DB7C35B002D5DA5 /* ATgaeImplGL.cpp in Sources */,
+				D384333F1DB7C35B002D5DA5 /* ATlibMatrix.cpp in Sources */,
+				D348504F1DB7CC760085B598 /* ATgaeEngineCreator.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D38432D81DB7C30F002D5DA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D38432D91DB7C30F002D5DA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D38432DB1DB7C30F002D5DA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = ../../src/include;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D38432DC1DB7C30F002D5DA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = ../../src/include;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D38432D11DB7C30F002D5DA5 /* Build configuration list for PBXProject "AKATSUKI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D38432D81DB7C30F002D5DA5 /* Debug */,
+				D38432D91DB7C30F002D5DA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D38432DA1DB7C30F002D5DA5 /* Build configuration list for PBXNativeTarget "AKATSUKI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D38432DB1DB7C30F002D5DA5 /* Debug */,
+				D38432DC1DB7C30F002D5DA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D38432CE1DB7C30F002D5DA5 /* Project object */;
+}

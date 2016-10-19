@@ -2,7 +2,8 @@
 #define __ATGAECOREGL_H__
 #include "ATgae/engine/core/ATgaeCore.h"
 
-#if defined(PLATFORM_IOS) || defined(PLATFORM_MACOS)
+#if defined(PLATFORM_IOS)
+#elif defined(PLATFORM_MACOS)
 #include <OpenGL/OpenGL.h>
 #include <GLUT/GLUT.h>
 #else
@@ -27,7 +28,7 @@ public:
    *
    * @return status code.
    */
-  virtual int initialize();
+  virtual int initialize(int argc, char *argv[]);
 
   /**
    * Finalize.
@@ -35,6 +36,11 @@ public:
    * @return status code.
    */
   virtual int finalize();
+
+  /**
+   * Show main window.
+   */
+  virtual void showWindow();
 
   /**
    * Clear screen.

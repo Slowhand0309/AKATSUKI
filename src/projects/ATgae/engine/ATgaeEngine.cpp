@@ -25,7 +25,7 @@ ATEngine::ATEngine(const EngineType type)
  */
 ATEngine::~ATEngine()
 {
-
+  AT_SAFE_DELETE(ml_pCore);
 }
 
 /**
@@ -33,10 +33,11 @@ ATEngine::~ATEngine()
  *
  * @return status code.
  */
-int ATEngine::initialize()
+int ATEngine::initialize(int argc, char *argv[])
 {
-
-  return AT_OK;
+  int nRet = ml_pCore->initialize(argc, argv);
+  ml_pCore->showWindow();
+  return nRet;
 }
 
 /**

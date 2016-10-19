@@ -11,6 +11,7 @@ objects
 
 # Generate static lib
 lib/*.a
+libAKATSUKI.a
 
 # Mac OS
 .DS_Store
@@ -27,4 +28,3 @@ xcuserdata/
 lib/debug
 lib/release
 *.vcxproj.user
-
