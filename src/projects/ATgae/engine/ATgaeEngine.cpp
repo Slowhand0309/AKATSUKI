@@ -1,5 +1,6 @@
 
 #include "ATgae/engine/ATgaeEngine.h"
+#include "ATgae/engine/core/ATgaeCoreGL.h"
 
 /**
  * Constructor.
@@ -7,6 +8,16 @@
 ATEngine::ATEngine(const EngineType type)
 {
   ml_nType = type;
+
+  // Create core instance.
+  switch (ml_nType) {
+    case EngineType_OpenGL: // use opengl
+      ml_pCore = new ATCoreGL();
+      break;
+
+    case EngineType_DirectX:
+      break;
+  }
 }
 
 /**
@@ -24,6 +35,7 @@ ATEngine::~ATEngine()
  */
 int ATEngine::initialize()
 {
+
   return AT_OK;
 }
 
