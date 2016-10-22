@@ -30,6 +30,13 @@ public:
   virtual int initialize(int argc, char *argv[]);
 
   /**
+   * Set callback via main loop.
+   *
+   * @param func Callback
+   */
+  virtual void setCallback(void(*func)(ATEngine*));
+
+  /**
    * Run.
    * While loop.
    */
@@ -42,16 +49,15 @@ public:
    */
   virtual int finalize();
 
-protected:
-
   /**
    * Execute main logic.
    */
   virtual void execute() = 0;
 
-private:
+protected:
 
   EngineType    ml_nType;
   ATCore*       ml_pCore;
+  void(*ml_pCallback)(ATEngine*);
 };
 #endif // __ATENGINE_H__9224713B_4CDE_5B4C_35F5_71CCC51SS180

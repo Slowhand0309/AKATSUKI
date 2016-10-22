@@ -394,6 +394,7 @@
 				D38432D21DB7C30F002D5DA5 /* Sources */,
 				D38432D31DB7C30F002D5DA5 /* Frameworks */,
 				D38432D41DB7C30F002D5DA5 /* Headers */,
+				D3C047181DBB6A1300F3E032 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -435,6 +436,22 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D3C047181DBB6A1300F3E032 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp $TARGET_BUILD_DIR/$EXECUTABLE_NAME $PROJECT_FILE_PATH/../../../lib/macos/.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D38432D21DB7C30F002D5DA5 /* Sources */ = {

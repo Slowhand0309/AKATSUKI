@@ -10,15 +10,20 @@
 #include "ATgae/engine/ATgaeEngineCreator.h"
 
 
-int main(int argc, char *argv[])
+void onCallback(ATEngine *pEngine)
 {
     ATLogger<ATSysPrinter> logger;
     
     TString message = _T("Hello AKATSUKI\n");
     logger.log(LOG_LEVEL_INFO, message);
-    
+}
+
+int main(int argc, char *argv[])
+{
     ATEngine *pEngine = ATEngineCreator::getEngine();
     pEngine->initialize(argc, argv);
-    
+    pEngine->setCallback(onCallback);
+    pEngine->run();
+    pEngine->finalize();
     return 0;
 }

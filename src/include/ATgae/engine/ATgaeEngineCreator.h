@@ -9,6 +9,9 @@ public:
   // Get engine instance.
   static ATEngine *getEngine();
   
+private:
+
+  static ATEngine *pEngine;
 };
 
 #endif // __ATGAEENGINECREATOR_H__

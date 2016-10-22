@@ -233,7 +233,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/include";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/ATExample/lib";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../lib/macos";
 				OTHER_LDFLAGS = "-lAKATSUKI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -243,7 +243,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/include";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/ATExample/lib";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../lib/macos";
 				OTHER_LDFLAGS = "-lAKATSUKI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

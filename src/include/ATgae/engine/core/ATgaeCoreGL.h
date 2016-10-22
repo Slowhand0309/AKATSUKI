@@ -40,11 +40,17 @@ public:
   /**
    * Show main window.
    */
-  virtual void showWindow();
-
+  virtual void showWindow(ATWindowInfo &windowInfo);
+    
   /**
    * Clear screen.
    */
   virtual void clearScreen();
+
+  /**
+   * Draw teapot sample.
+   */
+  virtual void drawTeapot();
+
 };
 #endif // __ATGAECOREGL_H__

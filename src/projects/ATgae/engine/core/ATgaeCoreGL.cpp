@@ -1,5 +1,15 @@
 #include "ATgae/engine/core/ATgaeCoreGL.h"
+#include "ATgae/engine/ATgaeEngineCreator.h"
 
+// global function.
+// Call when draw.
+void onDraw()
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    ATEngine *pEngine = ATEngineCreator::getEngine();
+    pEngine->execute();
+    glFlush();
+}
 
 ATCoreGL::ATCoreGL()
   : ATCore()
@@ -12,20 +22,11 @@ ATCoreGL::~ATCoreGL()
 
 }
 
-// TODO debug
-void draw(void) {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glutSolidTeapot(0.5);
-    glFlush();
-}
 
 int ATCoreGL::initialize(int argc, char *argv[])
 {
   glutInit(&argc, argv);
-  glutInitWindowSize(600,600);
-  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA | GLUT_DEPTH);
-  glutCreateWindow("Wire_teapot");
-  glutDisplayFunc(draw);
+
   return AT_OK;
 }
 
@@ -35,12 +36,21 @@ int ATCoreGL::finalize()
 }
 
 
-void ATCoreGL::showWindow()
+void ATCoreGL::showWindow(ATWindowInfo &windowInfo)
 {
+  glutInitWindowSize(windowInfo.getDispWidth(), windowInfo.getDispHeight());
+  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA | GLUT_DEPTH);
+  glutCreateWindow(windowInfo.getWindowTitle().c_str());
+  glutDisplayFunc(onDraw);
   glutMainLoop();
 }
 
-void ATCoreGL::clearScreen()
+void ATCoreGL::drawTeapot()
+{
+    glutSolidTeapot(0.5);
+}
+
+void ATCoreGL::clearScreen(void)
 {
   
 }

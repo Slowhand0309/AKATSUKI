@@ -36,8 +36,6 @@ public:
    */
   virtual int finalize();
 
-protected:
-
   /**
    * Execute main logic.
    */

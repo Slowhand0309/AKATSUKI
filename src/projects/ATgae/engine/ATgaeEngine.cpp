@@ -1,6 +1,7 @@
 
 #include "ATgae/engine/ATgaeEngine.h"
 #include "ATgae/engine/core/ATgaeCoreGL.h"
+#include "ATgae/engine/window/ATgaeWindowInfo.h"
 
 /**
  * Constructor.
@@ -36,8 +37,18 @@ ATEngine::~ATEngine()
 int ATEngine::initialize(int argc, char *argv[])
 {
   int nRet = ml_pCore->initialize(argc, argv);
-  ml_pCore->showWindow();
+
   return nRet;
+}
+
+/**
+ * Set callback via main loop.
+ *
+ * @param func Callback
+ */
+void ATEngine::setCallback(void(*func)(ATEngine*))
+{
+  this->ml_pCallback = func;
 }
 
 /**
@@ -46,7 +57,12 @@ int ATEngine::initialize(int argc, char *argv[])
  */
 void ATEngine::run()
 {
-
+  // TODO debug
+  ATWindowInfo info;
+  info.setDispWidth(800);
+  info.setDispHeight(500);
+  info.setWindowTitle(_T("AKATSUKI"));
+  ml_pCore->showWindow(info);
 }
 
 /**
