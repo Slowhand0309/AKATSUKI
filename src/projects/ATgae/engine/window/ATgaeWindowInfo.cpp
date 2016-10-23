@@ -22,6 +22,20 @@ ATWindowInfo::~ATWindowInfo() {
 }
 
 /**
+ * operatorr=.
+ */
+ATWindowInfo &ATWindowInfo::operator=(const ATWindowInfo &obj)
+{
+  this->ml_nHeight = obj.ml_nHeight;
+  this->ml_nWidth = obj.ml_nWidth;
+  this->ml_nDispHeight = obj.ml_nDispHeight;
+  this->ml_nDispWidth = obj.ml_nDispWidth;
+  this->ml_szWindowTitle = obj.ml_szWindowTitle;
+  this->ml_bWindowMode = obj.ml_bWindowMode;
+  return *this;
+}
+
+/**
  * Get height size for client window.
  *
  * @return size

@@ -9,6 +9,7 @@ set(ATGAE_SRC
     engine/window/ATgaeWindowInfo.cpp
     engine/window/ATgaeWindowManager.cpp
     engine/ATgaeEngine.cpp
+    engine/ATgaeEngineCreator.cpp
 )
 
 include_directories(

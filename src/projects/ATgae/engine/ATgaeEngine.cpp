@@ -52,17 +52,23 @@ void ATEngine::setCallback(void(*func)(ATEngine*))
 }
 
 /**
+ * Set window information.
+ *
+ * @param info ATWindowInfo
+ */
+void ATEngine::setWindowInfo(const ATWindowInfo &info)
+{
+  ml_WindowInfo = info;
+}
+
+/**
  * Run.
  * While loop.
  */
 void ATEngine::run()
 {
-  // TODO debug
-  ATWindowInfo info;
-  info.setDispWidth(800);
-  info.setDispHeight(500);
-  info.setWindowTitle(_T("AKATSUKI"));
-  ml_pCore->showWindow(info);
+  // Show window.
+  ml_pCore->showWindow(ml_WindowInfo);
 }
 
 /**

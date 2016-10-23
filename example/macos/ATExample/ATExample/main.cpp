@@ -13,16 +13,24 @@
 void onCallback(ATEngine *pEngine)
 {
     ATLogger<ATSysPrinter> logger;
-    
+
     TString message = _T("Hello AKATSUKI\n");
     logger.log(LOG_LEVEL_INFO, message);
 }
 
 int main(int argc, char *argv[])
 {
+    // Create Window info.
+    ATWindowInfo info;
+    info.setDispWidth(640);
+    info.setDispHeight(480);
+    info.setWindowTitle(_T("AKATSUKI"));
+
+    // Create engine and run.
     ATEngine *pEngine = ATEngineCreator::getEngine();
     pEngine->initialize(argc, argv);
     pEngine->setCallback(onCallback);
+    pEngine->setWindowInfo(info);
     pEngine->run();
     pEngine->finalize();
     return 0;

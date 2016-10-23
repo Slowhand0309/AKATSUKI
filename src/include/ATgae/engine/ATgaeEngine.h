@@ -2,6 +2,7 @@
 #define __ATENGINE_H__9224713B_4CDE_5B4C_35F5_71CCC51SS180
 #include "ATgae/engine/com/ATgaeCommon.h"
 #include "ATgae/engine/core/ATgaeCore.h"
+#include "ATgae/engine/window/ATgaeWindowInfo.h"
 
 #if _MSC_VER > 1000
 #pragma once
@@ -34,7 +35,14 @@ public:
    *
    * @param func Callback
    */
-  virtual void setCallback(void(*func)(ATEngine*));
+  void setCallback(void(*func)(ATEngine*));
+
+  /**
+   * Set window information.
+   *
+   * @param info ATWindowInfo
+   */
+  void setWindowInfo(const ATWindowInfo &info);
 
   /**
    * Run.
@@ -58,6 +66,7 @@ protected:
 
   EngineType    ml_nType;
   ATCore*       ml_pCore;
+  ATWindowInfo  ml_WindowInfo;
   void(*ml_pCallback)(ATEngine*);
 };
 #endif // __ATENGINE_H__9224713B_4CDE_5B4C_35F5_71CCC51SS180

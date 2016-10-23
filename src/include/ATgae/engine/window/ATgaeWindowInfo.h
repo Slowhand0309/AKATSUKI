@@ -38,6 +38,11 @@ public:
 	virtual ~ATWindowInfo();
 
 	/**
+	 * operator= .
+	 */
+	ATWindowInfo &operator=(const ATWindowInfo &obj);
+
+	/**
 	 * Get height size for client window.
 	 *
 	 * @return size
