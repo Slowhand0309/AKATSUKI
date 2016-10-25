@@ -14,7 +14,7 @@ void onCallback(ATEngine *pEngine)
 {
     ATLogger<ATSysPrinter> logger;
 
-    TString message = _T("Hello AKATSUKI\n");
+    TString message = _T("Hello AKATSUKI");
     logger.log(LOG_LEVEL_INFO, message);
 }
 

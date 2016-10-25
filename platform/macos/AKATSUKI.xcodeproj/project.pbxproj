@@ -48,6 +48,7 @@
 		D38433431DB7C35B002D5DA5 /* ATlibDateUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433331DB7C35B002D5DA5 /* ATlibDateUtl.cpp */; };
 		D38433441DB7C35B002D5DA5 /* ATlibStringUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433341DB7C35B002D5DA5 /* ATlibStringUtl.cpp */; };
 		D38433451DB7C35B002D5DA5 /* ATlibSysUtl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D38433351DB7C35B002D5DA5 /* ATlibSysUtl.cpp */; };
+		D3EED2331DBFB58C00550A3A /* ATgaeLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EED2321DBFB58C00550A3A /* ATgaeLog.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,8 @@
 		D38433331DB7C35B002D5DA5 /* ATlibDateUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibDateUtl.cpp; sourceTree = "<group>"; };
 		D38433341DB7C35B002D5DA5 /* ATlibStringUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibStringUtl.cpp; sourceTree = "<group>"; };
 		D38433351DB7C35B002D5DA5 /* ATlibSysUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibSysUtl.cpp; sourceTree = "<group>"; };
+		D3EED2311DBFB57C00550A3A /* ATgaeLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATgaeLog.h; path = debugger/ATgaeLog.h; sourceTree = "<group>"; };
+		D3EED2321DBFB58C00550A3A /* ATgaeLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATgaeLog.cpp; path = debugger/ATgaeLog.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D30366071DBFB51000A62C4D /* debugger */ = {
+			isa = PBXGroup;
+			children = (
+				D3EED2311DBFB57C00550A3A /* ATgaeLog.h */,
+			);
+			name = debugger;
+			sourceTree = "<group>";
+		};
+		D30366081DBFB51700A62C4D /* debugger */ = {
+			isa = PBXGroup;
+			children = (
+				D3EED2321DBFB58C00550A3A /* ATgaeLog.cpp */,
+			);
+			name = debugger;
+			sourceTree = "<group>";
+		};
 		D38432CD1DB7C30F002D5DA5 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +163,7 @@
 		D38432DF1DB7C342002D5DA5 /* ATgae */ = {
 			isa = PBXGroup;
 			children = (
+				D30366071DBFB51000A62C4D /* debugger */,
 				D38432E01DB7C342002D5DA5 /* engine */,
 			);
 			name = ATgae;
@@ -264,6 +284,7 @@
 		D384331B1DB7C35B002D5DA5 /* ATgae */ = {
 			isa = PBXGroup;
 			children = (
+				D30366081DBFB51700A62C4D /* debugger */,
 				D384331D1DB7C35B002D5DA5 /* engine */,
 			);
 			name = ATgae;
@@ -471,6 +492,7 @@
 				D384333A1DB7C35B002D5DA5 /* ATgaeWindowInfo.cpp in Sources */,
 				D384333E1DB7C35B002D5DA5 /* ATlibStream.cpp in Sources */,
 				D384333B1DB7C35B002D5DA5 /* ATgaeWindowManager.cpp in Sources */,
+				D3EED2331DBFB58C00550A3A /* ATgaeLog.cpp in Sources */,
 				D384333C1DB7C35B002D5DA5 /* ATlibFile.cpp in Sources */,
 				D38433391DB7C35B002D5DA5 /* ATgaeImplGL.cpp in Sources */,
 				D384333F1DB7C35B002D5DA5 /* ATlibMatrix.cpp in Sources */,
@@ -573,6 +595,7 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = ../../src/include;
+				OTHER_CFLAGS = "-D_DEBUG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -582,6 +605,7 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = ../../src/include;
+				OTHER_CFLAGS = "-D_DEBUG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

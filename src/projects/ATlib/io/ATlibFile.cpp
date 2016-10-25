@@ -115,7 +115,7 @@ int ATFile::open(const TString &szName, const enum OpenMode eMode, const enum Sp
     }
 #elif defined(PLATFORM_ANDROID)
 #endif
-    
+
 	try {
 		/* file open */
 		ml_pFile = _tfopen(tsPath.c_str(), szMode.c_str());

@@ -106,16 +106,38 @@
 #define ATSleep(t)                     Sleep(1000 * t) /* Sleep(sec)     */
 #define AT_INVALID_HANDLE              NULL            /* Invalid handle */
 
-#ifndef TRACE
-#define TRACE(str, ...) \
+#ifndef TRACEV
+#ifdef _DEBUG
+#define TRACEV(fmt, ...) \
 		{ \
 			TCHAR c[_MAX_PATH] = {0}; \
 			TCHAR fin[_MAX_PATH] = {0}; \
-			_stprintf(c, str, __VA_ARGS__); \
-			_stprintf(fin, _T("File:[%ls]\nLine:[%d]\nMsg:[%ls]\n"), _T(__FILE__), __LINE__, c); \
+			_stprintf(c, fmt, __VA_ARGS__); \
+			_stprintf(fin, _T("File:[%ls(%d)]\nMsg:[%ls]\n"), _T(__FILE__), __LINE__, c); \
 			OutputDebugString( fin ); \
 		}
+#else
+#define TRACEV(fmt, ...) \
+		{ \
+			OutputDebugString(fmt, __VA_ARGS__); \
+		}
+#endif // _DEBUG
+#endif // TRACEV
 
+#ifndef TRACE
+#ifdef _DEBUG
+#define TRACE(message) \
+		{ \
+			TCHAR fin[_MAX_PATH] = {0}; \
+			_stprintf(fin, _T("File:[%ls(%d)]\nMsg:[%ls]\n"), _T(__FILE__), __LINE__, message); \
+			OutputDebugString(fin); \
+		}
+#else
+#define TRACE(message) \
+		{ \
+			OutputDebugString(message);
+		}
+#endif // _DEBUG
 #endif // TRACE
 
 #else
@@ -184,7 +206,6 @@ typedef long                 HRESULT;
 #define __T(x)              x
 #define TCHAR               char
 #define _TCHAR              char
-#define _stprintf           sprintf
 #define _tsetlocale         setlocale
 #define _vstprintf_s        vsprintf_l
 #define _ftprintf_s         fprintf
@@ -308,13 +329,46 @@ typedef long                 HRESULT;
 #define ZeroMemory(Destination,Length)       memset((Destination),0,(Length))
 
 
-#ifndef TRACE
-#define TRACE( str, ... ) \
+#ifndef TRACEV
+#ifdef _DEBUG
+#define TRACEV(fmt, ...) \
 		{ \
-			printf( str ); \
+			TCHAR c[_MAX_PATH] = {0}; \
+			TCHAR fin[_MAX_PATH] = {0}; \
+			va_list vaList; \
+			va_start(vaList, fmt); \
+			_vstprintf(c, fmt, vaList); \
+			va_end(vaList); \
+			_stprintf(fin, _T("File:[%s(%d)]\nMsg:[%s]"), _T(__FILE__), __LINE__, c); \
+			puts(fin); \
 		}
+#else
+#define TRACEV(fmt, ...) \
+		{ \
+			va_list vaList; \
+			va_start(vaList, fmt); \
+			_vtprintf(fmt, vaList); \
+			va_end(vaList); \
+		}
+#endif // _DEBUG
+#endif // TRACEV
 
+#ifndef TRACE
+#ifdef _DEBUG
+#define TRACE(message) \
+		{ \
+			TCHAR fin[_MAX_PATH] = {0}; \
+			_stprintf(fin, _T("File:[%s(%d)]\nMsg:[%s]"), _T(__FILE__), __LINE__, message); \
+			puts(fin); \
+		}
+#else
+#define TRACE(message) \
+		{ \
+			puts(message); \
+		}
+#endif // _DEBUG
 #endif // TRACE
+
 #endif // PLATFORM_WINDOWS
 
 /* ----- common typedef ----- */

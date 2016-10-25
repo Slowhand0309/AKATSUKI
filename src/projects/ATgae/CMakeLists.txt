@@ -10,6 +10,7 @@ set(ATGAE_SRC
     engine/window/ATgaeWindowManager.cpp
     engine/ATgaeEngine.cpp
     engine/ATgaeEngineCreator.cpp
+    debugger/ATgaeLog.cpp
 )
 
 include_directories(

@@ -234,6 +234,7 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/include";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../lib/macos";
+				OTHER_CFLAGS = "-D_DEBUG";
 				OTHER_LDFLAGS = "-lAKATSUKI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -244,6 +245,7 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/include";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../lib/macos";
+				OTHER_CFLAGS = "-D_DEBUG";
 				OTHER_LDFLAGS = "-lAKATSUKI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
