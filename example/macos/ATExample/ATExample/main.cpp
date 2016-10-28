@@ -6,14 +6,14 @@
 //  Copyright © 2016年 Slowhand0309. All rights reserved.
 //
 #include "ATlib/log/ATlibLogger.h"
-#include "ATlib/log/ATlibSysPrinter.h"
+#include "ATlib/log/ATlibFilePrinter.h"
 #include "ATgae/engine/ATgaeEngineCreator.h"
 
 
 void onCallback(ATEngine *pEngine)
 {
-    ATLogger<ATSysPrinter> logger;
-
+    ATLogger<ATFilePrinter> logger;
+    logger.setFile(_T("file.log"));
     TString message = _T("Hello AKATSUKI");
     logger.log(LOG_LEVEL_INFO, message);
 }

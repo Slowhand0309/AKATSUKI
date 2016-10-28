@@ -190,7 +190,7 @@ int ATFile::write(LPCVOID pData, size_t uiSize)
  */
 int ATFile::write(const TString &szData, ...)
 {
-	if (!ATStringUtl::isEmpty(szData)) {
+	if (ATStringUtl::isEmpty(szData)) {
 		return AT_ERR_ARGUMENTS;
 	}
 

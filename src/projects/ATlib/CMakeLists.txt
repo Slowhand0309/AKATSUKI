@@ -6,6 +6,7 @@ set(ATLIB_SRC
     io/ATlibFile.cpp
     io/ATlibLock.cpp
     io/ATlibStream.cpp
+    log/ATlibFilePrinter.cpp
     utl/ATlibStringUtl.cpp
     utl/ATlibSysUtl.cpp
     utl/ATlibDateUtl.cpp

@@ -34,7 +34,7 @@ void ATLock::createHandle()
 	ml_hLockHandle = CreateMutex(0, TRUE, NULL);
 #endif // PLATFORM_WINDOWS
 
-#if defined(PLATFORM_LINUX) || defined(PLATFORM_IOS)
+#if defined(PLATFORM_LINUX) || defined(PLATFORM_IOS) || defined(PLATFORM_MACOS)
 	/* Create semaphore */
 	ml_hLockHandle = semget((key_t)1111, 1, 0666 | IPC_CREAT);
 	if (ml_hLockHandle != AT_INVALID_HANDLE) {
@@ -60,7 +60,7 @@ void ATLock::deleteHandle()
 	}
 #endif // PLATFORM_WINDOWS
 
-#if defined(PLATFORM_LINUX) || defined(PLATFORM_IOS)
+#if defined(PLATFORM_LINUX) || defined(PLATFORM_IOS) || defined(PLATFORM_MACOS)
 	if (ml_hLockHandle != AT_INVALID_HANDLE) {
 		union semuni semunion;
 		if (semctl(ml_hLockHandle, 0, IPC_RMID, semunion) == -1) {
@@ -95,7 +95,7 @@ int ATLock::lock()
 	}
 #endif // PLATFORM_WINDOWS
 
-#if defined(PLATFORM_LINUX) || defined(PLATFORM_IOS)
+#if defined(PLATFORM_LINUX) || defined(PLATFORM_IOS) || defined(PLATFORM_MACOS)
 
 	/* semaphore lock */
 	ml_stSemb.sem_num = 0;
@@ -124,7 +124,7 @@ void ATLock::unlock()
 	ReleaseMutex(ml_hLockHandle);
 #endif // PLATFORM_WINDOWS
 
-#if defined(PLATFORM_LINUX) || defined(PLATFORM_IOS)
+#if defined(PLATFORM_LINUX) || defined(PLATFORM_IOS) || defined(PLATFORM_MACOS)
 	ml_stSemb.sem_op = 1;
 	if (semop(ml_hLockHandle, &ml_stSemb, 1) == -1) {
 		TRACE(_T("ATLock unlock() semop failed."));
