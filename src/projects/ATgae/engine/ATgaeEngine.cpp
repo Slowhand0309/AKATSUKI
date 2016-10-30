@@ -19,6 +19,8 @@ ATEngine::ATEngine(const EngineType type)
     case EngineType_DirectX:
       break;
   }
+
+  ml_pLog = ATLog::getInstance();
 }
 
 /**

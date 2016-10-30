@@ -19,9 +19,22 @@ void ATLog::Release()
   }
 }
 
+// Set log file.
+void ATLog::setFileName(const TString &logFile)
+{
+  ml_Logger.setFile(logFile);
+}
+
+// Log out.
+void ATLog::log(int level, const TString &message)
+{
+  ml_Logger.log(level, message);
+}
+
 // Constructor.
 ATLog::ATLog()
 {
+  ml_Logger.setFile(DEFAULT_LOGFILE);
 }
 
 // Destructor.
