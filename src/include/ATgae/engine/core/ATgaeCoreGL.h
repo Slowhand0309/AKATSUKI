@@ -41,7 +41,7 @@ public:
    * Show main window.
    */
   virtual void showWindow(ATWindowInfo &windowInfo);
-    
+
   /**
    * Clear screen.
    */

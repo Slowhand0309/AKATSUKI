@@ -11,6 +11,23 @@ void onDraw()
     glFlush();
 }
 
+// Call when hit keyboard.
+void onKeyboard(unsigned char key , int x , int y)
+{
+
+}
+
+void onSpecialKeyboard(int key, int x, int y)
+{
+  switch (key) {
+    case GLUT_KEY_UP:
+      printf("GLUT_KEY_UP");
+      break;
+    default:
+      break;
+  }
+}
+
 ATCoreGL::ATCoreGL()
   : ATCore()
 {
@@ -42,6 +59,8 @@ void ATCoreGL::showWindow(ATWindowInfo &windowInfo)
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA | GLUT_DEPTH);
   glutCreateWindow(windowInfo.getWindowTitle().c_str());
   glutDisplayFunc(onDraw);
+  glutKeyboardFunc(onKeyboard);
+  glutSpecialFunc(onSpecialKeyboard);
   glutMainLoop();
 }
 
@@ -52,5 +71,5 @@ void ATCoreGL::drawTeapot()
 
 void ATCoreGL::clearScreen(void)
 {
-  
+
 }
