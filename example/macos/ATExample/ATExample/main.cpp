@@ -12,10 +12,7 @@
 
 void onCallback(ATEngine *pEngine)
 {
-    ATLogger<ATFilePrinter> logger;
-    logger.setFile(_T("file.log"));
-    TString message = _T("Hello AKATSUKI");
-    logger.log(LOG_LEVEL_INFO, message);
+
 }
 
 int main(int argc, char *argv[])

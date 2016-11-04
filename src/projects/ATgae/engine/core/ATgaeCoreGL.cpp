@@ -14,18 +14,19 @@ void onDraw()
 // Call when hit keyboard.
 void onKeyboard(unsigned char key , int x , int y)
 {
+    switch (key) {
+        case 27:
+            exit(0);
+            break;
 
+        default:
+            break;
+    }
 }
 
 void onSpecialKeyboard(int key, int x, int y)
 {
-  switch (key) {
-    case GLUT_KEY_UP:
-      printf("GLUT_KEY_UP");
-      break;
-    default:
-      break;
-  }
+
 }
 
 ATCoreGL::ATCoreGL()
