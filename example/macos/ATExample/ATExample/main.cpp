@@ -19,8 +19,8 @@ int main(int argc, char *argv[])
 {
     // Create Window info.
     ATWindowInfo info;
-    info.setDispWidth(640);
-    info.setDispHeight(480);
+    info.setWidth(640);
+    info.setHeight(480);
     info.setWindowTitle(_T("AKATSUKI"));
 
     // Create engine and run.

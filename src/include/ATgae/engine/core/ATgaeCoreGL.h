@@ -5,7 +5,7 @@
 #if defined(PLATFORM_IOS)
 #elif defined(PLATFORM_MACOS)
 #include <OpenGL/OpenGL.h>
-#include <GLUT/GLUT.h>
+#include <external/GLFW/glfw3.h>
 #else
 #endif
 

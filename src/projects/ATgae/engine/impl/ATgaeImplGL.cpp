@@ -39,5 +39,4 @@ int ATImplGL::finalize()
 void ATImplGL::execute()
 {
   ml_pCallback(this);
-  ml_pCore->drawTeapot(); // TODO debug
 }

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3DEF0B11DD6003F003918DA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DEF0B01DD6003F003918DA /* IOKit.framework */; };
+		D3DEF0B31DD60047003918DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DEF0B21DD60047003918DA /* Cocoa.framework */; };
+		D3DEF0B51DD60081003918DA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DEF0B41DD60081003918DA /* CoreVideo.framework */; };
 		D3EBBD961DB7C1870066AB3E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EBBD951DB7C1870066AB3E /* main.cpp */; };
-		D3EBBD9F1DB7C1D80066AB3E /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EBBD9D1DB7C1D80066AB3E /* GLUT.framework */; };
 		D3EBBDA01DB7C1D80066AB3E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EBBD9E1DB7C1D80066AB3E /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D3DEF0B01DD6003F003918DA /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		D3DEF0B21DD60047003918DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D3DEF0B41DD60081003918DA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		D3EBBD921DB7C1870066AB3E /* ATExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ATExample; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EBBD951DB7C1870066AB3E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D3EBBD9D1DB7C1D80066AB3E /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -36,7 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3EBBD9F1DB7C1D80066AB3E /* GLUT.framework in Frameworks */,
+				D3DEF0B51DD60081003918DA /* CoreVideo.framework in Frameworks */,
+				D3DEF0B31DD60047003918DA /* Cocoa.framework in Frameworks */,
+				D3DEF0B11DD6003F003918DA /* IOKit.framework in Frameworks */,
 				D3EBBDA01DB7C1D80066AB3E /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +79,9 @@
 		D3EBBD9C1DB7C1D80066AB3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3DEF0B41DD60081003918DA /* CoreVideo.framework */,
+				D3DEF0B21DD60047003918DA /* Cocoa.framework */,
+				D3DEF0B01DD6003F003918DA /* IOKit.framework */,
 				D3EBBD9D1DB7C1D80066AB3E /* GLUT.framework */,
 				D3EBBD9E1DB7C1D80066AB3E /* OpenGL.framework */,
 			);
@@ -232,10 +242,18 @@
 		D3EBBD9A1DB7C1870066AB3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/include";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../lib/macos";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../lib/macos",
+					"$(SRCROOT)/../../../lib/external",
+				);
 				OTHER_CFLAGS = "-D_DEBUG";
-				OTHER_LDFLAGS = "-lAKATSUKI";
+				OTHER_LDFLAGS = (
+					"-lAKATSUKI",
+					"-lglfw3",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -243,10 +261,18 @@
 		D3EBBD9B1DB7C1870066AB3E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../src/include";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../lib/macos";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../lib/macos",
+					"$(SRCROOT)/../../../lib/external",
+				);
 				OTHER_CFLAGS = "-D_DEBUG";
-				OTHER_LDFLAGS = "-lAKATSUKI";
+				OTHER_LDFLAGS = (
+					"-lAKATSUKI",
+					"-lglfw3",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

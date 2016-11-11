@@ -43,31 +43,42 @@ ATCoreGL::~ATCoreGL()
 
 int ATCoreGL::initialize(int argc, char *argv[])
 {
-  glutInit(&argc, argv);
+  glfwInit();
 
   return AT_OK;
 }
 
 int ATCoreGL::finalize()
 {
+  glfwTerminate();
   return AT_OK;
 }
 
 
 void ATCoreGL::showWindow(ATWindowInfo &windowInfo)
 {
-  glutInitWindowSize(windowInfo.getDispWidth(), windowInfo.getDispHeight());
-  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA | GLUT_DEPTH);
-  glutCreateWindow(windowInfo.getWindowTitle().c_str());
-  glutDisplayFunc(onDraw);
-  glutKeyboardFunc(onKeyboard);
-  glutSpecialFunc(onSpecialKeyboard);
-  glutMainLoop();
+  unsigned int width = windowInfo.getWidth();
+  unsigned int height = windowInfo.getHeight();
+  TString title = windowInfo.getWindowTitle();
+
+  GLFWwindow* window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
+  glfwMakeContextCurrent(window);
+
+  while (!glfwWindowShouldClose(window))
+  {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    ATEngine *pEngine = ATEngineCreator::getEngine();
+    pEngine->execute();
+
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+  }
 }
 
 void ATCoreGL::drawTeapot()
 {
-    glutSolidTeapot(0.5);
+    //glutSolidTeapot(0.5);
 }
 
 void ATCoreGL::clearScreen(void)

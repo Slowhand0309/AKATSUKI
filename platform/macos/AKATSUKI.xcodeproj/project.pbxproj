@@ -95,6 +95,8 @@
 		D38433331DB7C35B002D5DA5 /* ATlibDateUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibDateUtl.cpp; sourceTree = "<group>"; };
 		D38433341DB7C35B002D5DA5 /* ATlibStringUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibStringUtl.cpp; sourceTree = "<group>"; };
 		D38433351DB7C35B002D5DA5 /* ATlibSysUtl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATlibSysUtl.cpp; sourceTree = "<group>"; };
+		D3DEF0AE1DD5F469003918DA /* glfw3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
+		D3DEF0AF1DD5F469003918DA /* glfw3native.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
 		D3E2F57E1DC3694800166E89 /* ATlibFilePrinter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATlibFilePrinter.h; sourceTree = "<group>"; };
 		D3E2F5801DC3696E00166E89 /* ATlibFilePrinter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ATlibFilePrinter.cpp; path = log/ATlibFilePrinter.cpp; sourceTree = "<group>"; };
 		D3EED2311DBFB57C00550A3A /* ATgaeLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ATgaeLog.h; path = debugger/ATgaeLog.h; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		D38432DD1DB7C319002D5DA5 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				D3DEF0AC1DD5F452003918DA /* external */,
 				D38432DF1DB7C342002D5DA5 /* ATgae */,
 				D38432ED1DB7C342002D5DA5 /* ATlib */,
 			);
@@ -374,6 +377,24 @@
 				D38433351DB7C35B002D5DA5 /* ATlibSysUtl.cpp */,
 			);
 			path = utl;
+			sourceTree = "<group>";
+		};
+		D3DEF0AC1DD5F452003918DA /* external */ = {
+			isa = PBXGroup;
+			children = (
+				D3DEF0AD1DD5F469003918DA /* GLFW */,
+			);
+			name = external;
+			sourceTree = "<group>";
+		};
+		D3DEF0AD1DD5F469003918DA /* GLFW */ = {
+			isa = PBXGroup;
+			children = (
+				D3DEF0AE1DD5F469003918DA /* glfw3.h */,
+				D3DEF0AF1DD5F469003918DA /* glfw3native.h */,
+			);
+			name = GLFW;
+			path = ../../src/include/external/GLFW;
 			sourceTree = "<group>";
 		};
 		D3E2F57F1DC3695400166E89 /* log */ = {
@@ -609,7 +630,9 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = ../../src/include;
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-D_DEBUG";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -619,7 +642,9 @@
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = ../../src/include;
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-D_DEBUG";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
