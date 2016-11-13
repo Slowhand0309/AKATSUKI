@@ -14,7 +14,9 @@
  */
 void onCallback()
 {
-
+    TRACE(_T("Say Hello"));
+    TRACE(_T("Arg1 [%d]"), 1);
+    TRACE(_T("Arg2 [%s]"), _T("aa"));
 }
 
 int main(int argc, char *argv[])

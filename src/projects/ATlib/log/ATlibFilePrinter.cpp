@@ -28,6 +28,7 @@ void ATFilePrinter::print(int level, const TString &message)
     // Level.
     TString levelString = toLevelString(level);
 
-    ml_File.write(_T("%s %s %s\n"), date.c_str(), levelString.c_str(), message.c_str());
+    ml_File.write(_T("%s %s %s\n"), date.c_str(),
+              levelString.c_str(), message.c_str());
   }
 }

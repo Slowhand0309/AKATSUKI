@@ -32,7 +32,7 @@ public:
   void setFileName(const TString &logFile);
 
   // Log out.
-  void log(int level, const TString &message);
+  void log(int level, const TString &message, ...);
 private:
 
   // Constructor.

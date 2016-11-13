@@ -30,7 +30,7 @@ public:
 	virtual void setFile(const TString &fileName) {
 	};
 
-	virtual void print(int level, const TString &message) = 0; // TODO arg
+	virtual void print(int level, const TString &message) = 0;
 
 protected:
 

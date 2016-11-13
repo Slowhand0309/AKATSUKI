@@ -112,36 +112,24 @@
 #define ATSleep(t)                     Sleep(1000 * t) /* Sleep(sec)     */
 #define AT_INVALID_HANDLE              NULL            /* Invalid handle */
 
-#ifndef TRACEV
-#ifdef _DEBUG
-#define TRACEV(fmt, ...) \
-		{ \
-			TCHAR c[_MAX_PATH] = {0}; \
-			TCHAR fin[_MAX_PATH] = {0}; \
-			_stprintf(c, fmt, __VA_ARGS__); \
-			_stprintf(fin, _T("File:[%ls(%d)]\nMsg:[%ls]\n"), _T(__FILE__), __LINE__, c); \
-			OutputDebugString( fin ); \
-		}
-#else
-#define TRACEV(fmt, ...) \
-		{ \
-			OutputDebugString(fmt, __VA_ARGS__); \
-		}
-#endif // _DEBUG
-#endif // TRACEV
 
 #ifndef TRACE
 #ifdef _DEBUG
-#define TRACE(message) \
+#define TRACE(...) \
 		{ \
-			TCHAR fin[_MAX_PATH] = {0}; \
-			_stprintf(fin, _T("File:[%ls(%d)]\nMsg:[%ls]\n"), _T(__FILE__), __LINE__, message); \
+			TCHAR str[_MAX_PATH] = {0}; \
+			TCHAR info[_MAX_PATH] = {0}; \
+			_stprintf(str, __VA_ARGS__); \
+			OutputDebugString(str); \
+			_stprintf(info, _T("\n %ls(%d)\n"), _T(__FILE__), __LINE__); \
 			OutputDebugString(fin); \
 		}
 #else
-#define TRACE(message) \
+#define TRACE(...) \
 		{ \
-			OutputDebugString(message);
+			TCHAR str[_MAX_PATH] = {0}; \
+			_stprintf(str, __VA_ARGS__); \
+			OutputDebugString(str); \
 		}
 #endif // _DEBUG
 #endif // TRACE
@@ -335,42 +323,18 @@ typedef long                 HRESULT;
 #define ZeroMemory(Destination,Length)       memset((Destination),0,(Length))
 
 
-#ifndef TRACEV
-#ifdef _DEBUG
-#define TRACEV(fmt, ...) \
-		{ \
-			TCHAR c[_MAX_PATH] = {0}; \
-			TCHAR fin[_MAX_PATH] = {0}; \
-			va_list vaList; \
-			va_start(vaList, fmt); \
-			_vstprintf(c, fmt, vaList); \
-			va_end(vaList); \
-			_stprintf(fin, _T("File:[%s(%d)]\nMsg:[%s]"), _T(__FILE__), __LINE__, c); \
-			puts(fin); \
-		}
-#else
-#define TRACEV(fmt, ...) \
-		{ \
-			va_list vaList; \
-			va_start(vaList, fmt); \
-			_vtprintf(fmt, vaList); \
-			va_end(vaList); \
-		}
-#endif // _DEBUG
-#endif // TRACEV
-
 #ifndef TRACE
 #ifdef _DEBUG
-#define TRACE(message) \
+#define TRACE(...) \
 		{ \
-			TCHAR fin[_MAX_PATH] = {0}; \
-			_stprintf(fin, _T("File:[%s(%d)]\nMsg:[%s]"), _T(__FILE__), __LINE__, message); \
-			puts(fin); \
+			_tprintf(__VA_ARGS__); \
+			_tprintf(_T("\n%s(%d)\n"), _T(__FILE__), __LINE__); \
 		}
 #else
-#define TRACE(message) \
+#define TRACE(...) \
 		{ \
-			puts(message); \
+			_tprintf(__VA_ARGS__); \
+			_tprintf("\n"); \
 		}
 #endif // _DEBUG
 #endif // TRACE

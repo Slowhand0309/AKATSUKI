@@ -40,7 +40,7 @@ ATEngine::~ATEngine()
  */
 int ATEngine::initialize(int argc, char *argv[])
 {
-  ml_pLog->log(LOG_LEVEL_INFO, _T("ATEngine::initialize"));
+  ml_pLog->log(LOG_LEVEL_INFO, _T("ATEngine::initialize argc[%d]"), argc);
   int nRet = ml_pCore->initialize(argc, argv);
 
   return nRet;

@@ -26,9 +26,15 @@ void ATLog::setFileName(const TString &logFile)
 }
 
 // Log out.
-void ATLog::log(int level, const TString &message)
+void ATLog::log(int level, const TString &message, ...)
 {
-  ml_Logger.log(level, message);
+  TCHAR dest[_MAX_PATH] = {0};
+  va_list args;
+  va_start(args, message.size());
+  _vstprintf(dest, message.c_str(), args);
+  va_end(args);
+
+  ml_Logger.log(level, TString(dest));
 }
 
 // Constructor.
