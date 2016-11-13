@@ -43,6 +43,13 @@ public:
   virtual void showWindow(ATWindowInfo &windowInfo);
 
   /**
+   * Main loop.
+   *
+   * @param func Callback function.
+   */
+  virtual void mainLoop(void(*func)());
+
+  /**
    * Clear screen.
    */
   virtual void clearScreen();
@@ -52,5 +59,8 @@ public:
    */
   virtual void drawTeapot();
 
+private:
+  GLFWwindow *ml_pWindow;
+  
 };
 #endif // __ATGAECOREGL_H__

@@ -9,8 +9,10 @@
 #include "ATlib/log/ATlibFilePrinter.h"
 #include "ATgae/engine/ATgaeEngineCreator.h"
 
-
-void onCallback(ATEngine *pEngine)
+/**
+ * Call when main loop.
+ */
+void onCallback()
 {
 
 }
@@ -25,7 +27,10 @@ int main(int argc, char *argv[])
 
     // Create engine and run.
     ATEngine *pEngine = ATEngineCreator::getEngine();
-    pEngine->initialize(argc, argv);
+    if (pEngine->initialize(argc, argv) != AT_OK) {
+        fprintf(stderr, "ATEngine initialize error.");
+        return -1;
+    }
     pEngine->setCallback(onCallback);
     pEngine->setWindowInfo(info);
     pEngine->run();

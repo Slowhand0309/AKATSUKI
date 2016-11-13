@@ -18,6 +18,12 @@
 #define AT_ERR_NOTFOUND           (0x90000006)    /* Not found resources */
 #define AT_ERR_SETTINGS           (0x90000007)    /* Settings error      */
 
+/* ----- about opengl ----- */
+#define AT_ERR_OPENGL_INIT        (0x90001000)    /* OpenGL init error   */
+
+/* ----- about directx ----- */
+#define AT_ERR_DIRECTX_INIT       (0x90010000)    /* DirectX init error  */
+
 #define AT_SAFE_DELETE(p)         { if (p) { delete (p);      (p)=NULL; } } /* Safe delete       */
 #define AT_SAFE_RELEASE(p)        { if (p) { (p)->Release();  (p)=NULL; } } /* Safe Release      */
 #define AT_SAFE_DELETE_ARRAY(p)   { if (p) { delete[] (p);    (p)=NULL; } } /* Safe delete array */

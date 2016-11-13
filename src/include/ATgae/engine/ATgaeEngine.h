@@ -35,7 +35,7 @@ public:
    *
    * @param func Callback
    */
-  void setCallback(void(*func)(ATEngine*));
+  void setCallback(void(*func)());
 
   /**
    * Set window information.
@@ -57,17 +57,12 @@ public:
    */
   virtual int finalize();
 
-  /**
-   * Execute main logic.
-   */
-  virtual void execute() = 0;
-
 protected:
 
   ATLog*        ml_pLog;
   EngineType    ml_nType;
   ATCore*       ml_pCore;
   ATWindowInfo  ml_WindowInfo;
-  void(*ml_pCallback)(ATEngine*);
+  void(*ml_pCallback)();
 };
 #endif // __ATENGINE_H__9224713B_4CDE_5B4C_35F5_71CCC51SS180

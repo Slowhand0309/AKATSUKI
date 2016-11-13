@@ -42,6 +42,13 @@ public:
   virtual void showWindow(ATWindowInfo &windowInfo) = 0;
 
   /**
+   * Main loop.
+   *
+   * @param func Callback function.
+   */
+  virtual void mainLoop(void(*func)()) = 0;
+
+  /**
    * Clear screen.
    */
   virtual void clearScreen() = 0;

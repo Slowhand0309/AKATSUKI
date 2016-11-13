@@ -51,7 +51,7 @@ int ATEngine::initialize(int argc, char *argv[])
  *
  * @param func Callback
  */
-void ATEngine::setCallback(void(*func)(ATEngine*))
+void ATEngine::setCallback(void(*func)())
 {
   this->ml_pCallback = func;
 }
@@ -74,6 +74,9 @@ void ATEngine::run()
 {
   // Show window.
   ml_pCore->showWindow(ml_WindowInfo);
+
+  // Do main loop.
+  ml_pCore->mainLoop(ml_pCallback);
 }
 
 /**
