@@ -1,6 +1,6 @@
 #ifndef __ATCORE_H__9384714E_12AB_4B7B_A5D5_11B8AA10A189
 #define __ATCORE_H__9384714E_12AB_4B7B_A5D5_11B8AA10A189
-#include "ATlib/com/ATlibCommon.h"
+#include "ATgae/engine/com/ATgaeCommon.h"
 #include "ATgae/engine/window/ATgaeWindowInfo.h"
 
 

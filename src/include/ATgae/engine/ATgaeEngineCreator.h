@@ -8,7 +8,10 @@ public:
 
   // Get engine instance.
   static ATEngine *getEngine();
-  
+
+  // Release engine instance.
+  static void releaseEngine();
+
 private:
 
   static ATEngine *pEngine;

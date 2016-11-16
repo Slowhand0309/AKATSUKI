@@ -13,14 +13,14 @@ ATEngine::ATEngine(const EngineType type)
   // Create core instance.
   switch (ml_nType) {
     case EngineType_OpenGL: // use opengl
+      LOGI(_T("Engine type: OpenGL"));
       ml_pCore = new ATCoreGL();
       break;
 
     case EngineType_DirectX:
+      LOGI(_T("Engine type: DirectX"));
       break;
   }
-
-  ml_pLog = ATLog::getInstance();
 }
 
 /**
@@ -29,8 +29,6 @@ ATEngine::ATEngine(const EngineType type)
 ATEngine::~ATEngine()
 {
   AT_SAFE_DELETE(ml_pCore);
-  ATLog::Release();
-  ml_pLog = NULL;
 }
 
 /**
@@ -40,7 +38,7 @@ ATEngine::~ATEngine()
  */
 int ATEngine::initialize(int argc, char *argv[])
 {
-  ml_pLog->log(LOG_LEVEL_INFO, _T("ATEngine::initialize argc[%d]"), argc);
+  LOGI(_T("ATEngine::initialize argc[%d]"), argc);
   int nRet = ml_pCore->initialize(argc, argv);
 
   return nRet;
@@ -86,6 +84,6 @@ void ATEngine::run()
  */
 int ATEngine::finalize()
 {
-  ml_pLog->log(LOG_LEVEL_INFO, _T("ATEngine::finalize"));
+  LOGI(_T("ATEngine::finalize"));
   return AT_OK;
 }

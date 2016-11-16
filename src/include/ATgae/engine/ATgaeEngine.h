@@ -59,7 +59,6 @@ public:
 
 protected:
 
-  ATLog*        ml_pLog;
   EngineType    ml_nType;
   ATCore*       ml_pCore;
   ATWindowInfo  ml_WindowInfo;
