@@ -134,7 +134,15 @@
 #endif // _DEBUG
 #endif // TRACE
 
+/* ----- Memory check ----- */
+#if defined(DEBUG) || defined(_DEBUG)
+#define MemoryLeakCheck      _CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF )
 #else
+#define MemoryLeakCheck
+#endif // DEBUG
+
+#else // PLATFORM_WINDOWS
+
 /* declaration for Linux Mac Other */
 #include <sys/types.h>
 #include <sys/stat.h>
