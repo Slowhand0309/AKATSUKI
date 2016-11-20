@@ -1,6 +1,7 @@
 #ifndef __ATGAECOREGL_H__
 #define __ATGAECOREGL_H__
 #include "ATgae/engine/core/ATgaeCore.h"
+#include "ATgae/engine/com/ATgaeCommonGL.h"
 
 #if defined(PLATFORM_IOS)
 #elif defined(PLATFORM_MACOS)
@@ -59,8 +60,18 @@ public:
    */
   virtual void drawTeapot();
 
+  /**
+   * Draw line.
+   *
+   * @param startVec2  Start coordinate
+   * @param endVec2 End coordinate
+   * @param color Line color
+   * @param lineWidth Line width
+   */
+  virtual void drawLine(ATVector2 &startVec2, ATVector2 &endVec2, ATColor color, float lineWidth = 1.0f);
+
 private:
   GLFWwindow *ml_pWindow;
-  
+
 };
 #endif // __ATGAECOREGL_H__

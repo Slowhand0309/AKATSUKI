@@ -47,8 +47,15 @@ void ATCoreGL::showWindow(ATWindowInfo &windowInfo)
 
   ml_pWindow = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
   glfwMakeContextCurrent(ml_pWindow);
+
+  glfwSwapInterval(1);
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+  glOrtho(0.0f, width, 0.0f, height, -1.0f, 1.0f);
+
   // Set input mode: default keyboard
   glfwSetInputMode(ml_pWindow, GLFW_STICKY_KEYS, GL_TRUE);
+
 }
 
 /**
@@ -62,9 +69,15 @@ void ATCoreGL::mainLoop(void(*func)())
   while (glfwGetKey(ml_pWindow, GLFW_KEY_ESCAPE ) != GLFW_PRESS &&
       !glfwWindowShouldClose(ml_pWindow))
   {
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     func();
+
+    // TODO debug
+    ATVector2 start2(180.0f, 200.0f);
+    ATVector2 end2(180.0f, 300.0f);
+    drawLine(start2, end2, ATCOLOR_RED);
 
     glfwSwapBuffers(ml_pWindow);
     glfwPollEvents();
@@ -81,4 +94,27 @@ void ATCoreGL::drawTeapot()
 void ATCoreGL::clearScreen(void)
 {
 
+}
+
+/**
+ * Draw line.
+ *
+ * @param startVec2  Start coordinate
+ * @param endVec2 End coordinate
+ * @param color Line color
+ * @param lineWidth Line width
+ */
+void ATCoreGL::drawLine(ATVector2 &startVec2, ATVector2 &endVec2, ATColor color, float lineWidth)
+{
+  const GLfloat vtx2[] = {
+    startVec2[0], startVec2[1],
+    endVec2[0], endVec2[1]
+  };
+  glVertexPointer(2, GL_FLOAT, 0, vtx2);
+  glLineWidth(lineWidth);
+  AT2GLCOLOR(color);
+
+  glEnableClientState(GL_VERTEX_ARRAY);
+  glDrawArrays(GL_LINES, 0, 2);
+  glDisableClientState(GL_VERTEX_ARRAY);
 }

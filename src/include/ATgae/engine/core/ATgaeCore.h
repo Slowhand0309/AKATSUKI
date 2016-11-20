@@ -58,5 +58,15 @@ public:
    */
   virtual void drawTeapot() = 0;
 
+  /**
+   * Draw line.
+   *
+   * @param startVec2  Start coordinate
+   * @param endVec2 End coordinate
+   * @param color Line color
+   * @param lineWidth Line width
+   */
+  virtual void drawLine(ATVector2 &startVec2, ATVector2 &endVec2, ATColor color, float lineWidth = 1.0f) = 0;
+
 };
 #endif // __ATCORE_H__9384714E_12AB_4B7B_A5D5_11B8AA10A189

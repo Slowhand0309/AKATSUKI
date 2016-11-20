@@ -1,6 +1,10 @@
 #ifndef __ATGAECOMMON_H__
 #define __ATGAECOMMON_H__
 #include "ATlib/com/ATlibCommon.h"
+#include "ATlib/math/ATlibMatrix.h"
+#include "ATlib/math/ATlibVector2.h"
+#include "ATlib/math/ATlibVector3.h"
+#include "ATlib/math/ATlibVector4.h"
 #include "ATgae/debugger/ATgaeLog.h"
 
 /**
@@ -13,6 +17,11 @@
 #define ATCOLOR_R(color)          (int)(color >> 16 & 0x000000FF)
 #define ATCOLOR_G(color)          (int)(color >> 8 & 0x000000FF)
 #define ATCOLOR_B(color)          (int)(color & 0x000000FF)
+
+#define ATCOLOR_AF(color)         (float)(ATCOLOR_A(color) / 255.0f)
+#define ATCOLOR_RF(color)         (float)(ATCOLOR_R(color) / 255.0f)
+#define ATCOLOR_GF(color)         (float)(ATCOLOR_G(color) / 255.0f)
+#define ATCOLOR_BF(color)         (float)(ATCOLOR_B(color) / 255.0f)
 
 #define ATCOLOR_RED               ATCOLOR_ARGB(255, 255, 0, 0)
 #define ATCOLOR_GREEN             ATCOLOR_ARGB(255, 0, 255, 0)
