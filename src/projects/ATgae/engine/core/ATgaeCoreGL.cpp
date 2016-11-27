@@ -97,6 +97,28 @@ void ATCoreGL::clearScreen(void)
 }
 
 /**
+ * Draw point.
+ *
+ * @param pointVec2 Point coordinate
+ * @param color     Point color
+ * @param size      Point size
+ */
+void drawPoint(ATVector2 &pointVec2, ATColor color, float size = 1.0f)
+{
+  const GLfloat vtx[] = {
+    pointVec2[0], pointVec2[1]
+  };
+  glVertexPointer(2, GL_FLOAT, 0, vtx);
+  glPointSize(size);
+  AT2GLCOLOR(color);
+
+  glMatrixMode(GL_MODELVIEW);
+  glEnableClientState(GL_VERTEX_ARRAY);
+  glDrawArrays(GL_POINTS, 0, 1);
+  glDisableClientState(GL_VERTEX_ARRAY);
+}
+
+/**
  * Draw line.
  *
  * @param startVec2  Start coordinate

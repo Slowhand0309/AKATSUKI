@@ -61,6 +61,15 @@ public:
   virtual void drawTeapot();
 
   /**
+   * Draw point.
+   *
+   * @param pointVec2 Point coordinate
+   * @param color     Point color
+   * @param size      Point size
+   */
+  virtual void drawPoint(ATVector2 &pointVec2, ATColor color, float size = 1.0f);
+
+  /**
    * Draw line.
    *
    * @param startVec2  Start coordinate
