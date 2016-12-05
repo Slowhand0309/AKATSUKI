@@ -10,7 +10,8 @@ include_directories(
 add_executable(ATlibTest
     src/ATlibStringUtlTest.cpp
     src/ATlibSysUtlTest.cpp
-    src/ATlibDateUtlTest.cpp)
+    src/ATlibDateUtlTest.cpp
+    src/ATlibVector2Test.cpp)
 
 target_link_libraries(ATlibTest
     pthread
