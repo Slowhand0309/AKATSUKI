@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E2E964B1DFBADB3008469CB /* ATgaeCoreDrawGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E2E964A1DFBADB3008469CB /* ATgaeCoreDrawGL.cpp */; };
 		D348504F1DB7CC760085B598 /* ATgaeEngineCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D348504E1DB7CC760085B598 /* ATgaeEngineCreator.cpp */; };
 		D38433031DB7C342002D5DA5 /* ATgaeEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432E11DB7C342002D5DA5 /* ATgaeEngine.h */; };
 		D38433041DB7C342002D5DA5 /* ATgaeEngineCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = D38432E21DB7C342002D5DA5 /* ATgaeEngineCreator.h */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E2E964A1DFBADB3008469CB /* ATgaeCoreDrawGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeCoreDrawGL.cpp; sourceTree = "<group>"; };
 		D348504E1DB7CC760085B598 /* ATgaeEngineCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ATgaeEngineCreator.cpp; sourceTree = "<group>"; };
 		D38432D61DB7C30F002D5DA5 /* libAKATSUKI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAKATSUKI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38432E11DB7C342002D5DA5 /* ATgaeEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATgaeEngine.h; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 			children = (
 				D38433201DB7C35B002D5DA5 /* ATgaeCore.cpp */,
 				D38433211DB7C35B002D5DA5 /* ATgaeCoreGL.cpp */,
+				9E2E964A1DFBADB3008469CB /* ATgaeCoreDrawGL.cpp */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				D3E2F5811DC3696E00166E89 /* ATlibFilePrinter.cpp in Sources */,
 				D38433401DB7C35B002D5DA5 /* ATlibVector2.cpp in Sources */,
 				D384333A1DB7C35B002D5DA5 /* ATgaeWindowInfo.cpp in Sources */,
+				9E2E964B1DFBADB3008469CB /* ATgaeCoreDrawGL.cpp in Sources */,
 				D384333E1DB7C35B002D5DA5 /* ATlibStream.cpp in Sources */,
 				D384333B1DB7C35B002D5DA5 /* ATgaeWindowManager.cpp in Sources */,
 				D3EED2331DBFB58C00550A3A /* ATgaeLog.cpp in Sources */,

@@ -5,6 +5,7 @@ project(AKATSUKI)
 set(ATGAE_SRC
     engine/core/ATgaeCore.cpp
     engine/core/ATgaeCoreGL.cpp
+    engine/core/ATgaeCoreDrawGL.cpp
     engine/impl/ATgaeImplGL.cpp
     engine/window/ATgaeWindowInfo.cpp
     engine/window/ATgaeWindowManager.cpp
